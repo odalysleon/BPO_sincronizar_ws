@@ -1,0 +1,153 @@
+
+package servicios;
+
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlEnumValue;
+import javax.xml.bind.annotation.XmlType;
+
+
+/**
+ * <p>Clase Java para Configuration.t_TipoCondicionante.
+ * 
+ * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
+ * <p>
+ * <pre>
+ * &lt;simpleType name="Configuration.t_TipoCondicionante">
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     &lt;enumeration value="InscripcionDelElementoValoradoComoFincaRegistralIndependiente"/>
+ *     &lt;enumeration value="AclaracionDiferenciasSignificativasEntreLaSuperficieRegistralCatastralyLaComprobada"/>
+ *     &lt;enumeration value="AportacionDeNotaSimpleoCertificacionEmitidaFueraDeLos3MesesAnterioresaLaFechaDeTasacion"/>
+ *     &lt;enumeration value="AportacionDeProyectoVisado"/>
+ *     &lt;enumeration value="AportacionDeLicenciaDeObras"/>
+ *     &lt;enumeration value="JustificacionDeQueElElementoValoradoEstaLibreDeInquilinosuOcupantes"/>
+ *     &lt;enumeration value="AportacionDeContratoDeArrendamientoyoUltimoRecibo"/>
+ *     &lt;enumeration value="AportacionDeUltimosRecibosDeRentaAbonados"/>
+ *     &lt;enumeration value="AportacionDeLaCedulaDeCalificacionProvisionaloDefinitiva"/>
+ *     &lt;enumeration value="AportacionDeDocumentacionUrbanisticayoDatosDeAprovechamientoUrbanistico"/>
+ *     &lt;enumeration value="AportacionDeCertificacionRegistral"/>
+ *     &lt;enumeration value="AportacionDePropietarioDeCertificadoDatosDeAlquiler"/>
+ *     &lt;enumeration value="DerechoDeRiego"/>
+ *     &lt;enumeration value="AportacionCedulaUrbanisticaCertificadoUrbanisticoMunicipaloDocumentacionparadeterminarlaClasedeSueloyAprovechamientoUrbanisticodelaPropiedad"/>
+ *     &lt;enumeration value="EstadodeConservacionAparente"/>
+ *     &lt;enumeration value="ServidumbresVisibles"/>
+ *     &lt;enumeration value="AportacionDocumentoRegimendeProteccionDelPatrimonioArquitectonico"/>
+ *     &lt;enumeration value="NoExistenCondicionantesParaElCasoConcretoDeEsteInforme"/>
+ *     &lt;enumeration value="NoSeHaDispuestoParaSuAnalisisPorElTasadorDeLaDocumentacionCatastral"/>
+ *     &lt;enumeration value="NoSeHaDispuestoParaSuAnalisisPorElTasadorDeLaReferenciaCatastralDeAlgunInmueble"/>
+ *     &lt;enumeration value="NoSeHaPodidoComprobarLaExistenciaDeProcedimientoDeDeclaracionDeIncumplimientoPlazosDeLosDeberesDeUrbanizacionoDeEdificacionDelSuelo"/>
+ *     &lt;enumeration value="OtrosCondicionantes"/>
+ *     &lt;enumeration value="C111_AportacionAlTasadorParaLaVerificacionDeLosDatosEmpleadosEnElInformeDeEscrituraDeLaPropiedadoCertificacionRegistralyoCopiaDeNotaSimpleEmitidaDuranteLosTresMesesAnterioresaLaFechaDeLaTasacion"/>
+ *     &lt;enumeration value="C112_AportacionAlTasadorParaLaVerificacionDeLosDatosEmpleadosEnElInformeDeFichaCatastralEmitidaDuranteLosTresMesesAnterioresaLaFechaDeLaTasacion"/>
+ *     &lt;enumeration value="C121_AportacionAlTasadorParaLaVerificacionDeLosDatosEmpleadosEnElInformeDeDocumentacionRegistralSegunNormativaEscrituraDeLaPropiedadoCertificacionRegistralyoCopiaDeNotaSimple"/>
+ *     &lt;enumeration value="C122_AportacionAlTasadorParaLaVerificacionDeLosDatosEmpleadosEnElInformeDeFichaCatastralEnLaQueLaDescripcionCatastralSeAdecueaLaRealidadFisicaActualySeaAcordeConLaNormativaUrbanistica"/>
+ *     &lt;enumeration value="C13_AportacionAlTasadorParaLaVerificacionDeLosDatosEmpleadosEnElInformeDeDocumentacionRegistralSegunNormativaEscrituraDeLaPropiedadoCertificacionRegistralyoCopiadeNotaSimpleEnLaQueElElementoValoradoFigure"/>
+ *     &lt;enumeration value="C14_ElelementoValoradoEstaFormadoPorDosoMasFincasRegistralesQueFormanUnaUnicaUnidadFuncionalNoSiendoPosibleDeterminarLaConfiguracionoLinderosDeCadaUnaDeEllasPorLoQueElValorInformadoSeCorrespondeConLaAgrupacion"/>
+ *     &lt;enumeration value="C15_LaFincaValoradaDaAccesoaOtraFincaRegistralQueSoloTieneAccesoAtravesDeEllayNoConstaInscritaServidumbreDePasoElValorDeTasacionSoloSeraValidoSiSeInscribeLasServidumbreDePasoDeacuerdoaLosParametrosManejados"/>
+ *     &lt;enumeration value="C31_AportacionAlTasadorParaLaVerificacionDeLosDatosEmpleadosEnElInformeDeproyectovisado"/>
+ *     &lt;enumeration value="C32_AportacionAlTasadorParaLaVerificacionDeLosDatosEmpleadosEnElInformeDeLicenciaDeObrasConSusClausulasyCartaDePago"/>
+ *     &lt;enumeration value="C41_AportacionAlTasadorParaLaVerificacionDeDocumentacionQueJustifiqueQueElElementoValoradoEstaLibreDeArrendamientoInquilinosuOcupantesDiferentesDelTitularRegistralAlNoHaberSidoAportadasLasCondicionesDeOcupacion"/>
+ *     &lt;enumeration value="C42_AportacionAlTasadorParaLaVerificacionDeLosDatosEmpleadosEnElInformeDelContratoDeArrendamiento"/>
+ *     &lt;enumeration value="C43_AportacionAlTasadorParaLaVerificacionDeLosDatosEmpleadosEnElInformeDelUltimoReciboDeRentaAbonado"/>
+ *     &lt;enumeration value="C5_AportacionAlTasadorParaLaVerificacionDeLosDatosEmpleadosEnElInformeDecedulaurbanisticacertificadomunicipaluotradocumentacionquepermitadeterminaryconfirmarintegramentelaclasedesueloelaprovechamientoysuscondicion"/>
+ *     &lt;enumeration value="C7_CondicionantesOtros"/>
+ *   &lt;/restriction>
+ * &lt;/simpleType>
+ * </pre>
+ * 
+ */
+@XmlType(name = "Configuration.t_TipoCondicionante")
+@XmlEnum
+public enum ConfigurationTTipoCondicionante {
+
+    @XmlEnumValue("InscripcionDelElementoValoradoComoFincaRegistralIndependiente")
+    INSCRIPCION_DEL_ELEMENTO_VALORADO_COMO_FINCA_REGISTRAL_INDEPENDIENTE("InscripcionDelElementoValoradoComoFincaRegistralIndependiente"),
+    @XmlEnumValue("AclaracionDiferenciasSignificativasEntreLaSuperficieRegistralCatastralyLaComprobada")
+    ACLARACION_DIFERENCIAS_SIGNIFICATIVAS_ENTRE_LA_SUPERFICIE_REGISTRAL_CATASTRALY_LA_COMPROBADA("AclaracionDiferenciasSignificativasEntreLaSuperficieRegistralCatastralyLaComprobada"),
+    @XmlEnumValue("AportacionDeNotaSimpleoCertificacionEmitidaFueraDeLos3MesesAnterioresaLaFechaDeTasacion")
+    APORTACION_DE_NOTA_SIMPLEO_CERTIFICACION_EMITIDA_FUERA_DE_LOS_3_MESES_ANTERIORESA_LA_FECHA_DE_TASACION("AportacionDeNotaSimpleoCertificacionEmitidaFueraDeLos3MesesAnterioresaLaFechaDeTasacion"),
+    @XmlEnumValue("AportacionDeProyectoVisado")
+    APORTACION_DE_PROYECTO_VISADO("AportacionDeProyectoVisado"),
+    @XmlEnumValue("AportacionDeLicenciaDeObras")
+    APORTACION_DE_LICENCIA_DE_OBRAS("AportacionDeLicenciaDeObras"),
+    @XmlEnumValue("JustificacionDeQueElElementoValoradoEstaLibreDeInquilinosuOcupantes")
+    JUSTIFICACION_DE_QUE_EL_ELEMENTO_VALORADO_ESTA_LIBRE_DE_INQUILINOSU_OCUPANTES("JustificacionDeQueElElementoValoradoEstaLibreDeInquilinosuOcupantes"),
+    @XmlEnumValue("AportacionDeContratoDeArrendamientoyoUltimoRecibo")
+    APORTACION_DE_CONTRATO_DE_ARRENDAMIENTOYO_ULTIMO_RECIBO("AportacionDeContratoDeArrendamientoyoUltimoRecibo"),
+    @XmlEnumValue("AportacionDeUltimosRecibosDeRentaAbonados")
+    APORTACION_DE_ULTIMOS_RECIBOS_DE_RENTA_ABONADOS("AportacionDeUltimosRecibosDeRentaAbonados"),
+    @XmlEnumValue("AportacionDeLaCedulaDeCalificacionProvisionaloDefinitiva")
+    APORTACION_DE_LA_CEDULA_DE_CALIFICACION_PROVISIONALO_DEFINITIVA("AportacionDeLaCedulaDeCalificacionProvisionaloDefinitiva"),
+    @XmlEnumValue("AportacionDeDocumentacionUrbanisticayoDatosDeAprovechamientoUrbanistico")
+    APORTACION_DE_DOCUMENTACION_URBANISTICAYO_DATOS_DE_APROVECHAMIENTO_URBANISTICO("AportacionDeDocumentacionUrbanisticayoDatosDeAprovechamientoUrbanistico"),
+    @XmlEnumValue("AportacionDeCertificacionRegistral")
+    APORTACION_DE_CERTIFICACION_REGISTRAL("AportacionDeCertificacionRegistral"),
+    @XmlEnumValue("AportacionDePropietarioDeCertificadoDatosDeAlquiler")
+    APORTACION_DE_PROPIETARIO_DE_CERTIFICADO_DATOS_DE_ALQUILER("AportacionDePropietarioDeCertificadoDatosDeAlquiler"),
+    @XmlEnumValue("DerechoDeRiego")
+    DERECHO_DE_RIEGO("DerechoDeRiego"),
+    @XmlEnumValue("AportacionCedulaUrbanisticaCertificadoUrbanisticoMunicipaloDocumentacionparadeterminarlaClasedeSueloyAprovechamientoUrbanisticodelaPropiedad")
+    APORTACION_CEDULA_URBANISTICA_CERTIFICADO_URBANISTICO_MUNICIPALO_DOCUMENTACIONPARADETERMINARLA_CLASEDE_SUELOY_APROVECHAMIENTO_URBANISTICODELA_PROPIEDAD("AportacionCedulaUrbanisticaCertificadoUrbanisticoMunicipaloDocumentacionparadeterminarlaClasedeSueloyAprovechamientoUrbanisticodelaPropiedad"),
+    @XmlEnumValue("EstadodeConservacionAparente")
+    ESTADODE_CONSERVACION_APARENTE("EstadodeConservacionAparente"),
+    @XmlEnumValue("ServidumbresVisibles")
+    SERVIDUMBRES_VISIBLES("ServidumbresVisibles"),
+    @XmlEnumValue("AportacionDocumentoRegimendeProteccionDelPatrimonioArquitectonico")
+    APORTACION_DOCUMENTO_REGIMENDE_PROTECCION_DEL_PATRIMONIO_ARQUITECTONICO("AportacionDocumentoRegimendeProteccionDelPatrimonioArquitectonico"),
+    @XmlEnumValue("NoExistenCondicionantesParaElCasoConcretoDeEsteInforme")
+    NO_EXISTEN_CONDICIONANTES_PARA_EL_CASO_CONCRETO_DE_ESTE_INFORME("NoExistenCondicionantesParaElCasoConcretoDeEsteInforme"),
+    @XmlEnumValue("NoSeHaDispuestoParaSuAnalisisPorElTasadorDeLaDocumentacionCatastral")
+    NO_SE_HA_DISPUESTO_PARA_SU_ANALISIS_POR_EL_TASADOR_DE_LA_DOCUMENTACION_CATASTRAL("NoSeHaDispuestoParaSuAnalisisPorElTasadorDeLaDocumentacionCatastral"),
+    @XmlEnumValue("NoSeHaDispuestoParaSuAnalisisPorElTasadorDeLaReferenciaCatastralDeAlgunInmueble")
+    NO_SE_HA_DISPUESTO_PARA_SU_ANALISIS_POR_EL_TASADOR_DE_LA_REFERENCIA_CATASTRAL_DE_ALGUN_INMUEBLE("NoSeHaDispuestoParaSuAnalisisPorElTasadorDeLaReferenciaCatastralDeAlgunInmueble"),
+    @XmlEnumValue("NoSeHaPodidoComprobarLaExistenciaDeProcedimientoDeDeclaracionDeIncumplimientoPlazosDeLosDeberesDeUrbanizacionoDeEdificacionDelSuelo")
+    NO_SE_HA_PODIDO_COMPROBAR_LA_EXISTENCIA_DE_PROCEDIMIENTO_DE_DECLARACION_DE_INCUMPLIMIENTO_PLAZOS_DE_LOS_DEBERES_DE_URBANIZACIONO_DE_EDIFICACION_DEL_SUELO("NoSeHaPodidoComprobarLaExistenciaDeProcedimientoDeDeclaracionDeIncumplimientoPlazosDeLosDeberesDeUrbanizacionoDeEdificacionDelSuelo"),
+    @XmlEnumValue("OtrosCondicionantes")
+    OTROS_CONDICIONANTES("OtrosCondicionantes"),
+    @XmlEnumValue("C111_AportacionAlTasadorParaLaVerificacionDeLosDatosEmpleadosEnElInformeDeEscrituraDeLaPropiedadoCertificacionRegistralyoCopiaDeNotaSimpleEmitidaDuranteLosTresMesesAnterioresaLaFechaDeLaTasacion")
+    C_111_APORTACION_AL_TASADOR_PARA_LA_VERIFICACION_DE_LOS_DATOS_EMPLEADOS_EN_EL_INFORME_DE_ESCRITURA_DE_LA_PROPIEDADO_CERTIFICACION_REGISTRALYO_COPIA_DE_NOTA_SIMPLE_EMITIDA_DURANTE_LOS_TRES_MESES_ANTERIORESA_LA_FECHA_DE_LA_TASACION("C111_AportacionAlTasadorParaLaVerificacionDeLosDatosEmpleadosEnElInformeDeEscrituraDeLaPropiedadoCertificacionRegistralyoCopiaDeNotaSimpleEmitidaDuranteLosTresMesesAnterioresaLaFechaDeLaTasacion"),
+    @XmlEnumValue("C112_AportacionAlTasadorParaLaVerificacionDeLosDatosEmpleadosEnElInformeDeFichaCatastralEmitidaDuranteLosTresMesesAnterioresaLaFechaDeLaTasacion")
+    C_112_APORTACION_AL_TASADOR_PARA_LA_VERIFICACION_DE_LOS_DATOS_EMPLEADOS_EN_EL_INFORME_DE_FICHA_CATASTRAL_EMITIDA_DURANTE_LOS_TRES_MESES_ANTERIORESA_LA_FECHA_DE_LA_TASACION("C112_AportacionAlTasadorParaLaVerificacionDeLosDatosEmpleadosEnElInformeDeFichaCatastralEmitidaDuranteLosTresMesesAnterioresaLaFechaDeLaTasacion"),
+    @XmlEnumValue("C121_AportacionAlTasadorParaLaVerificacionDeLosDatosEmpleadosEnElInformeDeDocumentacionRegistralSegunNormativaEscrituraDeLaPropiedadoCertificacionRegistralyoCopiaDeNotaSimple")
+    C_121_APORTACION_AL_TASADOR_PARA_LA_VERIFICACION_DE_LOS_DATOS_EMPLEADOS_EN_EL_INFORME_DE_DOCUMENTACION_REGISTRAL_SEGUN_NORMATIVA_ESCRITURA_DE_LA_PROPIEDADO_CERTIFICACION_REGISTRALYO_COPIA_DE_NOTA_SIMPLE("C121_AportacionAlTasadorParaLaVerificacionDeLosDatosEmpleadosEnElInformeDeDocumentacionRegistralSegunNormativaEscrituraDeLaPropiedadoCertificacionRegistralyoCopiaDeNotaSimple"),
+    @XmlEnumValue("C122_AportacionAlTasadorParaLaVerificacionDeLosDatosEmpleadosEnElInformeDeFichaCatastralEnLaQueLaDescripcionCatastralSeAdecueaLaRealidadFisicaActualySeaAcordeConLaNormativaUrbanistica")
+    C_122_APORTACION_AL_TASADOR_PARA_LA_VERIFICACION_DE_LOS_DATOS_EMPLEADOS_EN_EL_INFORME_DE_FICHA_CATASTRAL_EN_LA_QUE_LA_DESCRIPCION_CATASTRAL_SE_ADECUEA_LA_REALIDAD_FISICA_ACTUALY_SEA_ACORDE_CON_LA_NORMATIVA_URBANISTICA("C122_AportacionAlTasadorParaLaVerificacionDeLosDatosEmpleadosEnElInformeDeFichaCatastralEnLaQueLaDescripcionCatastralSeAdecueaLaRealidadFisicaActualySeaAcordeConLaNormativaUrbanistica"),
+    @XmlEnumValue("C13_AportacionAlTasadorParaLaVerificacionDeLosDatosEmpleadosEnElInformeDeDocumentacionRegistralSegunNormativaEscrituraDeLaPropiedadoCertificacionRegistralyoCopiadeNotaSimpleEnLaQueElElementoValoradoFigure")
+    C_13_APORTACION_AL_TASADOR_PARA_LA_VERIFICACION_DE_LOS_DATOS_EMPLEADOS_EN_EL_INFORME_DE_DOCUMENTACION_REGISTRAL_SEGUN_NORMATIVA_ESCRITURA_DE_LA_PROPIEDADO_CERTIFICACION_REGISTRALYO_COPIADE_NOTA_SIMPLE_EN_LA_QUE_EL_ELEMENTO_VALORADO_FIGURE("C13_AportacionAlTasadorParaLaVerificacionDeLosDatosEmpleadosEnElInformeDeDocumentacionRegistralSegunNormativaEscrituraDeLaPropiedadoCertificacionRegistralyoCopiadeNotaSimpleEnLaQueElElementoValoradoFigure"),
+    @XmlEnumValue("C14_ElelementoValoradoEstaFormadoPorDosoMasFincasRegistralesQueFormanUnaUnicaUnidadFuncionalNoSiendoPosibleDeterminarLaConfiguracionoLinderosDeCadaUnaDeEllasPorLoQueElValorInformadoSeCorrespondeConLaAgrupacion")
+    C_14_ELELEMENTO_VALORADO_ESTA_FORMADO_POR_DOSO_MAS_FINCAS_REGISTRALES_QUE_FORMAN_UNA_UNICA_UNIDAD_FUNCIONAL_NO_SIENDO_POSIBLE_DETERMINAR_LA_CONFIGURACIONO_LINDEROS_DE_CADA_UNA_DE_ELLAS_POR_LO_QUE_EL_VALOR_INFORMADO_SE_CORRESPONDE_CON_LA_AGRUPACION("C14_ElelementoValoradoEstaFormadoPorDosoMasFincasRegistralesQueFormanUnaUnicaUnidadFuncionalNoSiendoPosibleDeterminarLaConfiguracionoLinderosDeCadaUnaDeEllasPorLoQueElValorInformadoSeCorrespondeConLaAgrupacion"),
+    @XmlEnumValue("C15_LaFincaValoradaDaAccesoaOtraFincaRegistralQueSoloTieneAccesoAtravesDeEllayNoConstaInscritaServidumbreDePasoElValorDeTasacionSoloSeraValidoSiSeInscribeLasServidumbreDePasoDeacuerdoaLosParametrosManejados")
+    C_15_LA_FINCA_VALORADA_DA_ACCESOA_OTRA_FINCA_REGISTRAL_QUE_SOLO_TIENE_ACCESO_ATRAVES_DE_ELLAY_NO_CONSTA_INSCRITA_SERVIDUMBRE_DE_PASO_EL_VALOR_DE_TASACION_SOLO_SERA_VALIDO_SI_SE_INSCRIBE_LAS_SERVIDUMBRE_DE_PASO_DEACUERDOA_LOS_PARAMETROS_MANEJADOS("C15_LaFincaValoradaDaAccesoaOtraFincaRegistralQueSoloTieneAccesoAtravesDeEllayNoConstaInscritaServidumbreDePasoElValorDeTasacionSoloSeraValidoSiSeInscribeLasServidumbreDePasoDeacuerdoaLosParametrosManejados"),
+    @XmlEnumValue("C31_AportacionAlTasadorParaLaVerificacionDeLosDatosEmpleadosEnElInformeDeproyectovisado")
+    C_31_APORTACION_AL_TASADOR_PARA_LA_VERIFICACION_DE_LOS_DATOS_EMPLEADOS_EN_EL_INFORME_DEPROYECTOVISADO("C31_AportacionAlTasadorParaLaVerificacionDeLosDatosEmpleadosEnElInformeDeproyectovisado"),
+    @XmlEnumValue("C32_AportacionAlTasadorParaLaVerificacionDeLosDatosEmpleadosEnElInformeDeLicenciaDeObrasConSusClausulasyCartaDePago")
+    C_32_APORTACION_AL_TASADOR_PARA_LA_VERIFICACION_DE_LOS_DATOS_EMPLEADOS_EN_EL_INFORME_DE_LICENCIA_DE_OBRAS_CON_SUS_CLAUSULASY_CARTA_DE_PAGO("C32_AportacionAlTasadorParaLaVerificacionDeLosDatosEmpleadosEnElInformeDeLicenciaDeObrasConSusClausulasyCartaDePago"),
+    @XmlEnumValue("C41_AportacionAlTasadorParaLaVerificacionDeDocumentacionQueJustifiqueQueElElementoValoradoEstaLibreDeArrendamientoInquilinosuOcupantesDiferentesDelTitularRegistralAlNoHaberSidoAportadasLasCondicionesDeOcupacion")
+    C_41_APORTACION_AL_TASADOR_PARA_LA_VERIFICACION_DE_DOCUMENTACION_QUE_JUSTIFIQUE_QUE_EL_ELEMENTO_VALORADO_ESTA_LIBRE_DE_ARRENDAMIENTO_INQUILINOSU_OCUPANTES_DIFERENTES_DEL_TITULAR_REGISTRAL_AL_NO_HABER_SIDO_APORTADAS_LAS_CONDICIONES_DE_OCUPACION("C41_AportacionAlTasadorParaLaVerificacionDeDocumentacionQueJustifiqueQueElElementoValoradoEstaLibreDeArrendamientoInquilinosuOcupantesDiferentesDelTitularRegistralAlNoHaberSidoAportadasLasCondicionesDeOcupacion"),
+    @XmlEnumValue("C42_AportacionAlTasadorParaLaVerificacionDeLosDatosEmpleadosEnElInformeDelContratoDeArrendamiento")
+    C_42_APORTACION_AL_TASADOR_PARA_LA_VERIFICACION_DE_LOS_DATOS_EMPLEADOS_EN_EL_INFORME_DEL_CONTRATO_DE_ARRENDAMIENTO("C42_AportacionAlTasadorParaLaVerificacionDeLosDatosEmpleadosEnElInformeDelContratoDeArrendamiento"),
+    @XmlEnumValue("C43_AportacionAlTasadorParaLaVerificacionDeLosDatosEmpleadosEnElInformeDelUltimoReciboDeRentaAbonado")
+    C_43_APORTACION_AL_TASADOR_PARA_LA_VERIFICACION_DE_LOS_DATOS_EMPLEADOS_EN_EL_INFORME_DEL_ULTIMO_RECIBO_DE_RENTA_ABONADO("C43_AportacionAlTasadorParaLaVerificacionDeLosDatosEmpleadosEnElInformeDelUltimoReciboDeRentaAbonado"),
+    @XmlEnumValue("C5_AportacionAlTasadorParaLaVerificacionDeLosDatosEmpleadosEnElInformeDecedulaurbanisticacertificadomunicipaluotradocumentacionquepermitadeterminaryconfirmarintegramentelaclasedesueloelaprovechamientoysuscondicion")
+    C_5_APORTACION_AL_TASADOR_PARA_LA_VERIFICACION_DE_LOS_DATOS_EMPLEADOS_EN_EL_INFORME_DECEDULAURBANISTICACERTIFICADOMUNICIPALUOTRADOCUMENTACIONQUEPERMITADETERMINARYCONFIRMARINTEGRAMENTELACLASEDESUELOELAPROVECHAMIENTOYSUSCONDICION("C5_AportacionAlTasadorParaLaVerificacionDeLosDatosEmpleadosEnElInformeDecedulaurbanisticacertificadomunicipaluotradocumentacionquepermitadeterminaryconfirmarintegramentelaclasedesueloelaprovechamientoysuscondicion"),
+    @XmlEnumValue("C7_CondicionantesOtros")
+    C_7_CONDICIONANTES_OTROS("C7_CondicionantesOtros");
+    private final String value;
+
+    ConfigurationTTipoCondicionante(String v) {
+        value = v;
+    }
+
+    public String value() {
+        return value;
+    }
+
+    public static ConfigurationTTipoCondicionante fromValue(String v) {
+        for (ConfigurationTTipoCondicionante c: ConfigurationTTipoCondicionante.values()) {
+            if (c.value.equals(v)) {
+                return c;
+            }
+        }
+        throw new IllegalArgumentException(v);
+    }
+
+}
