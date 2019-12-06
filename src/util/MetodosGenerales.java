@@ -5,12 +5,8 @@ import com.jcraft.jsch.JSch;
 import com.jcraft.jsch.JSchException;
 import com.jcraft.jsch.Session;
 import com.jcraft.jsch.SftpException;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStream;
+
+import java.io.*;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.text.DateFormat;
@@ -144,19 +140,33 @@ public class MetodosGenerales {
      * @return 
      */
     public static Session   connectFTPbySSH(){
-        String ipFtp = "80.81.115.5";
-        String userFtp = "grupotechid";
-        String passWdFtp = "Bb7UaIkV5=wi";
-        JSch jsch = new JSch();
-        Session session = null;
+       /* Cargando fichero de configuracion para la conexion al Ftp*/
+        Properties p = new Properties();
+        InputStream propertiesStream = ClassLoader.getSystemResourceAsStream("resources/configFtp.properties");
         try {
-            session = jsch.getSession(userFtp, ipFtp);
-            session.setPassword(passWdFtp);
-            session.setConfig("StrictHostKeyChecking", "no");
-            session.connect();
-        } catch (JSchException ex) {
+            p.load(propertiesStream);
+            //buscando en el fichero de conf la llave "ipFtp"
+            String ipFtp = p.getProperty("ipFtp");
+            //buscando en el fichero de conf la llave "userFtp"
+            String userFtp = p.getProperty("userFtp");
+            //buscando en el fichero de conf la llave "passWdFtp"
+            String passWdFtp = p.getProperty("passWdFtp");
+           //Cerrando el fichero
+            propertiesStream.close();
+            JSch jsch = new JSch();
+            Session session = null;
+            try {
+                session = jsch.getSession(userFtp, ipFtp);
+                session.setPassword(passWdFtp);
+                session.setConfig("StrictHostKeyChecking", "no");
+                session.connect();
+            } catch (JSchException ex) {
+            }
+            return session;
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        return session;
+
     }
     
     /**
