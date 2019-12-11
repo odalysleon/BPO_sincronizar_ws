@@ -156,8 +156,9 @@ public class MetodosGenerales {
 
             try {
                 session = jsch.getSession(userFtp, ipFtp);
-                session.setPassword(passWdFtp);
-                session.setConfig("StrictHostKeyChecking", "no");
+                  Properties properties=new Properties();
+            properties.setProperty("StrictHostKeyChecking","no");
+            session.setConfig(properties);
                 session.connect();
             } catch (JSchException ex) {
             }
@@ -172,17 +173,33 @@ public class MetodosGenerales {
      * @return
      */
     public static Session connectFTPbySSHTech() {
-        String ipFtp = "31.47.76.22";
-        String userFtp = "bpo";
-        String passWdFtp = "Tech1D01";
-        JSch jsch = new JSch();
+        /* Cargando fichero de configuracion para la conexion al Ftp*/
+        Properties p = new Properties();
+        InputStream propertiesStream = ClassLoader.getSystemResourceAsStream("resources/configFtp.properties");
         Session session = null;
         try {
-            session = jsch.getSession(userFtp, ipFtp);
-            session.setPassword(passWdFtp);
-            session.setConfig("StrictHostKeyChecking", "no");
-            session.connect();
-        } catch (JSchException ex) {
+            p.load(propertiesStream);
+            //buscando en el fichero de conf la llave "ipFtp"
+            String ipFtp = p.getProperty("ipFtp");
+            //buscando en el fichero de conf la llave "userFtp"
+            String userFtp = p.getProperty("userFtp");
+            //buscando en el fichero de conf la llave "passWdFtp"
+            String passWdFtp = p.getProperty("passWdFtp");
+            //Cerrando el fichero
+            propertiesStream.close();
+            JSch jsch = new JSch();
+
+            try {
+                session = jsch.getSession(userFtp, ipFtp);
+                  Properties properties=new Properties();
+            properties.setProperty("StrictHostKeyChecking","no");
+            session.setConfig(properties);
+                session.connect();
+            } catch (JSchException ex) {
+            }
+            return session;
+        } catch (IOException e) {
+            e.printStackTrace();
         }
         return session;
     }
