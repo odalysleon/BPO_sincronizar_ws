@@ -111,6 +111,7 @@ import sincronizarrepogrupobc.SincronizarRepoGrupoBC;
 
 
 public class MetodosGenerales {
+    private static String direccion=System.getProperty("user.dir");
 
     /**
      * @param fecha
@@ -141,7 +142,7 @@ public class MetodosGenerales {
        
         Session session = null;
         try {
-             File file = new File(System.getProperty("user.dir").concat("\\config\\configFtp_WS.properties"));
+             File file = new File(direccion.concat("\\conf\\configFtp_WS.properties"));
             FileInputStream fileInputStream = new FileInputStream(file);
             Properties mainProperties = new Properties();
             mainProperties.load(fileInputStream);
@@ -178,7 +179,7 @@ public class MetodosGenerales {
         
         Session session = null;
         try {
-             File file = new File(System.getProperty("user.dir").concat("\\config\\configFtp_WS.properties"));
+             File file = new File(direccion.concat("\\conf\\configFtp_WS.properties"));
             FileInputStream fileInputStream = new FileInputStream(file);
             Properties mainProperties = new Properties();
             mainProperties.load(fileInputStream);
@@ -967,7 +968,7 @@ public class MetodosGenerales {
      * @return
      */
     private static Integer devolverIdSolicitud(ChannelSftp channelSftp, String nombreArchivo) {
-        String destino = "/home/adiaz/bpo/Servicio/Enviados".concat("trazas_descargados_GrupoBCWS.dat");
+        String destino = direccion.concat("\\Enviados\\").concat("trazas_descargados_GrupoBCWS.dat");
         String fuente = "/home/BPO/Historico/".concat("trazas_descargados_GrupoBCWS.dat");
         try {
             channelSftp.get(fuente, destino);
@@ -1422,7 +1423,7 @@ public class MetodosGenerales {
      * @return
      */
     private static Boolean existeArchivo(ChannelSftp channelSftp, String nombreArchivo) {
-        String destino = "/home/adiaz/bpo/Servicio/Enviados".concat("trazas_descargados_GrupoBCWS.dat");
+        String destino =  direccion.concat("\\Enviados\\").concat("trazas_descargados_GrupoBCWS.dat");
         String fuente = "/home/BPO/Historico/".concat("trazas_descargados_GrupoBCWS.dat");
         try {
             channelSftp.get(fuente, destino);
@@ -1504,19 +1505,19 @@ public class MetodosGenerales {
 
                     OutputStream out;
                     if ((null != tipoDocumento) && (tipoDocumento == ConfigurationTTipoDocumento.NOTA_SIMPLE_NODULOS)) {
-                        out = new FileOutputStream("/home/adiaz/bpo/ocr/Enviados/" + nombreDocumento);
+                        out = new FileOutputStream( direccion.concat("\\Enviados\\") + nombreDocumento);
                         out.write(listaBytes.getValue());
                         out.close();
-                        channelSftpTech.put("/home/adiaz/bpo/ocr/Enviados/" + nombreDocumento, directorio + nombreDocumento);
+                        channelSftpTech.put( direccion.concat("\\Enviados\\") + nombreDocumento, directorio + nombreDocumento);
                     } else {
-                        out = new FileOutputStream("/home/adiaz/bpo/Servicio/Enviados/" + nombreDocumento);
+                        out = new FileOutputStream( direccion.concat("\\Enviados\\") + nombreDocumento);
                         out.write(listaBytes.getValue());
                         out.close();
-                        channelSftpTech.put("/home/adiaz/bpo/Servicio/Enviados/" + nombreDocumento, directorio + nombreDocumento);
+                        channelSftpTech.put(direccion.concat("\\Enviados\\") + nombreDocumento, directorio + nombreDocumento);
                     }
                     try {
                         if ((null != tipoDocumento) && (tipoDocumento != ConfigurationTTipoDocumento.NOTA_SIMPLE_NODULOS)) {
-                            String[] cmd = {"rm", "/home/adiaz/bpo/Servicio/Enviados/" + nombreDocumento};
+                            String[] cmd = {"rm",direccion.concat("\\Enviados\\") + nombreDocumento};
                             Runtime.getRuntime().exec(cmd);
                         }
                     } catch (IOException ioe) {
@@ -2596,9 +2597,9 @@ public class MetodosGenerales {
     public static ArrayList<String> getAddressList(Integer typeOfAddress) {
         String filePath;
         if (typeOfAddress == 1)
-            filePath = "/home/adiaz/bpo/Servicio/conf/address_morning.dat";//filePath = System.getProperty("user.dir").concat("\\conf\\address_morning.dat");
+            filePath = direccion.concat("\\conf\\address_morning.dat");//filePath = direccion.concat("\\conf\\address_morning.dat");
         else
-            filePath = "/home/adiaz/bpo/Servicio/conf/address_afternoon.dat"; //filePath = System.getProperty("user.dir").concat("\\conf\\address_afternoon.dat");
+            filePath = direccion.concat("\\conf\\address_afternoon.dat"); //filePath = direccion.concat("\\conf\\address_afternoon.dat");
 
 
         File archivo = new File(filePath);
@@ -2617,11 +2618,11 @@ public class MetodosGenerales {
     }
 
     public static void checkNotes() {
-        //String filePathBC = System.getProperty("user.dir").concat("\\conf\\subidos.dat");
-        //String filePathTech = System.getProperty("user.dir").concat("\\conf\\trazas_subidos_GrupoBCWS.dat");
+        //String filePathBC = direccion.concat("\\conf\\subidos.dat");
+        //String filePathTech = direccion.concat("\\conf\\trazas_subidos_GrupoBCWS.dat");
 
-        String filePathBC = System.getProperty("user.dir").concat("\\conf\\descargados.dat");
-        String filePathTech = System.getProperty("user.dir").concat("\\conf\\trazas_descargados_GrupoBCWS.dat");
+        String filePathBC = direccion.concat("\\conf\\descargados.dat");
+        String filePathTech = direccion.concat("\\conf\\trazas_descargados_GrupoBCWS.dat");
 
 
         File archivoTech = new File(filePathTech);
