@@ -151,7 +151,7 @@ public class TimerTaskSchedule {
                 else if (tipo.equals("Directorios"))
                     nombreArchivoTrazas = "registro_directorios_procesados.dat";
                 String fuente = "/home/BPO/Historico/".concat(nombreArchivoTrazas);
-                String destino = direccion.concat("\\Enviados\\").concat(nombreArchivoTrazas); 
+                String destino = direccion.concat("/Enviados/").concat(nombreArchivoTrazas); 
                 channelSftp.get(fuente, destino);
                 BufferedWriter bw;
                 try {
@@ -173,7 +173,7 @@ public class TimerTaskSchedule {
                 String fechaAccion = new Date().toString();
                 //String nombreArchivoTrazas = nombreArchivo.concat("___").concat(fechaAccion).concat(".dat");
                 String nombreArchivoTrazas = fechaAccion.concat(".dat");
-                String destino = direccion.concat("\\Enviados\\").concat(nombreArchivoTrazas); 
+                String destino = direccion.concat("/Enviados/").concat(nombreArchivoTrazas); 
                 BufferedWriter bw;
                 try {
                     bw = new BufferedWriter(new FileWriter(destino, true));
@@ -207,7 +207,7 @@ public class TimerTaskSchedule {
      * @return 
      */
     private static Boolean existeDirectorio(ChannelSftp channelSftp, String directorio){
-        String destino = direccion.concat("\\Enviados\\").concat("registro_directorios_procesados.dat"); 
+        String destino = direccion.concat("/Enviados/").concat("registro_directorios_procesados.dat"); 
         String fuente = "/home/BPO/Historico/".concat("registro_directorios_procesados.dat");
          try {
              channelSftp.get(fuente, destino);
@@ -242,7 +242,7 @@ public class TimerTaskSchedule {
      * @return 
      */
     private static Boolean existeArchivo(ChannelSftp channelSftp, String nombreArchivo){
-        String destino = direccion.concat("\\Enviados\\").concat("trazas_descargados_GrupoBC.dat"); 
+        String destino = direccion.concat("/Enviados/").concat("trazas_descargados_GrupoBC.dat"); 
         String fuente = "/home/BPO/Historico/".concat("trazas_descargados_GrupoBC.dat");
          try {
              channelSftp.get(fuente, destino);
