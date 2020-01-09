@@ -1725,7 +1725,9 @@ public class MetodosGenerales {
             listaArchivosProcesados = channelSftpTech.ls(rutaProcesadosTechFTP);
             List<String> listaNombreArchivos = new ArrayList<>();
             ArrayOfIRPF arrayOfIRPF = new ArrayOfIRPF();
-            if (listaArchivosProcesados.size() > 2) {
+            if(listaArchivosProcesados!=null)
+            {
+                if (listaArchivosProcesados.size() > 2) {
                 for (int i = 0; i < listaArchivosProcesados.size(); i++) {
                     ChannelSftp.LsEntry archivo = (ChannelSftp.LsEntry) listaArchivosProcesados.elementAt(i);
                     if (!archivo.getFilename().equals(".") && !archivo.getFilename().equals("..") && !esDirectorio(archivo.getFilename())) {
@@ -1751,7 +1753,9 @@ public class MetodosGenerales {
                     }
                 }
             }
-            if (arrayOfIRPF.getIRPF().size() > 0) {
+            }
+            
+            if (arrayOfIRPF!=null && arrayOfIRPF.getIRPF().size() > 0) {
                 try {
                     ArrayOfOCRWSResult arrayOfResult = receiveIRPFs(arrayOfIRPF);
                     List<OCRWSResult> lista = arrayOfResult.getOCRWSResult();
