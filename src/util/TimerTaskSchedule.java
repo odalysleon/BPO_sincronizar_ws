@@ -315,8 +315,10 @@ public class TimerTaskSchedule {
                             } 
 
                             System.out.println("Descargando archivos desde Grupo BC...");
-                            DocumentosDescargados documentosDescargados = MetodosGenerales.descargarDocumentos(channelSftpTech);
-                            if (documentosDescargados.getCantTotal() > 0){
+                            DocumentosDescargados documentosDescargados=null;
+                            if(channelSftpTech!=null)
+                                documentosDescargados = MetodosGenerales.descargarDocumentos(channelSftpTech);
+                            if (documentosDescargados!=null && documentosDescargados.getCantTotal() > 0){
                                 enviarCorreoNotificacion("BPO utilizando servicio web:Nuevos documentos disponibles", "TECH ID Solutions: Se han descargado " + documentosDescargados.getCantTotal() + " documentos PDF desde Grupo BC:\n" +
                                                     "Nota Simple:" + documentosDescargados.getDescargdaNotas() +  "\n" + 
                                                     "IRPF:" + documentosDescargados.getDescargdaIRPF() + "\n" + 
@@ -326,15 +328,17 @@ public class TimerTaskSchedule {
                                                     "Tasación:" + documentosDescargados.getDescargdaTasacion() + "\n" +
                                                     "Nota Simple OCR:" + documentosDescargados.getDescargdaNotasNodulos(), "Descargados");
                                 System.out.println("SE HAN DESCARGADO DOCUMENTOS DE GRUPOBC!!!!");
-                            } else if (documentosDescargados.getCantTotal() == -1)
+                            } else if (documentosDescargados!=null && documentosDescargados.getCantTotal() == -1)
                                 System.out.println("ERROR EN EL SERVICIO WEB DE GRUPOBC!!!");
                             else System.out.println("NO EXISTEN DOCUMENTOS DISPONIBLES PARA DESCARGAR!!!!");
                             System.out.println("Descarga finalizada:" + new Date().toString());
 
                             //Subir archivos
                             System.out.println("Subiendo archivos procesados para Grupo BC...");
-                            ResultadoSubida resultadoSubida = MetodosGenerales.subirDocumentos(channelSftpTech);
-                            if (resultadoSubida.getResultado()){
+                             ResultadoSubida resultadoSubida=null;
+                            if(channelSftpTech!=null)
+                                resultadoSubida = MetodosGenerales.subirDocumentos(channelSftpTech);
+                            if (resultadoSubida!=null && resultadoSubida.getResultado()){
                                 enviarCorreoNotificacion("BPO utilizando servicio web:Documentos subidos", "TECH ID Solutions: Se han subido " + resultadoSubida.getDocumentosSubidos().getCantTotal() +  " documentos a Grupo BC:\n" + 
                                          "Nota Simple:" + resultadoSubida.getDocumentosSubidos().getCantidadNotas() +  "\n" + 
                                          "IRPF:" + resultadoSubida.getDocumentosSubidos().getCantidadIRPF() + "\n" + 
@@ -347,8 +351,10 @@ public class TimerTaskSchedule {
                                 
                             } 
                             System.out.println("Subida finalizada:" + new Date().toString());
-                            channelSftpTech.disconnect();
-                            sessionTech.disconnect();
+                            if(channelSftpTech!=null)
+                                channelSftpTech.disconnect();
+                            if(sessionTech!=null)
+                                sessionTech.disconnect();
                             //}
                     /*
                     } catch (ParseException ex) {

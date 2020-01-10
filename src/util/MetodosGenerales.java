@@ -1725,7 +1725,7 @@ public class MetodosGenerales {
             listaArchivosProcesados = channelSftpTech.ls(rutaProcesadosTechFTP);
             List<String> listaNombreArchivos = new ArrayList<>();
             ArrayOfIRPF arrayOfIRPF = new ArrayOfIRPF();
-            if(listaArchivosProcesados!=null)
+            if(listaArchivosProcesados!=null) 
             {
                 if (listaArchivosProcesados.size() > 2) {
                 for (int i = 0; i < listaArchivosProcesados.size(); i++) {
