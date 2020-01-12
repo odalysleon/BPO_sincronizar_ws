@@ -109,9 +109,9 @@ import servicios.Titulo;
 import servicios.VidaLaboral;
 import sincronizarrepogrupobc.SincronizarRepoGrupoBC;
 
-
 public class MetodosGenerales {
-    private static String direccion=System.getProperty("user.dir");
+
+    private static String direccion = System.getProperty("user.dir");
 
     /**
      * @param fecha
@@ -139,10 +139,10 @@ public class MetodosGenerales {
      * @return
      */
     public static Session connectFTPbySSH() {
-       
+
         Session session = null;
         try {
-             File file = new File(direccion.concat("/conf/configFtp_WS.properties"));
+            File file = new File(direccion.concat("/conf/configFtp_WS.properties"));
             FileInputStream fileInputStream = new FileInputStream(file);
             Properties mainProperties = new Properties();
             mainProperties.load(fileInputStream);
@@ -158,9 +158,9 @@ public class MetodosGenerales {
 
             try {
                 session = jsch.getSession(userFtp, ipFtp);
-                  Properties properties=new Properties();
-            properties.setProperty("StrictHostKeyChecking","no");
-            session.setConfig(properties);
+                Properties properties = new Properties();
+                properties.setProperty("StrictHostKeyChecking", "no");
+                session.setConfig(properties);
                 session.connect();
             } catch (JSchException ex) {
             }
@@ -176,30 +176,35 @@ public class MetodosGenerales {
      */
     public static Session connectFTPbySSHTech() {
         /* Cargando fichero de configuracion para la conexion al Ftp*/
-        
+
         Session session = null;
         try {
-             File file = new File(direccion.concat("/conf/configFtp_WS.properties"));
+            File file = new File(direccion.concat("/conf/configFtp_WS.properties"));
             FileInputStream fileInputStream = new FileInputStream(file);
             Properties mainProperties = new Properties();
             mainProperties.load(fileInputStream);
             //buscando en el fichero de conf la llave "ipFtp"
-            String ipFtp = mainProperties.getProperty("ipFtp");
+           String ipFtp = mainProperties.getProperty("ipFtp");
+           
             //buscando en el fichero de conf la llave "userFtp"
-            String userFtp = mainProperties.getProperty("userFtp");
+           String userFtp = mainProperties.getProperty("userFtp");
+       
             //buscando en el fichero de conf la llave "passWdFtp"
-            String passWdFtp = mainProperties.getProperty("passWdFtp");
+           String passWdFtp = mainProperties.getProperty("passWdFtp");
+           //buscando en el fichero de conf la llave "portFtp"
+           String portFtp =mainProperties.getProperty("portFtp");
             //Cerrando el fichero
             fileInputStream.close();
             JSch jsch = new JSch();
 
             try {
-                session = jsch.getSession(userFtp, ipFtp);
-                  Properties properties=new Properties();
-            properties.setProperty("StrictHostKeyChecking","no");
-            session.setConfig(properties);
+                session = jsch.getSession(userFtp, ipFtp, new Integer(portFtp));
+                session.setPassword(passWdFtp);
+
+                session.setConfig("StrictHostKeyChecking", "no");
                 session.connect();
-            } catch (JSchException ex) {
+            } catch (Exception ex) {
+                String o = ex.toString();
             }
             return session;
         } catch (IOException e) {
@@ -209,11 +214,12 @@ public class MetodosGenerales {
     }
 
     /**
-     * Método que parsea y lee un documento XML para devolver una lista con la información
-     * de cada componente del formulario.
+     * Método que parsea y lee un documento XML para devolver una lista con la
+     * información de cada componente del formulario.
      *
      * @param rutaArchivo Ruta del archivo.
-     * @return ArrayList (ComponenteFormulario) Lista con la información de los componentes del formulario.
+     * @return ArrayList (ComponenteFormulario) Lista con la información de los
+     * componentes del formulario.
      */
     public static DatosXML leerXML(String rutaArchivo) {
         //rutaArchivo = "";
@@ -252,8 +258,9 @@ public class MetodosGenerales {
                                     hijoDeTitulo = (Element) listaHijosTitulo.get(m);
                                     datosXML.getListaComponentes().add(new ComponenteFormulario(hijoDeTitulo.getName(), hijoDeTitulo.getText()));
                                 }
-                            } else
+                            } else {
                                 datosXML.getListaComponentes().add(new ComponenteFormulario(hijoDeTitular.getName(), hijoDeTitular.getText()));
+                            }
                         }
                         break;
                     default:
@@ -354,14 +361,14 @@ public class MetodosGenerales {
                 elementoTemp = (Element) list.get(i);
                 datosXML.getListaComponentes().add(new ComponenteFormulario(elementoTemp.getName(), elementoTemp.getText()));
                 /*
-                if (elementoTemp.getName().equals("VIDA_LABORAL")){
-                    java.util.List listaHijosRegistral = elementoTemp.getChildren();
-                    for ( int j = 0; j < listaHijosRegistral.size(); j++ ){
-                        hijoDeRegistral = (Element)listaHijosRegistral.get(j);
-                        datosXML.getListaComponentes().add(new ComponenteFormulario(hijoDeRegistral.getName(), hijoDeRegistral.getText()));
-                    }
-                }
-                */
+                 if (elementoTemp.getName().equals("VIDA_LABORAL")){
+                 java.util.List listaHijosRegistral = elementoTemp.getChildren();
+                 for ( int j = 0; j < listaHijosRegistral.size(); j++ ){
+                 hijoDeRegistral = (Element)listaHijosRegistral.get(j);
+                 datosXML.getListaComponentes().add(new ComponenteFormulario(hijoDeRegistral.getName(), hijoDeRegistral.getText()));
+                 }
+                 }
+                 */
             }
             datosXML.setCantTitulares(cantTitulares);
         } catch (IOException | JDOMException io) {
@@ -546,27 +553,27 @@ public class MetodosGenerales {
             //datosXML.setCantTitulares(cantTitulares);
             //datosXML.setCantAnejos(cantAnejos);
             //datosXML.setCantTitulares(cantCargas);
-            
+
             /*
-            for (ComponenteFormulario nodo : datosXML.getListaComponentes()) {
-                System.out.println(nodo.getNombre() + "                     " + nodo.getValor());
-            }
+             for (ComponenteFormulario nodo : datosXML.getListaComponentes()) {
+             System.out.println(nodo.getNombre() + "                     " + nodo.getValor());
+             }
             
-            System.out.println("TITULARES");
-            for (ComponenteFormulario nodo : datosXML.getListaTiturales()) {
-                System.out.println(nodo.getNombre() + "                     " + nodo.getValor());
-            }
+             System.out.println("TITULARES");
+             for (ComponenteFormulario nodo : datosXML.getListaTiturales()) {
+             System.out.println(nodo.getNombre() + "                     " + nodo.getValor());
+             }
             
-            System.out.println("ANEJOS");
-            for (ComponenteFormulario nodo : datosXML.getListaAnejos()) {
-                System.out.println(nodo.getNombre() + "                     " + nodo.getValor());
-            }
+             System.out.println("ANEJOS");
+             for (ComponenteFormulario nodo : datosXML.getListaAnejos()) {
+             System.out.println(nodo.getNombre() + "                     " + nodo.getValor());
+             }
             
-            System.out.println("CARGAS");
-            for (ComponenteFormulario nodo : datosXML.getListaCargas()) {
-                System.out.println(nodo.getNombre() + "                     " + nodo.getValor());
-            }
-            */
+             System.out.println("CARGAS");
+             for (ComponenteFormulario nodo : datosXML.getListaCargas()) {
+             System.out.println(nodo.getNombre() + "                     " + nodo.getValor());
+             }
+             */
         } catch (IOException | JDOMException io) {
             System.out.println(io.getMessage());
         }
@@ -613,8 +620,9 @@ public class MetodosGenerales {
                                 hijoDeTitulo = (Element) listaHijosTitulo.get(k);
                                 listaTempTitular.add(new ComponenteFormulario(hijoDeTitulo.getName(), hijoDeTitulo.getText()));
                             }
-                        } else
+                        } else {
                             listaTempTitular.add(new ComponenteFormulario(hijoDeTitular.getName(), hijoDeTitular.getText()));
+                        }
                     }
                     datosXML.getListaTiturales().add(listaTempTitular);
                 } else if (elementoTemp.getName().equals("Anejo")) {
@@ -641,27 +649,27 @@ public class MetodosGenerales {
             datosXML.setCantTitulares(cantTitulares);
             datosXML.setCantAnejos(cantAnejos);
             datosXML.setCantTitulares(cantCargas);
-            
+
             /*
-            for (ComponenteFormulario nodo : datosXML.getListaComponentes()) {
-                System.out.println(nodo.getNombre() + "                     " + nodo.getValor());
-            }
+             for (ComponenteFormulario nodo : datosXML.getListaComponentes()) {
+             System.out.println(nodo.getNombre() + "                     " + nodo.getValor());
+             }
             
-            System.out.println("TITULARES");
-            for (ComponenteFormulario nodo : datosXML.getListaTiturales()) {
-                System.out.println(nodo.getNombre() + "                     " + nodo.getValor());
-            }
+             System.out.println("TITULARES");
+             for (ComponenteFormulario nodo : datosXML.getListaTiturales()) {
+             System.out.println(nodo.getNombre() + "                     " + nodo.getValor());
+             }
             
-            System.out.println("ANEJOS");
-            for (ComponenteFormulario nodo : datosXML.getListaAnejos()) {
-                System.out.println(nodo.getNombre() + "                     " + nodo.getValor());
-            }
+             System.out.println("ANEJOS");
+             for (ComponenteFormulario nodo : datosXML.getListaAnejos()) {
+             System.out.println(nodo.getNombre() + "                     " + nodo.getValor());
+             }
             
-            System.out.println("CARGAS");
-            for (ComponenteFormulario nodo : datosXML.getListaCargas()) {
-                System.out.println(nodo.getNombre() + "                     " + nodo.getValor());
-            }
-            */
+             System.out.println("CARGAS");
+             for (ComponenteFormulario nodo : datosXML.getListaCargas()) {
+             System.out.println(nodo.getNombre() + "                     " + nodo.getValor());
+             }
+             */
         } catch (IOException | JDOMException io) {
             System.out.println(io.getMessage());
         }
@@ -679,22 +687,22 @@ public class MetodosGenerales {
         for (ComponenteFormulario componente : listaComponentes) {
             if (componente.getNombre().equalsIgnoreCase(nombre)) {
                 /*
-                switch (nombre){
-                    case "TIT_NOMBRE":
-                    case "TIT_APELLIDO1":
-                    case "TIT_APELLIDO2":
-                    case "TIT_DOC_IDENTIDAD":
-                    case "TIT_REGIMEN":
-                    case "TLO_PROPIEDAD":
-                    case "TLO_FECHA_ESCRITURA":
-                    case "TLO_PROTOCOLO":
-                    case "TLO_NOTARIA":
-                    case "TLO_NUM_INSCRIPCION":
-                    case "TLO_FECHA_INSCRIPCION":
-                    case "TLO_TIPO_PARTICIPACION":
-                    case "TLO_PORC_PARTICIPACION":listaComponentes.remove(index);break;
-                }
-                */
+                 switch (nombre){
+                 case "TIT_NOMBRE":
+                 case "TIT_APELLIDO1":
+                 case "TIT_APELLIDO2":
+                 case "TIT_DOC_IDENTIDAD":
+                 case "TIT_REGIMEN":
+                 case "TLO_PROPIEDAD":
+                 case "TLO_FECHA_ESCRITURA":
+                 case "TLO_PROTOCOLO":
+                 case "TLO_NOTARIA":
+                 case "TLO_NUM_INSCRIPCION":
+                 case "TLO_FECHA_INSCRIPCION":
+                 case "TLO_TIPO_PARTICIPACION":
+                 case "TLO_PORC_PARTICIPACION":listaComponentes.remove(index);break;
+                 }
+                 */
                 return componente.getValor();
             }
             index++;
@@ -724,8 +732,9 @@ public class MetodosGenerales {
     private static Integer existePersona(ArrayOfFincaTitular arrayOfTitular, String nombre, String apellido1, String apellido2) {
         Integer indice = 0;
         for (FincaTitular fincaTitular : arrayOfTitular.getFincaTitular()) {
-            if (fincaTitular.getTitular().getValue().getNombre().getValue().equals(nombre) && fincaTitular.getTitular().getValue().getApellido1().getValue().equals(apellido1) && fincaTitular.getTitular().getValue().getApellido2().getValue().equals(apellido2))
+            if (fincaTitular.getTitular().getValue().getNombre().getValue().equals(nombre) && fincaTitular.getTitular().getValue().getApellido1().getValue().equals(apellido1) && fincaTitular.getTitular().getValue().getApellido2().getValue().equals(apellido2)) {
                 return indice;
+            }
             indice++;
         }
         return -1;
@@ -800,7 +809,6 @@ public class MetodosGenerales {
                 persona.setIdentificacion(fact.createPersonaIdentificacion(identificacion));
                 persona.setTipoRegimenEconomico(ConfigurationTTipoRegimenEconomica.fromValue(MetodosGenerales.devolverValorDadoNombre(listaComponentesTitular, "REGIMEN_ECONOMICO")));
 
-
                 //Título
                 ArrayOfTitulo arrayOfTitulo = new ArrayOfTitulo();
                 Titulo titulo = new Titulo();
@@ -840,7 +848,6 @@ public class MetodosGenerales {
                 titulo.setTipoPropiedad(ConfigurationTTipoPropiedad.fromValue(MetodosGenerales.devolverValorDadoNombre(listaComponentesTitular, "TLO_TIPO_PROPIEDAD")));
                 arrayOfTitular.getFincaTitular().get(indice).getTitular().getValue().getTitulos().getValue().getTitulo().add(titulo);
             }
-
 
         }
         notaSimple.setTitulares(fact.createNotaSimpleTitulares(arrayOfTitular));
@@ -1184,22 +1191,24 @@ public class MetodosGenerales {
         //tasacion.setNombre(listaParaExt[0].concat(".").concat(listaParaExt[1].split("\\.")[1]));
         ArrayOfAdvertencia arrayOfAdvertencia = new ArrayOfAdvertencia();
         String listaAdvertencias[] = MetodosGenerales.devolverValorDadoNombre(datosXML.getListaComponentes(), "ADVERTENCIAS").equals("") ? null : MetodosGenerales.devolverValorDadoNombre(datosXML.getListaComponentes(), "ADVERTENCIAS").split("#");
-        if (listaAdvertencias != null)
+        if (listaAdvertencias != null) {
             for (String advertenciaTemp : listaAdvertencias) {
                 Advertencia advertencia = new Advertencia();
                 advertencia.setIdAdvertencia(ConfigurationTTipoAdvertencia.fromValue(advertenciaTemp)); //;tDescripcion(fact.createAdvertenciaDescripcion(listaAdvertencias[i]));
                 arrayOfAdvertencia.getAdvertencia().add(advertencia);
             }
+        }
         tasacion.setAdvertencias(fact.createTasacionAdvertencias(arrayOfAdvertencia));
 
         ArrayOfCondicionante arrayOfCondicionantes = new ArrayOfCondicionante();
         String listaCondicionantes[] = MetodosGenerales.devolverValorDadoNombre(datosXML.getListaComponentes(), "CONDICIONANTES").equals("") ? null : MetodosGenerales.devolverValorDadoNombre(datosXML.getListaComponentes(), "CONDICIONANTES").split("#");
-        if (listaCondicionantes != null)
+        if (listaCondicionantes != null) {
             for (String condicionanteTemp : listaCondicionantes) {
                 Condicionante condicionante = new Condicionante();
                 condicionante.setIdCondicionante(ConfigurationTTipoCondicionante.fromValue(condicionanteTemp));
                 arrayOfCondicionantes.getCondicionante().add(condicionante);
             }
+        }
         tasacion.setCondicionantes(fact.createTasacionCondicionantes(arrayOfCondicionantes));
 
         tasacion.setCodigoTasacion(fact.createTasacionCodigoTasacion(MetodosGenerales.devolverValorDadoNombre(datosXML.getListaComponentes(), "CODIGO_TASACION")));
@@ -1222,7 +1231,6 @@ public class MetodosGenerales {
         tasacion.setValorHipotecario(MetodosGenerales.devolverValorDadoNombre(datosXML.getListaComponentes(), "VALOR_HIPOTECARIO").equals("") ? 0.00 : Double.valueOf(MetodosGenerales.devolverValorDadoNombre(datosXML.getListaComponentes(), "VALOR_HIPOTECARIO").replace(",", ".")));
         tasacion.setValorTasacionEstadistico(fact.createTasacionValorTasacionEstadistico(MetodosGenerales.devolverValorDadoNombre(datosXML.getListaComponentes(), "VALOR_TASACION_ESTADISTICO").equals("") ? 0.00 : Double.valueOf(MetodosGenerales.devolverValorDadoNombre(datosXML.getListaComponentes(), "VALOR_TASACION_ESTADISTICO").replaceAll(",", "."))));
         tasacion.setVisitaInmueble(ConfigurationTVisitaInmueble.fromValue(MetodosGenerales.devolverValorDadoNombre(datosXML.getListaComponentes(), "VISITA_INMUEBLE")));
-
 
         //Finca Tasación
         ArrayOfFincaTasacion arrayOfFincaTasacion = new ArrayOfFincaTasacion();
@@ -1268,9 +1276,7 @@ public class MetodosGenerales {
             finca.setValorTasacion(MetodosGenerales.devolverValorDadoNombre(datosFinca.getListaComponentesXML(), "VALOR_TASACION").equals("") ? null : Double.valueOf(MetodosGenerales.devolverValorDadoNombre(datosFinca.getListaComponentesXML(), "VALOR_TASACION").replace(",", ".")));
             finca.setValoracion(MetodosGenerales.devolverValorDadoNombre(datosFinca.getListaComponentesXML(), "VALORACION").equals("") ? null : Double.valueOf(MetodosGenerales.devolverValorDadoNombre(datosFinca.getListaComponentesXML(), "VALORACION").replace(",", ".")));
 
-
             fincaTasacion.setFinca(fact.createFincaTasacionFinca(finca));
-
 
             //Anejos
             ArrayOfAnejo arrayOfAnejo = new ArrayOfAnejo();
@@ -1300,7 +1306,6 @@ public class MetodosGenerales {
                     identificacion.setTipoIdentificacion(PersonModelIdentifierType.fromValue(MetodosGenerales.devolverValorDadoNombre(listaComponentesTitular, "TIPO_DOCUMENTO")));
                     persona.setIdentificacion(fact.createPersonaIdentificacion(identificacion));
                     persona.setTipoRegimenEconomico(ConfigurationTTipoRegimenEconomica.fromValue(MetodosGenerales.devolverValorDadoNombre(listaComponentesTitular, "REGIMEN_ECONOMICO")));
-
 
                     //Título
                     ArrayOfTitulo arrayOfTitulo = new ArrayOfTitulo();
@@ -1349,19 +1354,19 @@ public class MetodosGenerales {
 
         //Solicitante
         /*
-        Persona persona = new Persona();
-        persona.setNombre(fact.createPersonaNombre(MetodosGenerales.devolverValorDadoNombre(datosXML.getListaComponentes(), "NOMBRE_SOLICITANTE")));
-        persona.setApellido1(fact.createPersonaApellido1(MetodosGenerales.devolverValorDadoNombre(datosXML.getListaComponentes(), "APELLIDO1_SOLICITANTE")));
-        persona.setApellido2(fact.createPersonaApellido2(MetodosGenerales.devolverValorDadoNombre(datosXML.getListaComponentes(), "APELLIDO2_SOLICITANTE")));
+         Persona persona = new Persona();
+         persona.setNombre(fact.createPersonaNombre(MetodosGenerales.devolverValorDadoNombre(datosXML.getListaComponentes(), "NOMBRE_SOLICITANTE")));
+         persona.setApellido1(fact.createPersonaApellido1(MetodosGenerales.devolverValorDadoNombre(datosXML.getListaComponentes(), "APELLIDO1_SOLICITANTE")));
+         persona.setApellido2(fact.createPersonaApellido2(MetodosGenerales.devolverValorDadoNombre(datosXML.getListaComponentes(), "APELLIDO2_SOLICITANTE")));
         
         
 
-        //Identificación del solicitante
-        Identificacion identificacion = new Identificacion();
-        identificacion.setNumeroIdentificacion(fact.createIdentificacionNumeroIdentificacion(MetodosGenerales.devolverValorDadoNombre(datosXML.getListaComponentes(), "NUMERO_IDENTIFICACION")));
-        identificacion.setTipoIdentificacion(PersonModelIdentifierType.fromValue(MetodosGenerales.devolverValorDadoNombre(datosXML.getListaComponentes(), "TIPO_IDENTIFICACION")));
-        persona.setIdentificacion(fact.createPersonaIdentificacion(identificacion));
-        */
+         //Identificación del solicitante
+         Identificacion identificacion = new Identificacion();
+         identificacion.setNumeroIdentificacion(fact.createIdentificacionNumeroIdentificacion(MetodosGenerales.devolverValorDadoNombre(datosXML.getListaComponentes(), "NUMERO_IDENTIFICACION")));
+         identificacion.setTipoIdentificacion(PersonModelIdentifierType.fromValue(MetodosGenerales.devolverValorDadoNombre(datosXML.getListaComponentes(), "TIPO_IDENTIFICACION")));
+         persona.setIdentificacion(fact.createPersonaIdentificacion(identificacion));
+         */
         return tasacion;
     }
 
@@ -1373,27 +1378,29 @@ public class MetodosGenerales {
             ArrayOfDatosEnvio arrayOfDatosEnvio = getPendingDocuments(tipoDocumento);
             int indice = 1;
             String directorio = "";
-            if (null != tipoDocumento) switch (tipoDocumento) {
-                case IRPF:
-                    directorio = "C:\\Temp\\Documentos\\IRPF\\";
-                    break;
-                case VIDA_LABORAL:
-                    directorio = "C:\\Temp\\Documentos\\Vida Laboral\\";
-                    break;
-                case NOTA_SIMPLE:
-                    directorio = "C:\\Temp\\Documentos\\Nota Simple\\";
-                    break;
-                case NOMINA:
-                    directorio = "C:\\Temp\\Documentos\\Nomina\\";
-                    break;
-                case RECIBO:
-                    directorio = "C:\\Temp\\Documentos\\Recibo\\";
-                    break;
-                case TASACION:
-                    directorio = "C:\\Temp\\Documentos\\Tasacion\\";
-                    break;
-                default:
-                    break;
+            if (null != tipoDocumento) {
+                switch (tipoDocumento) {
+                    case IRPF:
+                        directorio = "C:\\Temp\\Documentos\\IRPF\\";
+                        break;
+                    case VIDA_LABORAL:
+                        directorio = "C:\\Temp\\Documentos\\Vida Laboral\\";
+                        break;
+                    case NOTA_SIMPLE:
+                        directorio = "C:\\Temp\\Documentos\\Nota Simple\\";
+                        break;
+                    case NOMINA:
+                        directorio = "C:\\Temp\\Documentos\\Nomina\\";
+                        break;
+                    case RECIBO:
+                        directorio = "C:\\Temp\\Documentos\\Recibo\\";
+                        break;
+                    case TASACION:
+                        directorio = "C:\\Temp\\Documentos\\Tasacion\\";
+                        break;
+                    default:
+                        break;
+                }
             }
 
             for (DatosEnvio datosEnvio : arrayOfDatosEnvio.getDatosEnvio()) {
@@ -1423,7 +1430,7 @@ public class MetodosGenerales {
      * @return
      */
     private static Boolean existeArchivo(ChannelSftp channelSftp, String nombreArchivo) {
-        String destino =  direccion.concat("/Enviados/").concat("trazas_descargados_GrupoBCWS.dat");
+        String destino = direccion.concat("/Enviados/").concat("trazas_descargados_GrupoBCWS.dat");
         String fuente = "/home/BPO/Historico/".concat("trazas_descargados_GrupoBCWS.dat");
         try {
             channelSftp.get(fuente, destino);
@@ -1463,31 +1470,33 @@ public class MetodosGenerales {
             System.out.println(tipoDocumento);
             System.out.println(arrayOfDatosEnvio.getDatosEnvio());
             String directorio = "";
-            if (null != tipoDocumento) switch (tipoDocumento) {
-                case IRPF:
-                    directorio = "/home/BPO/EnviadosWS/IRPF/";
-                    break;
-                case VIDA_LABORAL:
-                    directorio = "/home/BPO/EnviadosWS/Vida Laboral/";
-                    break;
-                case NOTA_SIMPLE:
-                    directorio = "/home/BPO/EnviadosWS/Nota Simple/";
-                    break;
-                case NOMINA:
-                    directorio = "/home/BPO/EnviadosWS/Nomina/";
-                    //directorio = "";
-                    break;
-                case RECIBO:
-                    directorio = "/home/BPO/EnviadosWS/Recibo/";
-                    break;
-                case TASACION:
-                    directorio = "/home/BPO/EnviadosWS/Tasacion/";
-                    break;
-                case NOTA_SIMPLE_NODULOS:
-                    directorio = "/home/BPO/EnviadosWS/NotaSimpleOCR/";
-                    break;
-                default:
-                    break;
+            if (null != tipoDocumento) {
+                switch (tipoDocumento) {
+                    case IRPF:
+                        directorio = "/home/BPO/EnviadosWS/IRPF/";
+                        break;
+                    case VIDA_LABORAL:
+                        directorio = "/home/BPO/EnviadosWS/Vida Laboral/";
+                        break;
+                    case NOTA_SIMPLE:
+                        directorio = "/home/BPO/EnviadosWS/Nota Simple/";
+                        break;
+                    case NOMINA:
+                        directorio = "/home/BPO/EnviadosWS/Nomina/";
+                        //directorio = "";
+                        break;
+                    case RECIBO:
+                        directorio = "/home/BPO/EnviadosWS/Recibo/";
+                        break;
+                    case TASACION:
+                        directorio = "/home/BPO/EnviadosWS/Tasacion/";
+                        break;
+                    case NOTA_SIMPLE_NODULOS:
+                        directorio = "/home/BPO/EnviadosWS/NotaSimpleOCR/";
+                        break;
+                    default:
+                        break;
+                }
             }
             for (DatosEnvio datosEnvio : arrayOfDatosEnvio.getDatosEnvio()) {
                 JAXBElement<ArrayOfDocumento> listaDocumentos = datosEnvio.getDocumentos();
@@ -1498,54 +1507,60 @@ public class MetodosGenerales {
                     JAXBElement<byte[]> listaBytes = documento.getContent();
                     String nombreDocumento = documento.getFileName().getValue();
                     String nombreYExt[] = nombreDocumento.split("\\.");
-                    if (nombreYExt.length == 1)
+                    if (nombreYExt.length == 1) {
                         nombreDocumento = nombreYExt[0].concat("___").concat(String.valueOf(datosEnvio.getIDSolicitud().getValue())).concat(".").concat("pdf");
-                    else
+                    } else {
                         nombreDocumento = nombreYExt[0].concat("___").concat(String.valueOf(datosEnvio.getIDSolicitud().getValue())).concat(".").concat(nombreYExt[1]);
+                    }
 
                     OutputStream out;
                     if ((null != tipoDocumento) && (tipoDocumento == ConfigurationTTipoDocumento.NOTA_SIMPLE_NODULOS)) {
-                        out = new FileOutputStream( direccion.concat("/Enviados/") + nombreDocumento);
+                        out = new FileOutputStream(direccion.concat("/Enviados/") + nombreDocumento);
                         out.write(listaBytes.getValue());
                         out.close();
-                        channelSftpTech.put( direccion.concat("/Enviados/") + nombreDocumento, directorio + nombreDocumento);
+                        channelSftpTech.put(direccion.concat("/Enviados/") + nombreDocumento, directorio + nombreDocumento);
                     } else {
-                        out = new FileOutputStream( direccion.concat("/Enviados/") + nombreDocumento);
+                        out = new FileOutputStream(direccion.concat("/Enviados/") + nombreDocumento);
                         out.write(listaBytes.getValue());
                         out.close();
                         channelSftpTech.put(direccion.concat("/Enviados/") + nombreDocumento, directorio + nombreDocumento);
                     }
                     try {
                         if ((null != tipoDocumento) && (tipoDocumento != ConfigurationTTipoDocumento.NOTA_SIMPLE_NODULOS)) {
-                            String[] cmd = {"rm",direccion.concat("/Enviados/") + nombreDocumento};
+                            String[] cmd = {"rm", direccion.concat("/Enviados/") + nombreDocumento};
                             Runtime.getRuntime().exec(cmd);
                         }
                     } catch (IOException ioe) {
                         System.out.println(ioe);
                     }
                     //generarTrazaBD(conexion, directorio.getFilename(), archivo.getFilename(), "Descargado de GrupoBC");
-                    if (nombreYExt.length == 1)
+                    if (nombreYExt.length == 1) {
                         TimerTaskSchedule.generarTraza(channelSftpTech, directorio, documento.getFileName().getValue().concat(".").concat("pdf"), "Descargado de GrupoBC", String.valueOf(datosEnvio.getIDSolicitud().getValue()), "Descargados");
-                    else
+                    } else {
                         TimerTaskSchedule.generarTraza(channelSftpTech, directorio, documento.getFileName().getValue(), "Descargado de GrupoBC", String.valueOf(datosEnvio.getIDSolicitud().getValue()), "Descargados");
+                    }
                     //}
                 }
             }
         } catch (IOException e) {
-            if (e.getMessage() != null)
+            if (e.getMessage() != null) {
                 enviarCorreoNotificacionError(e.getMessage() + "--- ERROR DE ENTRADA SALIDA --- TIPO DE DOCUMENTO:" + tipoDocumento);
+            }
         } catch (SftpException ex) {
-            if (ex.getMessage() != null)
+            if (ex.getMessage() != null) {
                 enviarCorreoNotificacionError(ex.getMessage() + "--- ERROR CONEXION FTP --- TIPO DE DOCUMENTO:" + tipoDocumento);
+            }
         } catch (Exception eWS) {
-            if (eWS.getMessage() != null)
+            if (eWS.getMessage() != null) {
                 enviarCorreoNotificacionError(eWS.getMessage() + "--- ERROR SERVICIO WEB --- TIPO DE DOCUMENTO:" + tipoDocumento);
+            }
         }
 
-        if (arrayOfDatosEnvio != null)
+        if (arrayOfDatosEnvio != null) {
             return arrayOfDatosEnvio.getDatosEnvio().size();
-        else
+        } else {
             return -1;
+        }
     }
 
     //public static Boolean descargarDocumentos(ChannelSftp channelSftpTech){
@@ -1553,19 +1568,17 @@ public class MetodosGenerales {
 
         //Prueba descargar Notas
         /*
-        Integer descargdaNotasNodulos = 0;
-        Integer descargdaNotas = MetodosGenerales.descargarDocumentos(channelSftpTech, ConfigurationTTipoDocumento.NOTA_SIMPLE);
-        Integer descargdaIRPF = 0;
-        Integer descargdaNomina = 0;
-        Integer descargdaRecibo = 0;
-        Integer descargdaTasacion = 0;
-        Integer descargdaVidaLaboral = 0;
-        DocumentosDescargados documentosDescargados = new DocumentosDescargados(descargdaNotas, 
-                                                descargdaNotas, 0, 0, 0, 0, 0, 0);
-        */
-
+         Integer descargdaNotasNodulos = 0;
+         Integer descargdaNotas = MetodosGenerales.descargarDocumentos(channelSftpTech, ConfigurationTTipoDocumento.NOTA_SIMPLE);
+         Integer descargdaIRPF = 0;
+         Integer descargdaNomina = 0;
+         Integer descargdaRecibo = 0;
+         Integer descargdaTasacion = 0;
+         Integer descargdaVidaLaboral = 0;
+         DocumentosDescargados documentosDescargados = new DocumentosDescargados(descargdaNotas, 
+         descargdaNotas, 0, 0, 0, 0, 0, 0);
+         */
         //CODIGO ORIGINAL
-
         Integer descargdaIRPF = MetodosGenerales.descargarDocumentos(channelSftpTech, ConfigurationTTipoDocumento.IRPF);
         Integer descargdaNomina = MetodosGenerales.descargarDocumentos(channelSftpTech, ConfigurationTTipoDocumento.NOMINA);
         Integer descargdaTasacion = MetodosGenerales.descargarDocumentos(channelSftpTech, ConfigurationTTipoDocumento.TASACION);
@@ -1581,12 +1594,10 @@ public class MetodosGenerales {
     }
 
     /*private static ArrayOfDatosEnvio getPendingDocuments(servicios.ConfigurationTTipoDocumento tipoDocumento) {
-        servicios.OcrReceiver service = new servicios.OcrReceiver();
-        servicios.IOcrReceiver port = service.getBasicHttpBindingIOcrReceiver();
-        return port.getPendingDocuments(tipoDocumento);
-    }*/
-
-
+     servicios.OcrReceiver service = new servicios.OcrReceiver();
+     servicios.IOcrReceiver port = service.getBasicHttpBindingIOcrReceiver();
+     return port.getPendingDocuments(tipoDocumento);
+     }*/
     public static ResultadoSubida subirDocumentos(ChannelSftp channelSftpTech) {
         NotificacionErrorAlCargarDocumento notificacionIRPF = subirIRPF(channelSftpTech);
         NotificacionErrorAlCargarDocumento notificacionVidaLaboral = subirVidaLaboral(channelSftpTech);
@@ -1596,18 +1607,16 @@ public class MetodosGenerales {
         NotificacionErrorAlCargarDocumento notificacionRecibo = subirRecibo(channelSftpTech);
         NotificacionErrorAlCargarDocumento notificacionKO = subirDocumentoKO(channelSftpTech);
         NotificacionErrorAlCargarDocumento notificacionTasacion = subirTasacion(channelSftpTech);
-        
+
         /*
-        if (notificacionTasacion.getExisteError()){
-            System.out.println(notificacionTasacion.getDescripcionExcepcion());
-            enviarCorreoNotificacionError(notificacionTasacion.getDescripcionExcepcion());
-        }else if (notificacionKO.getExisteError()){
-            System.out.println(notificacionKO.getDescripcionExcepcion());
-            enviarCorreoNotificacionError(notificacionKO.getDescripcionExcepcion());
-        }
-        */
-
-
+         if (notificacionTasacion.getExisteError()){
+         System.out.println(notificacionTasacion.getDescripcionExcepcion());
+         enviarCorreoNotificacionError(notificacionTasacion.getDescripcionExcepcion());
+         }else if (notificacionKO.getExisteError()){
+         System.out.println(notificacionKO.getDescripcionExcepcion());
+         enviarCorreoNotificacionError(notificacionKO.getDescripcionExcepcion());
+         }
+         */
         if (notificacionIRPF.getExisteError()) {
             System.out.println(notificacionIRPF.getDescripcionExcepcion());
             enviarCorreoNotificacionError(notificacionIRPF.getDescripcionExcepcion());
@@ -1631,7 +1640,6 @@ public class MetodosGenerales {
             enviarCorreoNotificacionError(notificacionTasacion.getDescripcionExcepcion());
         }
 
-
         DocumentosSubidos documentosSubidos = new DocumentosSubidos(notificacionNotaSimple.getCantidadDocumentos(),
                 notificacionIRPF.getCantidadDocumentos(),
                 notificacionNomina.getCantidadDocumentos(),
@@ -1641,19 +1649,18 @@ public class MetodosGenerales {
                 notificacionKO.getCantidadDocumentos(),
                 notificacionNotaSimpleOCR.getCantidadDocumentos());
 
-
         //Solo un tipo de documento
         /*
-        DocumentosSubidos documentosSubidos = new DocumentosSubidos(0, 
-                                            0, 
-                                            0,  
-                                            0, 
-                                            notificacionTasacion.getCantidadDocumentos(), 
-                                            0,
-                                            notificacionKO.getCantidadDocumentos(),
-                                            0);
+         DocumentosSubidos documentosSubidos = new DocumentosSubidos(0, 
+         0, 
+         0,  
+         0, 
+         notificacionTasacion.getCantidadDocumentos(), 
+         0,
+         notificacionKO.getCantidadDocumentos(),
+         0);
         
-        */
+         */
         return new ResultadoSubida(documentosSubidos, notificacionNotaSimple.getResultadoSubida() || notificacionVidaLaboral.getResultadoSubida() || notificacionNomina.getResultadoSubida() || notificacionIRPF.getResultadoSubida() || notificacionKO.getResultadoSubida() || notificacionNotaSimpleOCR.getResultadoSubida() || notificacionRecibo.getResultadoSubida() || notificacionTasacion.getResultadoSubida());
         //return new ResultadoSubida(documentosSubidos, notificacionTasacion.getResultadoSubida() || notificacionKO.getResultadoSubida());
     }
@@ -1675,17 +1682,15 @@ public class MetodosGenerales {
                         DatosXML datosXML = MetodosGenerales.leerXML(rutaProcesadosTechFTP.concat(archivo.getFilename()));
                         NotaSimple notaSimple = MetodosGenerales.devolverNotaSimple(channelSftpTech, datosXML);
                         arrayOfNotaSimple.getNotaSimple().add(notaSimple);
-                        
-                        /*ArrayOfOCRWSResult arrayOfResult =  receiveNotasSimples(arrayOfNotaSimple);
-                        List<OCRWSResult> lista = arrayOfResult.getOCRWSResult();
-                        for (OCRWSResult result : lista) {
-                            System.out.println(result.getDescripcionResultado().getValue());    
-                        }*/
 
+                        /*ArrayOfOCRWSResult arrayOfResult =  receiveNotasSimples(arrayOfNotaSimple);
+                         List<OCRWSResult> lista = arrayOfResult.getOCRWSResult();
+                         for (OCRWSResult result : lista) {
+                         System.out.println(result.getDescripcionResultado().getValue());    
+                         }*/
                         TimerTaskSchedule.generarTraza(channelSftpTech, "NotaSimple", archivo.getFilename(), "Subido al Grupo BC", String.valueOf(notaSimple.getIdSolicitudOCR()), "Subidos");
                         channelSftpTech.put(rutaProcesadosTechFTP.concat(archivo.getFilename()), "/home/BPO/SubidosWS/Nota Simple/".concat(archivo.getFilename()));
                         channelSftpTech.rm(rutaProcesadosTechFTP.concat(archivo.getFilename()));
-
 
                     }
                 }
@@ -1706,8 +1711,9 @@ public class MetodosGenerales {
 
     private static Boolean esDirectorio(String elemento) {
         String partes[] = elemento.split("\\.");
-        if (partes.length == 1)
+        if (partes.length == 1) {
             return true;
+        }
         return false;
     }
 
@@ -1725,37 +1731,37 @@ public class MetodosGenerales {
             listaArchivosProcesados = channelSftpTech.ls(rutaProcesadosTechFTP);
             List<String> listaNombreArchivos = new ArrayList<>();
             ArrayOfIRPF arrayOfIRPF = new ArrayOfIRPF();
-            if(listaArchivosProcesados!=null) 
-            {
+            if (listaArchivosProcesados != null) {
                 if (listaArchivosProcesados.size() > 2) {
-                for (int i = 0; i < listaArchivosProcesados.size(); i++) {
-                    ChannelSftp.LsEntry archivo = (ChannelSftp.LsEntry) listaArchivosProcesados.elementAt(i);
-                    if (!archivo.getFilename().equals(".") && !archivo.getFilename().equals("..") && !esDirectorio(archivo.getFilename())) {
-                        System.out.println(archivo.getFilename());
-                        listaNombreArchivos.add(archivo.getFilename());
-                        DatosXML datosXML = MetodosGenerales.leerXMLIRPF(rutaProcesadosTechFTP.concat(archivo.getFilename()));
-                        try {
-                            IRPF iRPF = MetodosGenerales.devolverIRPF(channelSftpTech, datosXML);
-                            arrayOfIRPF.getIRPF().add(iRPF);
-                        } catch (Exception ex) {
-                            if (ex.getMessage() != null) {
-                                String nombreDocumento = MetodosGenerales.devolverValorDadoNombre(datosXML.getListaComponentes(), "NOMBRE_DOCUMENTO");
-                                String listaParaExt[] = nombreDocumento.split("_{3}");
-                                if (listaParaExt.length == 2)
-                                    notificacion.setDescripcionExcepcion("Error en el documento IRPF con ID=" + listaParaExt[1].split("\\.")[0] + " Descripción:" + ex.getMessage());
-                                else
-                                    notificacion.setDescripcionExcepcion("Error en el nombre del IRPF:" + nombreDocumento);
-                                notificacion.setExisteError(true);
-                                return notificacion;
+                    for (int i = 0; i < listaArchivosProcesados.size(); i++) {
+                        ChannelSftp.LsEntry archivo = (ChannelSftp.LsEntry) listaArchivosProcesados.elementAt(i);
+                        if (!archivo.getFilename().equals(".") && !archivo.getFilename().equals("..") && !esDirectorio(archivo.getFilename())) {
+                            System.out.println(archivo.getFilename());
+                            listaNombreArchivos.add(archivo.getFilename());
+                            DatosXML datosXML = MetodosGenerales.leerXMLIRPF(rutaProcesadosTechFTP.concat(archivo.getFilename()));
+                            try {
+                                IRPF iRPF = MetodosGenerales.devolverIRPF(channelSftpTech, datosXML);
+                                arrayOfIRPF.getIRPF().add(iRPF);
+                            } catch (Exception ex) {
+                                if (ex.getMessage() != null) {
+                                    String nombreDocumento = MetodosGenerales.devolverValorDadoNombre(datosXML.getListaComponentes(), "NOMBRE_DOCUMENTO");
+                                    String listaParaExt[] = nombreDocumento.split("_{3}");
+                                    if (listaParaExt.length == 2) {
+                                        notificacion.setDescripcionExcepcion("Error en el documento IRPF con ID=" + listaParaExt[1].split("\\.")[0] + " Descripción:" + ex.getMessage());
+                                    } else {
+                                        notificacion.setDescripcionExcepcion("Error en el nombre del IRPF:" + nombreDocumento);
+                                    }
+                                    notificacion.setExisteError(true);
+                                    return notificacion;
+                                }
                             }
-                        }
 
+                        }
                     }
                 }
             }
-            }
-            
-            if (arrayOfIRPF!=null && arrayOfIRPF.getIRPF().size() > 0) {
+
+            if (arrayOfIRPF != null && arrayOfIRPF.getIRPF().size() > 0) {
                 try {
                     ArrayOfOCRWSResult arrayOfResult = receiveIRPFs(arrayOfIRPF);
                     List<OCRWSResult> lista = arrayOfResult.getOCRWSResult();
@@ -1784,7 +1790,6 @@ public class MetodosGenerales {
                     return notificacion;
                 }
             }
-
 
         } catch (SftpException ex) {
             System.out.println(ex.getMessage());
@@ -1821,10 +1826,11 @@ public class MetodosGenerales {
                             //if (ex.getMessage() != null){
                             String nombreDocumento = MetodosGenerales.devolverValorDadoNombre(datosXML.getListaComponentes(), "NOMBRE_DOCUMENTO");
                             String listaParaExt[] = nombreDocumento.split("_{3}");
-                            if (listaParaExt.length == 2)
+                            if (listaParaExt.length == 2) {
                                 notificacion.setDescripcionExcepcion("Error en el documento Nómina con ID=" + listaParaExt[1].split("\\.")[0] + " Descripción:" + ex.getMessage());
-                            else
+                            } else {
                                 notificacion.setDescripcionExcepcion("Error en el nombre de la Nómina:" + nombreDocumento);
+                            }
                             notificacion.setExisteError(true);
                             return notificacion;
                             //}
@@ -1896,10 +1902,11 @@ public class MetodosGenerales {
                             if (ex.getMessage() != null) {
                                 String nombreDocumento = MetodosGenerales.devolverValorDadoNombre(datosXML.getListaComponentes(), "NOMBRE_DOCUMENTO");
                                 String listaParaExt[] = nombreDocumento.split("_{3}");
-                                if (listaParaExt.length == 2)
+                                if (listaParaExt.length == 2) {
                                     notificacion.setDescripcionExcepcion("Error en el documento Vida Laboral con ID=" + listaParaExt[1].split("\\.")[0] + " Descripción:" + ex.getMessage());
-                                else
+                                } else {
                                     notificacion.setDescripcionExcepcion("Error en el nombre de la Vida Laboral:" + nombreDocumento);
+                                }
                                 notificacion.setExisteError(true);
                                 return notificacion;
                             }
@@ -1971,10 +1978,11 @@ public class MetodosGenerales {
                             if (ex.getMessage() != null) {
                                 String nombreDocumento = MetodosGenerales.devolverValorDadoNombre(datosXML.getListaComponentes(), "NOMBRE_DOCUMENTO");
                                 String listaParaExt[] = nombreDocumento.split("_{3}");
-                                if (listaParaExt.length == 2)
+                                if (listaParaExt.length == 2) {
                                     notificacion.setDescripcionExcepcion("Error en el documento KO con ID=" + listaParaExt[1].split("\\.")[0] + " Descripción:" + ex.getMessage());
-                                else
+                                } else {
                                     notificacion.setDescripcionExcepcion("Error en el nombre del documento KO:" + nombreDocumento);
+                                }
                                 notificacion.setExisteError(true);
                                 return notificacion;
                             }
@@ -2045,10 +2053,11 @@ public class MetodosGenerales {
                             if (ex.getMessage() != null) {
                                 String nombreDocumento = MetodosGenerales.devolverValorDadoNombre(datosXML.getListaComponentes(), "ID_DOCUMENTO").concat(".pdf");
                                 String listaParaExt[] = nombreDocumento.split("_{3}");
-                                if (listaParaExt.length == 2)
+                                if (listaParaExt.length == 2) {
                                     notificacion.setDescripcionExcepcion("Error en el documento Nota Simple OCR con ID=" + listaParaExt[1].split("\\.")[0] + " Descripción:" + ex.getMessage());
-                                else
+                                } else {
                                     notificacion.setDescripcionExcepcion("Error en el nombre de la Nota Simple OCR:" + nombreDocumento);
+                                }
                                 notificacion.setExisteError(true);
                                 return notificacion;
                             }
@@ -2120,10 +2129,11 @@ public class MetodosGenerales {
                             if (ex.getMessage() != null) {
                                 String nombreDocumento = MetodosGenerales.devolverValorDadoNombre(datosXML.getListaComponentes(), "NOMBRE_DOCUMENTO");
                                 String listaParaExt[] = nombreDocumento.split("_{3}");
-                                if (listaParaExt.length == 2)
+                                if (listaParaExt.length == 2) {
                                     notificacion.setDescripcionExcepcion("Error en el documento Recibo con ID=" + listaParaExt[1].split("\\.")[0] + " Descripción:" + ex.getMessage());
-                                else
+                                } else {
                                     notificacion.setDescripcionExcepcion("Error en el nombre de la Recibo:" + nombreDocumento);
+                                }
                                 notificacion.setExisteError(true);
                                 return notificacion;
                             }
@@ -2195,10 +2205,11 @@ public class MetodosGenerales {
                             if (ex.getMessage() != null) {
                                 String nombreDocumento = MetodosGenerales.devolverValorDadoNombre(datosXML.getListaComponentes(), "NOMBRE_DOCUMENTO");
                                 String listaParaExt[] = nombreDocumento.split("_{3}");
-                                if (listaParaExt.length == 2)
+                                if (listaParaExt.length == 2) {
                                     notificacion.setDescripcionExcepcion("Error en el documento Tasacion con ID=" + listaParaExt[1].split("\\.")[0] + " Descripción:" + ex.getMessage());
-                                else
+                                } else {
                                     notificacion.setDescripcionExcepcion("Error en el nombre de la Tasacion:" + nombreDocumento);
+                                }
                                 notificacion.setExisteError(true);
                                 return notificacion;
                             }
@@ -2241,89 +2252,87 @@ public class MetodosGenerales {
         }
         return notificacion;
     }
-    
+
     /*
-    public static Boolean subirRecibo(ChannelSftp channelSftpTech) throws Exception{
-        Boolean alMenosUnoEnviado = false;
-        try {
-            String rutaProcesadosTechFTP = "/home/BPO/Procesados/Recibo/";
-            Vector listaArchivosProcesados;
-            listaArchivosProcesados = channelSftpTech.ls(rutaProcesadosTechFTP);
-            ArrayOfRecibo arrayOfRecibo = new ArrayOfRecibo();
-            List <String> listaNombreArchivos = new ArrayList<>();
-            if (listaArchivosProcesados.size() > 2){
-                for (int i = 0; i < listaArchivosProcesados.size(); i++) {
-                    ChannelSftp.LsEntry archivo = (ChannelSftp.LsEntry)listaArchivosProcesados.elementAt(i);
-                    if (!archivo.getFilename().equals(".") && !archivo.getFilename().equals("..") && !esDirectorio(archivo.getFilename())){
-                        System.out.println(archivo.getFilename());
-                        listaNombreArchivos.add(archivo.getFilename());
-                        DatosXML datosXML = MetodosGenerales.leerXMLRecibo(rutaProcesadosTechFTP.concat(archivo.getFilename()));
-                        Recibo recibo = MetodosGenerales.devolverRecibo(channelSftpTech, datosXML);
-                        arrayOfRecibo.getRecibo().add(recibo);
-                    }
-                }
-            }
-             if (arrayOfRecibo.getRecibo().size() > 0){
-                ArrayOfOCRWSResult arrayOfResult =  receiveRecibos(arrayOfRecibo);
-                List<OCRWSResult> lista = arrayOfResult.getOCRWSResult();
-                int indice = 0;
-                for (OCRWSResult result : lista) {
-                    System.out.println(result.getDescripcionResultado().getValue());    
-                    if (result.getDescripcionResultado().getValue().equals("Grabación correcta")){
-                        Recibo recibo = arrayOfRecibo.getRecibo().get(indice);
-                        TimerTaskSchedule.generarTraza(channelSftpTech, "Recibo", listaNombreArchivos.get(indice), "Subido al Grupo BC",String.valueOf(recibo.getIdSolicitudOCR()), "Subidos");
-                        channelSftpTech.put(rutaProcesadosTechFTP.concat(listaNombreArchivos.get(indice)), "/home/BPO/SubidosWS/Recibo/".concat(listaNombreArchivos.get(indice)));
-                        channelSftpTech.rm(rutaProcesadosTechFTP.concat(listaNombreArchivos.get(indice)));
-                        alMenosUnoEnviado = true;
-                    }
-                    indice++;
-                }
-            }
-        } catch (SftpException ex) {
-            System.out.println(ex.getMessage());    
-        }
-        return alMenosUnoEnviado;
-    } 
-    */
-     
+     public static Boolean subirRecibo(ChannelSftp channelSftpTech) throws Exception{
+     Boolean alMenosUnoEnviado = false;
+     try {
+     String rutaProcesadosTechFTP = "/home/BPO/Procesados/Recibo/";
+     Vector listaArchivosProcesados;
+     listaArchivosProcesados = channelSftpTech.ls(rutaProcesadosTechFTP);
+     ArrayOfRecibo arrayOfRecibo = new ArrayOfRecibo();
+     List <String> listaNombreArchivos = new ArrayList<>();
+     if (listaArchivosProcesados.size() > 2){
+     for (int i = 0; i < listaArchivosProcesados.size(); i++) {
+     ChannelSftp.LsEntry archivo = (ChannelSftp.LsEntry)listaArchivosProcesados.elementAt(i);
+     if (!archivo.getFilename().equals(".") && !archivo.getFilename().equals("..") && !esDirectorio(archivo.getFilename())){
+     System.out.println(archivo.getFilename());
+     listaNombreArchivos.add(archivo.getFilename());
+     DatosXML datosXML = MetodosGenerales.leerXMLRecibo(rutaProcesadosTechFTP.concat(archivo.getFilename()));
+     Recibo recibo = MetodosGenerales.devolverRecibo(channelSftpTech, datosXML);
+     arrayOfRecibo.getRecibo().add(recibo);
+     }
+     }
+     }
+     if (arrayOfRecibo.getRecibo().size() > 0){
+     ArrayOfOCRWSResult arrayOfResult =  receiveRecibos(arrayOfRecibo);
+     List<OCRWSResult> lista = arrayOfResult.getOCRWSResult();
+     int indice = 0;
+     for (OCRWSResult result : lista) {
+     System.out.println(result.getDescripcionResultado().getValue());    
+     if (result.getDescripcionResultado().getValue().equals("Grabación correcta")){
+     Recibo recibo = arrayOfRecibo.getRecibo().get(indice);
+     TimerTaskSchedule.generarTraza(channelSftpTech, "Recibo", listaNombreArchivos.get(indice), "Subido al Grupo BC",String.valueOf(recibo.getIdSolicitudOCR()), "Subidos");
+     channelSftpTech.put(rutaProcesadosTechFTP.concat(listaNombreArchivos.get(indice)), "/home/BPO/SubidosWS/Recibo/".concat(listaNombreArchivos.get(indice)));
+     channelSftpTech.rm(rutaProcesadosTechFTP.concat(listaNombreArchivos.get(indice)));
+     alMenosUnoEnviado = true;
+     }
+     indice++;
+     }
+     }
+     } catch (SftpException ex) {
+     System.out.println(ex.getMessage());    
+     }
+     return alMenosUnoEnviado;
+     } 
+     */
     /*
-    public static void subirTasacion(ChannelSftp channelSftpTech){
-        try {
-            String rutaProcesadosTechFTP = "/home/BPO/Procesados/Tasacion/";
-            Vector listaArchivosProcesados;
-            listaArchivosProcesados = channelSftpTech.ls(rutaProcesadosTechFTP);
-            ArrayOfTasacion arrayOfTasacion = new ArrayOfTasacion();
-            ObjectFactory fact = new ObjectFactory();
-            if (listaArchivosProcesados.size() > 2){
-                for (int i = 0; i < listaArchivosProcesados.size(); i++) {
-                    ChannelSftp.LsEntry archivo = (ChannelSftp.LsEntry)listaArchivosProcesados.elementAt(i);
-                    System.out.println(archivo.getFilename());
-                    if (!archivo.getFilename().equals(".") && !archivo.getFilename().equals("..") && !esDirectorio(archivo.getFilename())){
-                        DatosXML datosXML = MetodosGenerales.leerXMLTasacion(rutaProcesadosTechFTP.concat(archivo.getFilename()));
-                        Tasacion tasacion = MetodosGenerales.devolverTasacion(channelSftpTech, datosXML);
-                        arrayOfTasacion.getTasacion().add(tasacion);
+     public static void subirTasacion(ChannelSftp channelSftpTech){
+     try {
+     String rutaProcesadosTechFTP = "/home/BPO/Procesados/Tasacion/";
+     Vector listaArchivosProcesados;
+     listaArchivosProcesados = channelSftpTech.ls(rutaProcesadosTechFTP);
+     ArrayOfTasacion arrayOfTasacion = new ArrayOfTasacion();
+     ObjectFactory fact = new ObjectFactory();
+     if (listaArchivosProcesados.size() > 2){
+     for (int i = 0; i < listaArchivosProcesados.size(); i++) {
+     ChannelSftp.LsEntry archivo = (ChannelSftp.LsEntry)listaArchivosProcesados.elementAt(i);
+     System.out.println(archivo.getFilename());
+     if (!archivo.getFilename().equals(".") && !archivo.getFilename().equals("..") && !esDirectorio(archivo.getFilename())){
+     DatosXML datosXML = MetodosGenerales.leerXMLTasacion(rutaProcesadosTechFTP.concat(archivo.getFilename()));
+     Tasacion tasacion = MetodosGenerales.devolverTasacion(channelSftpTech, datosXML);
+     arrayOfTasacion.getTasacion().add(tasacion);
                         
                         
 
-                        TimerTaskSchedule.generarTraza(channelSftpTech, "Tasación", archivo.getFilename(), "Subido al Grupo BC", String.valueOf(tasacion.getIdSolicitudOCR()), "Subidos");
-                        channelSftpTech.put(rutaProcesadosTechFTP.concat(archivo.getFilename()), "/home/BPO/SubidosWS/Tasacion/".concat(archivo.getFilename()));
-                        channelSftpTech.rm(rutaProcesadosTechFTP.concat(archivo.getFilename()));
-                    }
-                }
-            }
-            if (arrayOfTasacion.getTasacion().size() > 0){
-                ArrayOfOCRWSResult arrayOfResult =  MetodosGenerales.receiveTasaciones(arrayOfTasacion);
-                List<OCRWSResult> lista = arrayOfResult.getOCRWSResult();
-                for (OCRWSResult result : lista) {
-                    System.out.println(result.getDescripcionResultado().getValue());    
-                }
-            }
-        } catch (SftpException ex) {
-                        Logger.getLogger(MetodosGenerales.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-    }
-    */
-
+     TimerTaskSchedule.generarTraza(channelSftpTech, "Tasación", archivo.getFilename(), "Subido al Grupo BC", String.valueOf(tasacion.getIdSolicitudOCR()), "Subidos");
+     channelSftpTech.put(rutaProcesadosTechFTP.concat(archivo.getFilename()), "/home/BPO/SubidosWS/Tasacion/".concat(archivo.getFilename()));
+     channelSftpTech.rm(rutaProcesadosTechFTP.concat(archivo.getFilename()));
+     }
+     }
+     }
+     if (arrayOfTasacion.getTasacion().size() > 0){
+     ArrayOfOCRWSResult arrayOfResult =  MetodosGenerales.receiveTasaciones(arrayOfTasacion);
+     List<OCRWSResult> lista = arrayOfResult.getOCRWSResult();
+     for (OCRWSResult result : lista) {
+     System.out.println(result.getDescripcionResultado().getValue());    
+     }
+     }
+     } catch (SftpException ex) {
+     Logger.getLogger(MetodosGenerales.class.getName()).log(Level.SEVERE, null, ex);
+     }
+     }
+     */
     public static NotificacionErrorAlCargarDocumento subirNotaSimple(ChannelSftp channelSftpTech) {
         NotificacionErrorAlCargarDocumento notificacion = new NotificacionErrorAlCargarDocumento();
         notificacion.setResultadoSubida(false);
@@ -2351,23 +2360,23 @@ public class MetodosGenerales {
 
                             //Guardar trazas de titulares
                             /*
-                            JAXBElement<ArrayOfFincaTitular> listaTitulares = notaSimple.getTitulares();
-                            List<FincaTitular> listaF = listaTitulares.getValue().getFincaTitular();
-                            for (FincaTitular fincaTitular : listaF) {
-                               String nombre = fincaTitular.getTitular().getValue().getNombre().getValue();
-                               titulares = titulares.concat(nombre).concat("\n");
-                            }
-                            titulares = titulares.concat("\n\n");
-                            */
-
+                             JAXBElement<ArrayOfFincaTitular> listaTitulares = notaSimple.getTitulares();
+                             List<FincaTitular> listaF = listaTitulares.getValue().getFincaTitular();
+                             for (FincaTitular fincaTitular : listaF) {
+                             String nombre = fincaTitular.getTitular().getValue().getNombre().getValue();
+                             titulares = titulares.concat(nombre).concat("\n");
+                             }
+                             titulares = titulares.concat("\n\n");
+                             */
                         } catch (Exception ex) {
                             if (ex.getMessage() != null) {
                                 String nombreDocumento = MetodosGenerales.devolverValorDadoNombre(datosXML.getListaComponentes(), "NOMBRE_DOCUMENTO");
                                 String listaParaExt[] = nombreDocumento.split("_{3}");
-                                if (listaParaExt.length == 2)
+                                if (listaParaExt.length == 2) {
                                     notificacion.setDescripcionExcepcion("Error en el documento Nota Simple con ID=" + listaParaExt[1].split("\\.")[0] + " Descripción:" + ex.getMessage());
-                                else
+                                } else {
                                     notificacion.setDescripcionExcepcion("Error en el nombre de la Nota Simple:" + nombreDocumento);
+                                }
                                 notificacion.setExisteError(true);
                                 return notificacion;
                             }
@@ -2436,7 +2445,6 @@ public class MetodosGenerales {
         return result;
     }
 
-
     private static ArrayOfOCRWSResult receiveNotasSimplesNodulos(servicios.ArrayOfNotaSimpleNodulos notasSimplesNodulos) {
         servicios.OcrReceiver service = new servicios.OcrReceiver();
         servicios.IOcrReceiver port = service.getBasicHttpBindingIOcrReceiver();
@@ -2451,13 +2459,11 @@ public class MetodosGenerales {
         return port.receiveVidasLaborales(vidasLaborales);
     }
 
-
     private static ArrayOfOCRWSResult receiveTasaciones(servicios.ArrayOfTasacion tasaciones) {
         servicios.OcrReceiver service = new servicios.OcrReceiver();
         servicios.IOcrReceiver port = service.getBasicHttpBindingIOcrReceiver();
         return port.receiveTasaciones(tasaciones);
     }
-
 
     private static ArrayOfOCRWSResult receiveKODocuments(servicios.ArrayOfKODocument koDocuemnts) {
         servicios.OcrReceiver service = new servicios.OcrReceiver();
@@ -2497,7 +2503,6 @@ public class MetodosGenerales {
         return port.getPendingDocuments(tipoDocumento);
     }
 
-
     /**
      * @param textoError
      */
@@ -2536,13 +2541,13 @@ public class MetodosGenerales {
                         index++;
                     }
                     /*
-                    listaDirecciones = new InternetAddress[5];
-                    listaDirecciones[0] = new InternetAddress("bpo@tidinternationalgroup.com");
-                    listaDirecciones[1] = new InternetAddress("angel.diaz@tidinternationalgroup.com");
-                    listaDirecciones[2] = new InternetAddress("josepineroe@gmail.com");
-                    listaDirecciones[3] = new InternetAddress("japestrada@nauta.cu");
-                    listaDirecciones[4] = new InternetAddress("odalys.leon@tidinternationalgroup.com");
-                    */
+                     listaDirecciones = new InternetAddress[5];
+                     listaDirecciones[0] = new InternetAddress("bpo@tidinternationalgroup.com");
+                     listaDirecciones[1] = new InternetAddress("angel.diaz@tidinternationalgroup.com");
+                     listaDirecciones[2] = new InternetAddress("josepineroe@gmail.com");
+                     listaDirecciones[3] = new InternetAddress("japestrada@nauta.cu");
+                     listaDirecciones[4] = new InternetAddress("odalys.leon@tidinternationalgroup.com");
+                     */
                     //listaDirecciones[4] = new InternetAddress("evaramon2016@gmail.com");
                 }
 
@@ -2561,12 +2566,12 @@ public class MetodosGenerales {
                         index++;
                     }
                     /*
-                    listaDirecciones = new InternetAddress[4];
-                    listaDirecciones[0] = new InternetAddress("bpo@tidinternationalgroup.com");
-                    listaDirecciones[1] = new InternetAddress("angel.diaz@tidinternationalgroup.com");
-                    listaDirecciones[2] = new InternetAddress("sltorres920120@gmail.com");
-                    listaDirecciones[3] = new InternetAddress("odalys.leon@tidinternationalgroup.com");
-                    */
+                     listaDirecciones = new InternetAddress[4];
+                     listaDirecciones[0] = new InternetAddress("bpo@tidinternationalgroup.com");
+                     listaDirecciones[1] = new InternetAddress("angel.diaz@tidinternationalgroup.com");
+                     listaDirecciones[2] = new InternetAddress("sltorres920120@gmail.com");
+                     listaDirecciones[3] = new InternetAddress("odalys.leon@tidinternationalgroup.com");
+                     */
                 }
 
             } catch (ParseException ex) {
@@ -2595,16 +2600,17 @@ public class MetodosGenerales {
     }
 
     /**
-     * @param typeOfAddress 1 direcciones de envío en la mañana de España y 2 direcciones de envío en la tarde de España
+     * @param typeOfAddress 1 direcciones de envío en la mañana de España y 2
+     * direcciones de envío en la tarde de España
      * @return
      */
     public static ArrayList<String> getAddressList(Integer typeOfAddress) {
         String filePath;
-        if (typeOfAddress == 1)
+        if (typeOfAddress == 1) {
             filePath = direccion.concat("/conf/address_morning.dat");//filePath = direccion.concat("\\conf\\address_morning.dat");
-        else
+        } else {
             filePath = direccion.concat("/conf/address_afternoon.dat"); //filePath = direccion.concat("\\conf\\address_afternoon.dat");
-
+        }
 
         File archivo = new File(filePath);
         ArrayList<String> addressList = new ArrayList<>();
@@ -2627,7 +2633,6 @@ public class MetodosGenerales {
 
         String filePathBC = direccion.concat("/conf/descargados.dat");
         String filePathTech = direccion.concat("/conf/trazas_descargados_GrupoBCWS.dat");
-
 
         File archivoTech = new File(filePathTech);
         File archivoBC = new File(filePathBC);
@@ -2662,15 +2667,15 @@ public class MetodosGenerales {
                     break;
                 }
             }
-            if (!encontrado)
+            if (!encontrado) {
                 idNotasNoDescargadas.add(idBC);
+            }
         }
         System.out.println("CANTIDAD:" + count);
         System.out.println("NOTAS QUE NO HAN SUBIDO:" + idNotasNoDescargadas.size());
         for (String id : idNotasNoDescargadas) {
             System.out.println(id);
         }
-
 
     }
 
