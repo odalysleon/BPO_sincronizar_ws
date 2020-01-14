@@ -338,7 +338,7 @@ public class TimerTaskSchedule {
                              ResultadoSubida resultadoSubida=null;
                             if(channelSftpTech!=null)
                                 resultadoSubida = MetodosGenerales.subirDocumentos(channelSftpTech);
-                            if (resultadoSubida!=null && resultadoSubida.getResultado()){
+                            if (resultadoSubida.getResultado()){
                                 enviarCorreoNotificacion("BPO utilizando servicio web:Documentos subidos", "TECH ID Solutions: Se han subido " + resultadoSubida.getDocumentosSubidos().getCantTotal() +  " documentos a Grupo BC:\n" + 
                                          "Nota Simple:" + resultadoSubida.getDocumentosSubidos().getCantidadNotas() +  "\n" + 
                                          "IRPF:" + resultadoSubida.getDocumentosSubidos().getCantidadIRPF() + "\n" + 
