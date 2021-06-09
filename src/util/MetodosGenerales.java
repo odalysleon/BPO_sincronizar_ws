@@ -7,6 +7,8 @@ import com.jcraft.jsch.Session;
 import com.jcraft.jsch.SftpException;
 
 import java.io.*;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.text.DateFormat;
@@ -200,8 +202,10 @@ public class MetodosGenerales {
             try {
                 session = jsch.getSession(userFtp, ipFtp, new Integer(portFtp));
                 session.setPassword(passWdFtp);
-
-                session.setConfig("StrictHostKeyChecking", "no");
+                Properties properties=new Properties();  
+                properties.setProperty("StrictHostKeyChecking", "StrictHostKeyChecking");
+                properties.setProperty("no", "no");
+                session.setConfig(properties);
                 session.connect();
             } catch (Exception ex) {
                 String o = ex.toString();
@@ -1594,7 +1598,7 @@ public class MetodosGenerales {
     }
 
     /*private static ArrayOfDatosEnvio getPendingDocuments(servicios.ConfigurationTTipoDocumento tipoDocumento) {
-     servicios.OcrReceiver service = new servicios.OcrReceiver();
+     servicios.OcrReceiver service = new servicios.OcrReceiver(getUrl());
      servicios.IOcrReceiver port = service.getBasicHttpBindingIOcrReceiver();
      return port.getPendingDocuments(tipoDocumento);
      }*/
@@ -2437,8 +2441,33 @@ public class MetodosGenerales {
         return notificacion;
     }
 
+    static  URL getUrl() {
+        String serviceUrl = "";
+        try {
+            File file = new File(direccion.concat("/conf/configFtp_WS.properties"));
+            FileInputStream fileInputStream = new FileInputStream(file);
+            Properties mainProperties = new Properties();
+            mainProperties.load(fileInputStream);
+            serviceUrl = mainProperties.getProperty("serviceUrl");
+            //Cerrando el fichero
+            fileInputStream.close();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        if (serviceUrl != "") {
+            try {
+                URL url = new URL(serviceUrl);
+                return url;
+            } catch (MalformedURLException ex) {
+                Logger.getLogger(MetodosGenerales.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        return null;
+    }
+    
     private static ArrayOfOCRWSResult receiveNotasSimples(servicios.ArrayOfNotaSimple notasSimples) {
-        servicios.OcrReceiver service = new servicios.OcrReceiver();
+        servicios.OcrReceiver service = new servicios.OcrReceiver(getUrl());
         //System.out.println(service.getWSDLDocumentLocation());
         servicios.IOcrReceiver port = service.getBasicHttpBindingIOcrReceiver();
         ArrayOfOCRWSResult result = port.receiveNotasSimples(notasSimples);
@@ -2446,58 +2475,58 @@ public class MetodosGenerales {
     }
 
     private static ArrayOfOCRWSResult receiveNotasSimplesNodulos(servicios.ArrayOfNotaSimpleNodulos notasSimplesNodulos) {
-        servicios.OcrReceiver service = new servicios.OcrReceiver();
+        servicios.OcrReceiver service = new servicios.OcrReceiver(getUrl());
         servicios.IOcrReceiver port = service.getBasicHttpBindingIOcrReceiver();
         ArrayOfOCRWSResult result = port.receiveNotasSimplesNodulos(notasSimplesNodulos);
         return result;
     }
 
     private static ArrayOfOCRWSResult receiveVidasLaborales(servicios.ArrayOfVidaLaboral vidasLaborales) {
-        servicios.OcrReceiver service = new servicios.OcrReceiver();
+        servicios.OcrReceiver service = new servicios.OcrReceiver(getUrl());
         System.out.println(service.getWSDLDocumentLocation());
         servicios.IOcrReceiver port = service.getBasicHttpBindingIOcrReceiver();
         return port.receiveVidasLaborales(vidasLaborales);
     }
 
     private static ArrayOfOCRWSResult receiveTasaciones(servicios.ArrayOfTasacion tasaciones) {
-        servicios.OcrReceiver service = new servicios.OcrReceiver();
+        servicios.OcrReceiver service = new servicios.OcrReceiver(getUrl());
         servicios.IOcrReceiver port = service.getBasicHttpBindingIOcrReceiver();
         return port.receiveTasaciones(tasaciones);
     }
 
     private static ArrayOfOCRWSResult receiveKODocuments(servicios.ArrayOfKODocument koDocuemnts) {
-        servicios.OcrReceiver service = new servicios.OcrReceiver();
+        servicios.OcrReceiver service = new servicios.OcrReceiver(getUrl());
         servicios.IOcrReceiver port = service.getBasicHttpBindingIOcrReceiver();
         return port.receiveKODocuments(koDocuemnts);
     }
 
     private static ArrayOfOCRWSResult receiveIRPFs(servicios.ArrayOfIRPF irpFs) {
-        servicios.OcrReceiver service = new servicios.OcrReceiver();
+        servicios.OcrReceiver service = new servicios.OcrReceiver(getUrl());
         System.out.println(service.getWSDLDocumentLocation());
         servicios.IOcrReceiver port = service.getBasicHttpBindingIOcrReceiver();
         return port.receiveIRPFs(irpFs);
     }
 
     private static ArrayOfOCRWSResult receiveNominas(servicios.ArrayOfNomina nominas) {
-        servicios.OcrReceiver service = new servicios.OcrReceiver();
+        servicios.OcrReceiver service = new servicios.OcrReceiver(getUrl());
         servicios.IOcrReceiver port = service.getBasicHttpBindingIOcrReceiver();
         return port.receiveNominas(nominas);
     }
 
     private static ArrayOfOCRWSResult receiveRecibos(servicios.ArrayOfRecibo recibos) {
-        servicios.OcrReceiver service = new servicios.OcrReceiver();
+        servicios.OcrReceiver service = new servicios.OcrReceiver(getUrl());
         servicios.IOcrReceiver port = service.getBasicHttpBindingIOcrReceiver();
         return port.receiveRecibos(recibos);
     }
 
     private static ArrayOfOCRWSResult receiveTasacion(servicios.ArrayOfTasacion tasaciones) {
-        servicios.OcrReceiver service = new servicios.OcrReceiver();
+        servicios.OcrReceiver service = new servicios.OcrReceiver(getUrl());
         servicios.IOcrReceiver port = service.getBasicHttpBindingIOcrReceiver();
         return port.receiveTasaciones(tasaciones);
     }
 
     private static ArrayOfDatosEnvio getPendingDocuments(servicios.ConfigurationTTipoDocumento tipoDocumento) {
-        servicios.OcrReceiver service = new servicios.OcrReceiver();
+        servicios.OcrReceiver service = new servicios.OcrReceiver(getUrl());
         System.out.println(service.getWSDLDocumentLocation());
         servicios.IOcrReceiver port = service.getBasicHttpBindingIOcrReceiver();
         return port.getPendingDocuments(tipoDocumento);
@@ -2594,7 +2623,7 @@ public class MetodosGenerales {
     }
 
     private static ArrayOfOCRWSResult receiveKODocuments_1(servicios.ArrayOfKODocument koDocuemnts) {
-        servicios.OcrReceiver service = new servicios.OcrReceiver();
+        servicios.OcrReceiver service = new servicios.OcrReceiver(getUrl());
         servicios.IOcrReceiver port = service.getBasicHttpBindingIOcrReceiver();
         return port.receiveKODocuments(koDocuemnts);
     }
