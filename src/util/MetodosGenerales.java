@@ -204,6 +204,7 @@ public class MetodosGenerales {
                 Properties properties=new Properties();  
                 java.util.Properties config = new java.util.Properties();
                 config.put( "StrictHostKeyChecking", "no" );
+                
                 session.setConfig(properties);
                 session.connect();
             } catch (Exception ex) {
