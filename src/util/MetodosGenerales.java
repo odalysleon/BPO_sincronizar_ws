@@ -1,9 +1,8 @@
 package util;
 
 import com.jcraft.jsch.ChannelSftp;
-import com.jcraft.jsch.JSch;
-import com.jcraft.jsch.JSchException;
-import com.jcraft.jsch.Session;
+import com.jcraft.jsch.*;
+
 import com.jcraft.jsch.SftpException;
 
 import java.io.*;
@@ -161,8 +160,8 @@ public class MetodosGenerales {
             try {
                 session = jsch.getSession(userFtp, ipFtp);
                 Properties properties = new Properties();
-                properties.setProperty("StrictHostKeyChecking", "no");
-                session.setConfig(properties);
+               // properties.setProperty("StrictHostKeyChecking", "no");
+               // session.setConfig(properties);
                 session.connect();
             } catch (JSchException ex) {
             }
@@ -203,8 +202,8 @@ public class MetodosGenerales {
                 session = jsch.getSession(userFtp, ipFtp, new Integer(portFtp));
                 session.setPassword(passWdFtp);
                 Properties properties=new Properties();  
-                properties.setProperty("StrictHostKeyChecking", "StrictHostKeyChecking");
-                properties.setProperty("no", "no");
+                java.util.Properties config = new java.util.Properties();
+                config.put( "StrictHostKeyChecking", "no" );
                 session.setConfig(properties);
                 session.connect();
             } catch (Exception ex) {
