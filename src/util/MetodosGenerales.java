@@ -1,10 +1,9 @@
 package util;
 
 import com.jcraft.jsch.ChannelSftp;
-import com.jcraft.jsch.*;
-
+import com.jcraft.jsch.JSch;
+import com.jcraft.jsch.JSchException;
 import com.jcraft.jsch.SftpException;
-
 import java.io.*;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -139,9 +138,9 @@ public class MetodosGenerales {
     /**
      * @return
      */
-    public static Session connectFTPbySSH() {
+    public static com.jcraft.jsch.Session connectFTPbySSH() {
 
-        Session session = null;
+        com.jcraft.jsch.Session session = null;
         try {
             File file = new File(direccion.concat("/conf/configFtp_WS.properties"));
             FileInputStream fileInputStream = new FileInputStream(file);
@@ -158,10 +157,10 @@ public class MetodosGenerales {
             JSch jsch = new JSch();
 
             try {
-                session = jsch.getSession(userFtp, ipFtp);
+                 session= jsch.getSession(userFtp, ipFtp);
                 Properties properties = new Properties();
                // properties.setProperty("StrictHostKeyChecking", "no");
-               // session.setConfig(properties);
+               session.setConfig("StrictHostKeyChecking", "no");
                 session.connect();
             } catch (JSchException ex) {
             }
@@ -175,10 +174,10 @@ public class MetodosGenerales {
     /**
      * @return
      */
-    public static Session connectFTPbySSHTech() {
+    public static com.jcraft.jsch.Session connectFTPbySSHTech() {
         /* Cargando fichero de configuracion para la conexion al Ftp*/
 
-        Session session = null;
+        com.jcraft.jsch.Session session = null;
         try {
             File file = new File(direccion.concat("/conf/configFtp_WS.properties"));
             FileInputStream fileInputStream = new FileInputStream(file);
@@ -199,13 +198,10 @@ public class MetodosGenerales {
             JSch jsch = new JSch();
 
             try {
-                session = jsch.getSession(userFtp, ipFtp, new Integer(portFtp));
+                 session = jsch.getSession(userFtp, ipFtp, new Integer(portFtp));
                 session.setPassword(passWdFtp);
                 Properties properties=new Properties();  
-                java.util.Properties config = new java.util.Properties();
-                config.put( "StrictHostKeyChecking", "StrictHostKeyChecking" );
-                config.put( "no", "no" );
-                session.setConfig(properties);
+                session.setConfig("StrictHostKeyChecking", "no");
                 session.connect();
             } catch (Exception ex) {
                 String o = ex.toString();
