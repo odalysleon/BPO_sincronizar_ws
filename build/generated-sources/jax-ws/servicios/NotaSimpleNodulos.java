@@ -10,9 +10,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para NotaSimpleNodulos complex type.
+ * <p>Java class for NotaSimpleNodulos complex type.
  * 
- * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="NotaSimpleNodulos">
@@ -64,7 +64,7 @@ public class NotaSimpleNodulos
     protected String titulares;
 
     /**
-     * Obtiene el valor de la propiedad asientosPendientes.
+     * Gets the value of the asientosPendientes property.
      * 
      * @return
      *     possible object is
@@ -76,7 +76,7 @@ public class NotaSimpleNodulos
     }
 
     /**
-     * Define el valor de la propiedad asientosPendientes.
+     * Sets the value of the asientosPendientes property.
      * 
      * @param value
      *     allowed object is
@@ -88,7 +88,7 @@ public class NotaSimpleNodulos
     }
 
     /**
-     * Obtiene el valor de la propiedad cargas.
+     * Gets the value of the cargas property.
      * 
      * @return
      *     possible object is
@@ -100,7 +100,7 @@ public class NotaSimpleNodulos
     }
 
     /**
-     * Define el valor de la propiedad cargas.
+     * Sets the value of the cargas property.
      * 
      * @param value
      *     allowed object is
@@ -112,7 +112,7 @@ public class NotaSimpleNodulos
     }
 
     /**
-     * Obtiene el valor de la propiedad datosRegistrales.
+     * Gets the value of the datosRegistrales property.
      * 
      * @return
      *     possible object is
@@ -124,7 +124,7 @@ public class NotaSimpleNodulos
     }
 
     /**
-     * Define el valor de la propiedad datosRegistrales.
+     * Sets the value of the datosRegistrales property.
      * 
      * @param value
      *     allowed object is
@@ -136,7 +136,7 @@ public class NotaSimpleNodulos
     }
 
     /**
-     * Obtiene el valor de la propiedad descripcionFinca.
+     * Gets the value of the descripcionFinca property.
      * 
      * @return
      *     possible object is
@@ -148,7 +148,7 @@ public class NotaSimpleNodulos
     }
 
     /**
-     * Define el valor de la propiedad descripcionFinca.
+     * Sets the value of the descripcionFinca property.
      * 
      * @param value
      *     allowed object is
@@ -160,7 +160,7 @@ public class NotaSimpleNodulos
     }
 
     /**
-     * Obtiene el valor de la propiedad documento.
+     * Gets the value of the documento property.
      * 
      * @return
      *     possible object is
@@ -172,7 +172,7 @@ public class NotaSimpleNodulos
     }
 
     /**
-     * Define el valor de la propiedad documento.
+     * Sets the value of the documento property.
      * 
      * @param value
      *     allowed object is
@@ -184,7 +184,7 @@ public class NotaSimpleNodulos
     }
 
     /**
-     * Obtiene el valor de la propiedad idSolicitudOCR.
+     * Gets the value of the idSolicitudOCR property.
      * 
      * @return
      *     possible object is
@@ -196,7 +196,7 @@ public class NotaSimpleNodulos
     }
 
     /**
-     * Define el valor de la propiedad idSolicitudOCR.
+     * Sets the value of the idSolicitudOCR property.
      * 
      * @param value
      *     allowed object is
@@ -208,7 +208,7 @@ public class NotaSimpleNodulos
     }
 
     /**
-     * Obtiene el valor de la propiedad titulares.
+     * Gets the value of the titulares property.
      * 
      * @return
      *     possible object is
@@ -220,7 +220,7 @@ public class NotaSimpleNodulos
     }
 
     /**
-     * Define el valor de la propiedad titulares.
+     * Sets the value of the titulares property.
      * 
      * @param value
      *     allowed object is

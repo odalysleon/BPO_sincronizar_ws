@@ -12,9 +12,9 @@ import javax.xml.datatype.XMLGregorianCalendar;
 
 
 /**
- * <p>Clase Java para Tasacion complex type.
+ * <p>Java class for Tasacion complex type.
  * 
- * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="Tasacion">
@@ -141,7 +141,7 @@ public class Tasacion
     protected ConfigurationTVisitaInmueble visitaInmueble;
 
     /**
-     * Obtiene el valor de la propiedad advertencias.
+     * Gets the value of the advertencias property.
      * 
      * @return
      *     possible object is
@@ -153,7 +153,7 @@ public class Tasacion
     }
 
     /**
-     * Define el valor de la propiedad advertencias.
+     * Sets the value of the advertencias property.
      * 
      * @param value
      *     allowed object is
@@ -165,7 +165,7 @@ public class Tasacion
     }
 
     /**
-     * Obtiene el valor de la propiedad codigoSociedadTasacionEstadistica.
+     * Gets the value of the codigoSociedadTasacionEstadistica property.
      * 
      * @return
      *     possible object is
@@ -177,7 +177,7 @@ public class Tasacion
     }
 
     /**
-     * Define el valor de la propiedad codigoSociedadTasacionEstadistica.
+     * Sets the value of the codigoSociedadTasacionEstadistica property.
      * 
      * @param value
      *     allowed object is
@@ -189,7 +189,7 @@ public class Tasacion
     }
 
     /**
-     * Obtiene el valor de la propiedad codigoTasacion.
+     * Gets the value of the codigoTasacion property.
      * 
      * @return
      *     possible object is
@@ -201,7 +201,7 @@ public class Tasacion
     }
 
     /**
-     * Define el valor de la propiedad codigoTasacion.
+     * Sets the value of the codigoTasacion property.
      * 
      * @param value
      *     allowed object is
@@ -213,7 +213,7 @@ public class Tasacion
     }
 
     /**
-     * Obtiene el valor de la propiedad codigoTasacionSociedadTasacionEstadistica.
+     * Gets the value of the codigoTasacionSociedadTasacionEstadistica property.
      * 
      * @return
      *     possible object is
@@ -225,7 +225,7 @@ public class Tasacion
     }
 
     /**
-     * Define el valor de la propiedad codigoTasacionSociedadTasacionEstadistica.
+     * Sets the value of the codigoTasacionSociedadTasacionEstadistica property.
      * 
      * @param value
      *     allowed object is
@@ -237,7 +237,7 @@ public class Tasacion
     }
 
     /**
-     * Obtiene el valor de la propiedad condicionantes.
+     * Gets the value of the condicionantes property.
      * 
      * @return
      *     possible object is
@@ -249,7 +249,7 @@ public class Tasacion
     }
 
     /**
-     * Define el valor de la propiedad condicionantes.
+     * Sets the value of the condicionantes property.
      * 
      * @param value
      *     allowed object is
@@ -261,7 +261,7 @@ public class Tasacion
     }
 
     /**
-     * Obtiene el valor de la propiedad documento.
+     * Gets the value of the documento property.
      * 
      * @return
      *     possible object is
@@ -273,7 +273,7 @@ public class Tasacion
     }
 
     /**
-     * Define el valor de la propiedad documento.
+     * Sets the value of the documento property.
      * 
      * @param value
      *     allowed object is
@@ -285,7 +285,7 @@ public class Tasacion
     }
 
     /**
-     * Obtiene el valor de la propiedad empresaTasadora.
+     * Gets the value of the empresaTasadora property.
      * 
      * @return
      *     possible object is
@@ -297,7 +297,7 @@ public class Tasacion
     }
 
     /**
-     * Define el valor de la propiedad empresaTasadora.
+     * Sets the value of the empresaTasadora property.
      * 
      * @param value
      *     allowed object is
@@ -309,7 +309,7 @@ public class Tasacion
     }
 
     /**
-     * Obtiene el valor de la propiedad fechaCaducidad.
+     * Gets the value of the fechaCaducidad property.
      * 
      * @return
      *     possible object is
@@ -321,7 +321,7 @@ public class Tasacion
     }
 
     /**
-     * Define el valor de la propiedad fechaCaducidad.
+     * Sets the value of the fechaCaducidad property.
      * 
      * @param value
      *     allowed object is
@@ -333,7 +333,7 @@ public class Tasacion
     }
 
     /**
-     * Obtiene el valor de la propiedad fechaTasacion.
+     * Gets the value of the fechaTasacion property.
      * 
      * @return
      *     possible object is
@@ -345,7 +345,7 @@ public class Tasacion
     }
 
     /**
-     * Define el valor de la propiedad fechaTasacion.
+     * Sets the value of the fechaTasacion property.
      * 
      * @param value
      *     allowed object is
@@ -357,7 +357,7 @@ public class Tasacion
     }
 
     /**
-     * Obtiene el valor de la propiedad fechaValoracionEstadistica.
+     * Gets the value of the fechaValoracionEstadistica property.
      * 
      * @return
      *     possible object is
@@ -369,7 +369,7 @@ public class Tasacion
     }
 
     /**
-     * Define el valor de la propiedad fechaValoracionEstadistica.
+     * Sets the value of the fechaValoracionEstadistica property.
      * 
      * @param value
      *     allowed object is
@@ -381,7 +381,7 @@ public class Tasacion
     }
 
     /**
-     * Obtiene el valor de la propiedad fechaVisita.
+     * Gets the value of the fechaVisita property.
      * 
      * @return
      *     possible object is
@@ -393,7 +393,7 @@ public class Tasacion
     }
 
     /**
-     * Define el valor de la propiedad fechaVisita.
+     * Sets the value of the fechaVisita property.
      * 
      * @param value
      *     allowed object is
@@ -405,7 +405,7 @@ public class Tasacion
     }
 
     /**
-     * Obtiene el valor de la propiedad finalidadTasacion.
+     * Gets the value of the finalidadTasacion property.
      * 
      * @return
      *     possible object is
@@ -417,7 +417,7 @@ public class Tasacion
     }
 
     /**
-     * Define el valor de la propiedad finalidadTasacion.
+     * Sets the value of the finalidadTasacion property.
      * 
      * @param value
      *     allowed object is
@@ -429,7 +429,7 @@ public class Tasacion
     }
 
     /**
-     * Obtiene el valor de la propiedad fincas.
+     * Gets the value of the fincas property.
      * 
      * @return
      *     possible object is
@@ -441,7 +441,7 @@ public class Tasacion
     }
 
     /**
-     * Define el valor de la propiedad fincas.
+     * Sets the value of the fincas property.
      * 
      * @param value
      *     allowed object is
@@ -453,7 +453,7 @@ public class Tasacion
     }
 
     /**
-     * Obtiene el valor de la propiedad fuenteDatos.
+     * Gets the value of the fuenteDatos property.
      * 
      * @return
      *     possible object is
@@ -465,7 +465,7 @@ public class Tasacion
     }
 
     /**
-     * Define el valor de la propiedad fuenteDatos.
+     * Sets the value of the fuenteDatos property.
      * 
      * @param value
      *     allowed object is
@@ -477,7 +477,7 @@ public class Tasacion
     }
 
     /**
-     * Obtiene el valor de la propiedad idSolicitudOCR.
+     * Gets the value of the idSolicitudOCR property.
      * 
      * @return
      *     possible object is
@@ -489,7 +489,7 @@ public class Tasacion
     }
 
     /**
-     * Define el valor de la propiedad idSolicitudOCR.
+     * Sets the value of the idSolicitudOCR property.
      * 
      * @param value
      *     allowed object is
@@ -501,7 +501,7 @@ public class Tasacion
     }
 
     /**
-     * Obtiene el valor de la propiedad leyDeMercado.
+     * Gets the value of the leyDeMercado property.
      * 
      * @return
      *     possible object is
@@ -513,7 +513,7 @@ public class Tasacion
     }
 
     /**
-     * Define el valor de la propiedad leyDeMercado.
+     * Sets the value of the leyDeMercado property.
      * 
      * @param value
      *     allowed object is
@@ -525,7 +525,7 @@ public class Tasacion
     }
 
     /**
-     * Obtiene el valor de la propiedad metodoValoracion.
+     * Gets the value of the metodoValoracion property.
      * 
      * @return
      *     possible object is
@@ -537,7 +537,7 @@ public class Tasacion
     }
 
     /**
-     * Define el valor de la propiedad metodoValoracion.
+     * Sets the value of the metodoValoracion property.
      * 
      * @param value
      *     allowed object is
@@ -549,7 +549,7 @@ public class Tasacion
     }
 
     /**
-     * Obtiene el valor de la propiedad metodoValoracionEstadistico.
+     * Gets the value of the metodoValoracionEstadistico property.
      * 
      * @return
      *     possible object is
@@ -561,7 +561,7 @@ public class Tasacion
     }
 
     /**
-     * Define el valor de la propiedad metodoValoracionEstadistico.
+     * Sets the value of the metodoValoracionEstadistico property.
      * 
      * @param value
      *     allowed object is
@@ -573,7 +573,7 @@ public class Tasacion
     }
 
     /**
-     * Obtiene el valor de la propiedad nombreTasador.
+     * Gets the value of the nombreTasador property.
      * 
      * @return
      *     possible object is
@@ -585,7 +585,7 @@ public class Tasacion
     }
 
     /**
-     * Define el valor de la propiedad nombreTasador.
+     * Sets the value of the nombreTasador property.
      * 
      * @param value
      *     allowed object is
@@ -597,7 +597,7 @@ public class Tasacion
     }
 
     /**
-     * Obtiene el valor de la propiedad observaciones.
+     * Gets the value of the observaciones property.
      * 
      * @return
      *     possible object is
@@ -609,7 +609,7 @@ public class Tasacion
     }
 
     /**
-     * Define el valor de la propiedad observaciones.
+     * Sets the value of the observaciones property.
      * 
      * @param value
      *     allowed object is
@@ -621,7 +621,7 @@ public class Tasacion
     }
 
     /**
-     * Obtiene el valor de la propiedad solicitante.
+     * Gets the value of the solicitante property.
      * 
      * @return
      *     possible object is
@@ -633,7 +633,7 @@ public class Tasacion
     }
 
     /**
-     * Define el valor de la propiedad solicitante.
+     * Sets the value of the solicitante property.
      * 
      * @param value
      *     allowed object is
@@ -645,7 +645,7 @@ public class Tasacion
     }
 
     /**
-     * Obtiene el valor de la propiedad valorHipotecario.
+     * Gets the value of the valorHipotecario property.
      * 
      * @return
      *     possible object is
@@ -657,7 +657,7 @@ public class Tasacion
     }
 
     /**
-     * Define el valor de la propiedad valorHipotecario.
+     * Sets the value of the valorHipotecario property.
      * 
      * @param value
      *     allowed object is
@@ -669,7 +669,7 @@ public class Tasacion
     }
 
     /**
-     * Obtiene el valor de la propiedad valorTasacion.
+     * Gets the value of the valorTasacion property.
      * 
      * @return
      *     possible object is
@@ -681,7 +681,7 @@ public class Tasacion
     }
 
     /**
-     * Define el valor de la propiedad valorTasacion.
+     * Sets the value of the valorTasacion property.
      * 
      * @param value
      *     allowed object is
@@ -693,7 +693,7 @@ public class Tasacion
     }
 
     /**
-     * Obtiene el valor de la propiedad valorTasacionEstadistico.
+     * Gets the value of the valorTasacionEstadistico property.
      * 
      * @return
      *     possible object is
@@ -705,7 +705,7 @@ public class Tasacion
     }
 
     /**
-     * Define el valor de la propiedad valorTasacionEstadistico.
+     * Sets the value of the valorTasacionEstadistico property.
      * 
      * @param value
      *     allowed object is
@@ -717,7 +717,7 @@ public class Tasacion
     }
 
     /**
-     * Obtiene el valor de la propiedad visitaInmueble.
+     * Gets the value of the visitaInmueble property.
      * 
      * @return
      *     possible object is
@@ -729,7 +729,7 @@ public class Tasacion
     }
 
     /**
-     * Define el valor de la propiedad visitaInmueble.
+     * Sets the value of the visitaInmueble property.
      * 
      * @param value
      *     allowed object is

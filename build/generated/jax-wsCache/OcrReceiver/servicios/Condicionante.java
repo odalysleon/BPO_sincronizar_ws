@@ -10,9 +10,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para Condicionante complex type.
+ * <p>Java class for Condicionante complex type.
  * 
- * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="Condicionante">
@@ -44,7 +44,7 @@ public class Condicionante
     protected JAXBElement<Integer> idTasacion;
 
     /**
-     * Obtiene el valor de la propiedad idCondicionante.
+     * Gets the value of the idCondicionante property.
      * 
      * @return
      *     possible object is
@@ -56,7 +56,7 @@ public class Condicionante
     }
 
     /**
-     * Define el valor de la propiedad idCondicionante.
+     * Sets the value of the idCondicionante property.
      * 
      * @param value
      *     allowed object is
@@ -68,7 +68,7 @@ public class Condicionante
     }
 
     /**
-     * Obtiene el valor de la propiedad idTasacion.
+     * Gets the value of the idTasacion property.
      * 
      * @return
      *     possible object is
@@ -80,7 +80,7 @@ public class Condicionante
     }
 
     /**
-     * Define el valor de la propiedad idTasacion.
+     * Sets the value of the idTasacion property.
      * 
      * @param value
      *     allowed object is

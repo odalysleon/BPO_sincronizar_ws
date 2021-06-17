@@ -12,9 +12,9 @@ import javax.xml.datatype.XMLGregorianCalendar;
 
 
 /**
- * <p>Clase Java para VidaLaboral complex type.
+ * <p>Java class for VidaLaboral complex type.
  * 
- * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="VidaLaboral">
@@ -98,7 +98,7 @@ public class VidaLaboral
     protected ConfigurationTTipoRegimenSS tipoRegimen;
 
     /**
-     * Obtiene el valor de la propiedad codCEA.
+     * Gets the value of the codCEA property.
      * 
      * @return
      *     possible object is
@@ -110,7 +110,7 @@ public class VidaLaboral
     }
 
     /**
-     * Define el valor de la propiedad codCEA.
+     * Sets the value of the codCEA property.
      * 
      * @param value
      *     allowed object is
@@ -122,7 +122,7 @@ public class VidaLaboral
     }
 
     /**
-     * Obtiene el valor de la propiedad documento.
+     * Gets the value of the documento property.
      * 
      * @return
      *     possible object is
@@ -134,7 +134,7 @@ public class VidaLaboral
     }
 
     /**
-     * Define el valor de la propiedad documento.
+     * Sets the value of the documento property.
      * 
      * @param value
      *     allowed object is
@@ -146,7 +146,7 @@ public class VidaLaboral
     }
 
     /**
-     * Obtiene el valor de la propiedad fechaAltaSS.
+     * Gets the value of the fechaAltaSS property.
      * 
      * @return
      *     possible object is
@@ -158,7 +158,7 @@ public class VidaLaboral
     }
 
     /**
-     * Define el valor de la propiedad fechaAltaSS.
+     * Sets the value of the fechaAltaSS property.
      * 
      * @param value
      *     allowed object is
@@ -170,7 +170,7 @@ public class VidaLaboral
     }
 
     /**
-     * Obtiene el valor de la propiedad fechaAltaUltimaEmpresa.
+     * Gets the value of the fechaAltaUltimaEmpresa property.
      * 
      * @return
      *     possible object is
@@ -182,7 +182,7 @@ public class VidaLaboral
     }
 
     /**
-     * Define el valor de la propiedad fechaAltaUltimaEmpresa.
+     * Sets the value of the fechaAltaUltimaEmpresa property.
      * 
      * @param value
      *     allowed object is
@@ -194,7 +194,7 @@ public class VidaLaboral
     }
 
     /**
-     * Obtiene el valor de la propiedad fechaCEA.
+     * Gets the value of the fechaCEA property.
      * 
      * @return
      *     possible object is
@@ -206,7 +206,7 @@ public class VidaLaboral
     }
 
     /**
-     * Define el valor de la propiedad fechaCEA.
+     * Sets the value of the fechaCEA property.
      * 
      * @param value
      *     allowed object is
@@ -218,7 +218,7 @@ public class VidaLaboral
     }
 
     /**
-     * Obtiene el valor de la propiedad fechaDocumento.
+     * Gets the value of the fechaDocumento property.
      * 
      * @return
      *     possible object is
@@ -230,7 +230,7 @@ public class VidaLaboral
     }
 
     /**
-     * Define el valor de la propiedad fechaDocumento.
+     * Sets the value of the fechaDocumento property.
      * 
      * @param value
      *     allowed object is
@@ -242,7 +242,7 @@ public class VidaLaboral
     }
 
     /**
-     * Obtiene el valor de la propiedad idCEA.
+     * Gets the value of the idCEA property.
      * 
      * @return
      *     possible object is
@@ -254,7 +254,7 @@ public class VidaLaboral
     }
 
     /**
-     * Define el valor de la propiedad idCEA.
+     * Sets the value of the idCEA property.
      * 
      * @param value
      *     allowed object is
@@ -266,7 +266,7 @@ public class VidaLaboral
     }
 
     /**
-     * Obtiene el valor de la propiedad idSolicitudOCR.
+     * Gets the value of the idSolicitudOCR property.
      * 
      * @return
      *     possible object is
@@ -278,7 +278,7 @@ public class VidaLaboral
     }
 
     /**
-     * Define el valor de la propiedad idSolicitudOCR.
+     * Sets the value of the idSolicitudOCR property.
      * 
      * @param value
      *     allowed object is
@@ -290,7 +290,7 @@ public class VidaLaboral
     }
 
     /**
-     * Obtiene el valor de la propiedad nif.
+     * Gets the value of the nif property.
      * 
      * @return
      *     possible object is
@@ -302,7 +302,7 @@ public class VidaLaboral
     }
 
     /**
-     * Define el valor de la propiedad nif.
+     * Sets the value of the nif property.
      * 
      * @param value
      *     allowed object is
@@ -314,7 +314,7 @@ public class VidaLaboral
     }
 
     /**
-     * Obtiene el valor de la propiedad nombre.
+     * Gets the value of the nombre property.
      * 
      * @return
      *     possible object is
@@ -326,7 +326,7 @@ public class VidaLaboral
     }
 
     /**
-     * Define el valor de la propiedad nombre.
+     * Sets the value of the nombre property.
      * 
      * @param value
      *     allowed object is
@@ -338,7 +338,7 @@ public class VidaLaboral
     }
 
     /**
-     * Obtiene el valor de la propiedad numeroAniosTotal.
+     * Gets the value of the numeroAniosTotal property.
      * 
      * @return
      *     possible object is
@@ -350,7 +350,7 @@ public class VidaLaboral
     }
 
     /**
-     * Define el valor de la propiedad numeroAniosTotal.
+     * Sets the value of the numeroAniosTotal property.
      * 
      * @param value
      *     allowed object is
@@ -362,7 +362,7 @@ public class VidaLaboral
     }
 
     /**
-     * Obtiene el valor de la propiedad numeroSeguridadSocial.
+     * Gets the value of the numeroSeguridadSocial property.
      * 
      * @return
      *     possible object is
@@ -374,7 +374,7 @@ public class VidaLaboral
     }
 
     /**
-     * Define el valor de la propiedad numeroSeguridadSocial.
+     * Sets the value of the numeroSeguridadSocial property.
      * 
      * @param value
      *     allowed object is
@@ -386,7 +386,7 @@ public class VidaLaboral
     }
 
     /**
-     * Obtiene el valor de la propiedad tipoContrato.
+     * Gets the value of the tipoContrato property.
      * 
      * @return
      *     possible object is
@@ -398,7 +398,7 @@ public class VidaLaboral
     }
 
     /**
-     * Define el valor de la propiedad tipoContrato.
+     * Sets the value of the tipoContrato property.
      * 
      * @param value
      *     allowed object is
@@ -410,7 +410,7 @@ public class VidaLaboral
     }
 
     /**
-     * Obtiene el valor de la propiedad tipoRegimen.
+     * Gets the value of the tipoRegimen property.
      * 
      * @return
      *     possible object is
@@ -422,7 +422,7 @@ public class VidaLaboral
     }
 
     /**
-     * Define el valor de la propiedad tipoRegimen.
+     * Sets the value of the tipoRegimen property.
      * 
      * @param value
      *     allowed object is

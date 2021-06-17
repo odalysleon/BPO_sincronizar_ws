@@ -10,9 +10,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para KODocument complex type.
+ * <p>Java class for KODocument complex type.
  * 
- * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="KODocument">
@@ -46,7 +46,7 @@ public class KODocument {
     protected JAXBElement<String> observaciones;
 
     /**
-     * Obtiene el valor de la propiedad descripcionError.
+     * Gets the value of the descripcionError property.
      * 
      * @return
      *     possible object is
@@ -58,7 +58,7 @@ public class KODocument {
     }
 
     /**
-     * Define el valor de la propiedad descripcionError.
+     * Sets the value of the descripcionError property.
      * 
      * @param value
      *     allowed object is
@@ -70,7 +70,7 @@ public class KODocument {
     }
 
     /**
-     * Obtiene el valor de la propiedad idSolicitudOcr.
+     * Gets the value of the idSolicitudOcr property.
      * 
      * @return
      *     possible object is
@@ -82,7 +82,7 @@ public class KODocument {
     }
 
     /**
-     * Define el valor de la propiedad idSolicitudOcr.
+     * Sets the value of the idSolicitudOcr property.
      * 
      * @param value
      *     allowed object is
@@ -94,7 +94,7 @@ public class KODocument {
     }
 
     /**
-     * Obtiene el valor de la propiedad observaciones.
+     * Gets the value of the observaciones property.
      * 
      * @return
      *     possible object is
@@ -106,7 +106,7 @@ public class KODocument {
     }
 
     /**
-     * Define el valor de la propiedad observaciones.
+     * Sets the value of the observaciones property.
      * 
      * @param value
      *     allowed object is

@@ -11,9 +11,9 @@ import javax.xml.datatype.XMLGregorianCalendar;
 
 
 /**
- * <p>Clase Java para Finca complex type.
+ * <p>Java class for Finca complex type.
  * 
- * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="Finca">
@@ -169,7 +169,7 @@ public class Finca
     protected Double valoracion;
 
     /**
-     * Obtiene el valor de la propiedad anioConstruccion.
+     * Gets the value of the anioConstruccion property.
      * 
      * @return
      *     possible object is
@@ -181,7 +181,7 @@ public class Finca
     }
 
     /**
-     * Define el valor de la propiedad anioConstruccion.
+     * Sets the value of the anioConstruccion property.
      * 
      * @param value
      *     allowed object is
@@ -193,7 +193,7 @@ public class Finca
     }
 
     /**
-     * Obtiene el valor de la propiedad cargas.
+     * Gets the value of the cargas property.
      * 
      * @return
      *     possible object is
@@ -205,7 +205,7 @@ public class Finca
     }
 
     /**
-     * Define el valor de la propiedad cargas.
+     * Sets the value of the cargas property.
      * 
      * @param value
      *     allowed object is
@@ -217,7 +217,7 @@ public class Finca
     }
 
     /**
-     * Obtiene el valor de la propiedad codigoPostal.
+     * Gets the value of the codigoPostal property.
      * 
      * @return
      *     possible object is
@@ -229,7 +229,7 @@ public class Finca
     }
 
     /**
-     * Define el valor de la propiedad codigoPostal.
+     * Sets the value of the codigoPostal property.
      * 
      * @param value
      *     allowed object is
@@ -241,7 +241,7 @@ public class Finca
     }
 
     /**
-     * Obtiene el valor de la propiedad direccion.
+     * Gets the value of the direccion property.
      * 
      * @return
      *     possible object is
@@ -253,7 +253,7 @@ public class Finca
     }
 
     /**
-     * Define el valor de la propiedad direccion.
+     * Sets the value of the direccion property.
      * 
      * @param value
      *     allowed object is
@@ -265,7 +265,7 @@ public class Finca
     }
 
     /**
-     * Obtiene el valor de la propiedad escalera.
+     * Gets the value of the escalera property.
      * 
      * @return
      *     possible object is
@@ -277,7 +277,7 @@ public class Finca
     }
 
     /**
-     * Define el valor de la propiedad escalera.
+     * Sets the value of the escalera property.
      * 
      * @param value
      *     allowed object is
@@ -289,7 +289,7 @@ public class Finca
     }
 
     /**
-     * Obtiene el valor de la propiedad estadoConservacion.
+     * Gets the value of the estadoConservacion property.
      * 
      * @return
      *     possible object is
@@ -301,7 +301,7 @@ public class Finca
     }
 
     /**
-     * Define el valor de la propiedad estadoConservacion.
+     * Sets the value of the estadoConservacion property.
      * 
      * @param value
      *     allowed object is
@@ -313,7 +313,7 @@ public class Finca
     }
 
     /**
-     * Obtiene el valor de la propiedad fechaCalificacion.
+     * Gets the value of the fechaCalificacion property.
      * 
      * @return
      *     possible object is
@@ -325,7 +325,7 @@ public class Finca
     }
 
     /**
-     * Define el valor de la propiedad fechaCalificacion.
+     * Sets the value of the fechaCalificacion property.
      * 
      * @param value
      *     allowed object is
@@ -337,7 +337,7 @@ public class Finca
     }
 
     /**
-     * Obtiene el valor de la propiedad fechaVerificacion.
+     * Gets the value of the fechaVerificacion property.
      * 
      * @return
      *     possible object is
@@ -349,7 +349,7 @@ public class Finca
     }
 
     /**
-     * Define el valor de la propiedad fechaVerificacion.
+     * Sets the value of the fechaVerificacion property.
      * 
      * @param value
      *     allowed object is
@@ -361,7 +361,7 @@ public class Finca
     }
 
     /**
-     * Obtiene el valor de la propiedad idufir.
+     * Gets the value of the idufir property.
      * 
      * @return
      *     possible object is
@@ -373,7 +373,7 @@ public class Finca
     }
 
     /**
-     * Define el valor de la propiedad idufir.
+     * Sets the value of the idufir property.
      * 
      * @param value
      *     allowed object is
@@ -385,7 +385,7 @@ public class Finca
     }
 
     /**
-     * Obtiene el valor de la propiedad inscripcionFolio.
+     * Gets the value of the inscripcionFolio property.
      * 
      * @return
      *     possible object is
@@ -397,7 +397,7 @@ public class Finca
     }
 
     /**
-     * Define el valor de la propiedad inscripcionFolio.
+     * Sets the value of the inscripcionFolio property.
      * 
      * @param value
      *     allowed object is
@@ -409,7 +409,7 @@ public class Finca
     }
 
     /**
-     * Obtiene el valor de la propiedad inscripcionLibro.
+     * Gets the value of the inscripcionLibro property.
      * 
      * @return
      *     possible object is
@@ -421,7 +421,7 @@ public class Finca
     }
 
     /**
-     * Define el valor de la propiedad inscripcionLibro.
+     * Sets the value of the inscripcionLibro property.
      * 
      * @param value
      *     allowed object is
@@ -433,7 +433,7 @@ public class Finca
     }
 
     /**
-     * Obtiene el valor de la propiedad inscripcionTomo.
+     * Gets the value of the inscripcionTomo property.
      * 
      * @return
      *     possible object is
@@ -445,7 +445,7 @@ public class Finca
     }
 
     /**
-     * Define el valor de la propiedad inscripcionTomo.
+     * Sets the value of the inscripcionTomo property.
      * 
      * @param value
      *     allowed object is
@@ -457,7 +457,7 @@ public class Finca
     }
 
     /**
-     * Obtiene el valor de la propiedad numeroFinca.
+     * Gets the value of the numeroFinca property.
      * 
      * @return
      *     possible object is
@@ -469,7 +469,7 @@ public class Finca
     }
 
     /**
-     * Define el valor de la propiedad numeroFinca.
+     * Sets the value of the numeroFinca property.
      * 
      * @param value
      *     allowed object is
@@ -481,7 +481,7 @@ public class Finca
     }
 
     /**
-     * Obtiene el valor de la propiedad ocupacion.
+     * Gets the value of the ocupacion property.
      * 
      * @return
      *     possible object is
@@ -493,7 +493,7 @@ public class Finca
     }
 
     /**
-     * Define el valor de la propiedad ocupacion.
+     * Sets the value of the ocupacion property.
      * 
      * @param value
      *     allowed object is
@@ -505,7 +505,7 @@ public class Finca
     }
 
     /**
-     * Obtiene el valor de la propiedad planta.
+     * Gets the value of the planta property.
      * 
      * @return
      *     possible object is
@@ -517,7 +517,7 @@ public class Finca
     }
 
     /**
-     * Define el valor de la propiedad planta.
+     * Sets the value of the planta property.
      * 
      * @param value
      *     allowed object is
@@ -529,7 +529,7 @@ public class Finca
     }
 
     /**
-     * Obtiene el valor de la propiedad poblacion.
+     * Gets the value of the poblacion property.
      * 
      * @return
      *     possible object is
@@ -541,7 +541,7 @@ public class Finca
     }
 
     /**
-     * Define el valor de la propiedad poblacion.
+     * Sets the value of the poblacion property.
      * 
      * @param value
      *     allowed object is
@@ -553,7 +553,7 @@ public class Finca
     }
 
     /**
-     * Obtiene el valor de la propiedad portal.
+     * Gets the value of the portal property.
      * 
      * @return
      *     possible object is
@@ -565,7 +565,7 @@ public class Finca
     }
 
     /**
-     * Define el valor de la propiedad portal.
+     * Sets the value of the portal property.
      * 
      * @param value
      *     allowed object is
@@ -577,7 +577,7 @@ public class Finca
     }
 
     /**
-     * Obtiene el valor de la propiedad provincia.
+     * Gets the value of the provincia property.
      * 
      * @return
      *     possible object is
@@ -589,7 +589,7 @@ public class Finca
     }
 
     /**
-     * Define el valor de la propiedad provincia.
+     * Sets the value of the provincia property.
      * 
      * @param value
      *     allowed object is
@@ -601,7 +601,7 @@ public class Finca
     }
 
     /**
-     * Obtiene el valor de la propiedad puerta.
+     * Gets the value of the puerta property.
      * 
      * @return
      *     possible object is
@@ -613,7 +613,7 @@ public class Finca
     }
 
     /**
-     * Define el valor de la propiedad puerta.
+     * Sets the value of the puerta property.
      * 
      * @param value
      *     allowed object is
@@ -625,7 +625,7 @@ public class Finca
     }
 
     /**
-     * Obtiene el valor de la propiedad referenciaCatastral.
+     * Gets the value of the referenciaCatastral property.
      * 
      * @return
      *     possible object is
@@ -637,7 +637,7 @@ public class Finca
     }
 
     /**
-     * Define el valor de la propiedad referenciaCatastral.
+     * Sets the value of the referenciaCatastral property.
      * 
      * @param value
      *     allowed object is
@@ -649,7 +649,7 @@ public class Finca
     }
 
     /**
-     * Obtiene el valor de la propiedad regimenProteccion.
+     * Gets the value of the regimenProteccion property.
      * 
      * @return
      *     possible object is
@@ -661,7 +661,7 @@ public class Finca
     }
 
     /**
-     * Define el valor de la propiedad regimenProteccion.
+     * Sets the value of the regimenProteccion property.
      * 
      * @param value
      *     allowed object is
@@ -673,7 +673,7 @@ public class Finca
     }
 
     /**
-     * Obtiene el valor de la propiedad registroPropiedad.
+     * Gets the value of the registroPropiedad property.
      * 
      * @return
      *     possible object is
@@ -685,7 +685,7 @@ public class Finca
     }
 
     /**
-     * Define el valor de la propiedad registroPropiedad.
+     * Sets the value of the registroPropiedad property.
      * 
      * @param value
      *     allowed object is
@@ -697,7 +697,7 @@ public class Finca
     }
 
     /**
-     * Obtiene el valor de la propiedad seccion.
+     * Gets the value of the seccion property.
      * 
      * @return
      *     possible object is
@@ -709,7 +709,7 @@ public class Finca
     }
 
     /**
-     * Define el valor de la propiedad seccion.
+     * Sets the value of the seccion property.
      * 
      * @param value
      *     allowed object is
@@ -721,7 +721,7 @@ public class Finca
     }
 
     /**
-     * Obtiene el valor de la propiedad superficieComprobada.
+     * Gets the value of the superficieComprobada property.
      * 
      * @return
      *     possible object is
@@ -733,7 +733,7 @@ public class Finca
     }
 
     /**
-     * Define el valor de la propiedad superficieComprobada.
+     * Sets the value of the superficieComprobada property.
      * 
      * @param value
      *     allowed object is
@@ -745,7 +745,7 @@ public class Finca
     }
 
     /**
-     * Obtiene el valor de la propiedad superficieConstruida.
+     * Gets the value of the superficieConstruida property.
      * 
      * @return
      *     possible object is
@@ -757,7 +757,7 @@ public class Finca
     }
 
     /**
-     * Define el valor de la propiedad superficieConstruida.
+     * Sets the value of the superficieConstruida property.
      * 
      * @param value
      *     allowed object is
@@ -769,7 +769,7 @@ public class Finca
     }
 
     /**
-     * Obtiene el valor de la propiedad superficieTerreno.
+     * Gets the value of the superficieTerreno property.
      * 
      * @return
      *     possible object is
@@ -781,7 +781,7 @@ public class Finca
     }
 
     /**
-     * Define el valor de la propiedad superficieTerreno.
+     * Sets the value of the superficieTerreno property.
      * 
      * @param value
      *     allowed object is
@@ -793,7 +793,7 @@ public class Finca
     }
 
     /**
-     * Obtiene el valor de la propiedad superficieUtil.
+     * Gets the value of the superficieUtil property.
      * 
      * @return
      *     possible object is
@@ -805,7 +805,7 @@ public class Finca
     }
 
     /**
-     * Define el valor de la propiedad superficieUtil.
+     * Sets the value of the superficieUtil property.
      * 
      * @param value
      *     allowed object is
@@ -817,7 +817,7 @@ public class Finca
     }
 
     /**
-     * Obtiene el valor de la propiedad tipoFinca.
+     * Gets the value of the tipoFinca property.
      * 
      * @return
      *     possible object is
@@ -829,7 +829,7 @@ public class Finca
     }
 
     /**
-     * Define el valor de la propiedad tipoFinca.
+     * Sets the value of the tipoFinca property.
      * 
      * @param value
      *     allowed object is
@@ -841,7 +841,7 @@ public class Finca
     }
 
     /**
-     * Obtiene el valor de la propiedad tipoVia.
+     * Gets the value of the tipoVia property.
      * 
      * @return
      *     possible object is
@@ -853,7 +853,7 @@ public class Finca
     }
 
     /**
-     * Define el valor de la propiedad tipoVia.
+     * Sets the value of the tipoVia property.
      * 
      * @param value
      *     allowed object is
@@ -865,7 +865,7 @@ public class Finca
     }
 
     /**
-     * Obtiene el valor de la propiedad valorSeguroRD716.
+     * Gets the value of the valorSeguroRD716 property.
      * 
      * @return
      *     possible object is
@@ -877,7 +877,7 @@ public class Finca
     }
 
     /**
-     * Define el valor de la propiedad valorSeguroRD716.
+     * Sets the value of the valorSeguroRD716 property.
      * 
      * @param value
      *     allowed object is
@@ -889,7 +889,7 @@ public class Finca
     }
 
     /**
-     * Obtiene el valor de la propiedad valorSuelo.
+     * Gets the value of the valorSuelo property.
      * 
      * @return
      *     possible object is
@@ -901,7 +901,7 @@ public class Finca
     }
 
     /**
-     * Define el valor de la propiedad valorSuelo.
+     * Sets the value of the valorSuelo property.
      * 
      * @param value
      *     allowed object is
@@ -913,7 +913,7 @@ public class Finca
     }
 
     /**
-     * Obtiene el valor de la propiedad valorTasacion.
+     * Gets the value of the valorTasacion property.
      * 
      * @return
      *     possible object is
@@ -925,7 +925,7 @@ public class Finca
     }
 
     /**
-     * Define el valor de la propiedad valorTasacion.
+     * Sets the value of the valorTasacion property.
      * 
      * @param value
      *     allowed object is
@@ -937,7 +937,7 @@ public class Finca
     }
 
     /**
-     * Obtiene el valor de la propiedad valoracion.
+     * Gets the value of the valoracion property.
      * 
      * @return
      *     possible object is
@@ -949,7 +949,7 @@ public class Finca
     }
 
     /**
-     * Define el valor de la propiedad valoracion.
+     * Sets the value of the valoracion property.
      * 
      * @param value
      *     allowed object is

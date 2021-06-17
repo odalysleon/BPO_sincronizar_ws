@@ -9,9 +9,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para Documento complex type.
+ * <p>Java class for Documento complex type.
  * 
- * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="Documento">
@@ -45,7 +45,7 @@ public class Documento {
     protected JAXBElement<String> mimeType;
 
     /**
-     * Obtiene el valor de la propiedad content.
+     * Gets the value of the content property.
      * 
      * @return
      *     possible object is
@@ -57,7 +57,7 @@ public class Documento {
     }
 
     /**
-     * Define el valor de la propiedad content.
+     * Sets the value of the content property.
      * 
      * @param value
      *     allowed object is
@@ -69,7 +69,7 @@ public class Documento {
     }
 
     /**
-     * Obtiene el valor de la propiedad fileName.
+     * Gets the value of the fileName property.
      * 
      * @return
      *     possible object is
@@ -81,7 +81,7 @@ public class Documento {
     }
 
     /**
-     * Define el valor de la propiedad fileName.
+     * Sets the value of the fileName property.
      * 
      * @param value
      *     allowed object is
@@ -93,7 +93,7 @@ public class Documento {
     }
 
     /**
-     * Obtiene el valor de la propiedad mimeType.
+     * Gets the value of the mimeType property.
      * 
      * @return
      *     possible object is
@@ -105,7 +105,7 @@ public class Documento {
     }
 
     /**
-     * Define el valor de la propiedad mimeType.
+     * Sets the value of the mimeType property.
      * 
      * @param value
      *     allowed object is

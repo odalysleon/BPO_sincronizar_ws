@@ -10,9 +10,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para FincaTitular complex type.
+ * <p>Java class for FincaTitular complex type.
  * 
- * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="FincaTitular">
@@ -44,7 +44,7 @@ public class FincaTitular
     protected JAXBElement<Persona> titular;
 
     /**
-     * Obtiene el valor de la propiedad regimenEconomico.
+     * Gets the value of the regimenEconomico property.
      * 
      * @return
      *     possible object is
@@ -56,7 +56,7 @@ public class FincaTitular
     }
 
     /**
-     * Define el valor de la propiedad regimenEconomico.
+     * Sets the value of the regimenEconomico property.
      * 
      * @param value
      *     allowed object is
@@ -68,7 +68,7 @@ public class FincaTitular
     }
 
     /**
-     * Obtiene el valor de la propiedad titular.
+     * Gets the value of the titular property.
      * 
      * @return
      *     possible object is
@@ -80,7 +80,7 @@ public class FincaTitular
     }
 
     /**
-     * Define el valor de la propiedad titular.
+     * Sets the value of the titular property.
      * 
      * @param value
      *     allowed object is

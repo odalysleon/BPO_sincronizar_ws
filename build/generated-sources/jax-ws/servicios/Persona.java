@@ -10,9 +10,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para Persona complex type.
+ * <p>Java class for Persona complex type.
  * 
- * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="Persona">
@@ -60,7 +60,7 @@ public class Persona
     protected JAXBElement<ArrayOfTitulo> titulos;
 
     /**
-     * Obtiene el valor de la propiedad apellido1.
+     * Gets the value of the apellido1 property.
      * 
      * @return
      *     possible object is
@@ -72,7 +72,7 @@ public class Persona
     }
 
     /**
-     * Define el valor de la propiedad apellido1.
+     * Sets the value of the apellido1 property.
      * 
      * @param value
      *     allowed object is
@@ -84,7 +84,7 @@ public class Persona
     }
 
     /**
-     * Obtiene el valor de la propiedad apellido2.
+     * Gets the value of the apellido2 property.
      * 
      * @return
      *     possible object is
@@ -96,7 +96,7 @@ public class Persona
     }
 
     /**
-     * Define el valor de la propiedad apellido2.
+     * Sets the value of the apellido2 property.
      * 
      * @param value
      *     allowed object is
@@ -108,7 +108,7 @@ public class Persona
     }
 
     /**
-     * Obtiene el valor de la propiedad identificacion.
+     * Gets the value of the identificacion property.
      * 
      * @return
      *     possible object is
@@ -120,7 +120,7 @@ public class Persona
     }
 
     /**
-     * Define el valor de la propiedad identificacion.
+     * Sets the value of the identificacion property.
      * 
      * @param value
      *     allowed object is
@@ -132,7 +132,7 @@ public class Persona
     }
 
     /**
-     * Obtiene el valor de la propiedad nombre.
+     * Gets the value of the nombre property.
      * 
      * @return
      *     possible object is
@@ -144,7 +144,7 @@ public class Persona
     }
 
     /**
-     * Define el valor de la propiedad nombre.
+     * Sets the value of the nombre property.
      * 
      * @param value
      *     allowed object is
@@ -156,7 +156,7 @@ public class Persona
     }
 
     /**
-     * Obtiene el valor de la propiedad tipoRegimenEconomico.
+     * Gets the value of the tipoRegimenEconomico property.
      * 
      * @return
      *     possible object is
@@ -168,7 +168,7 @@ public class Persona
     }
 
     /**
-     * Define el valor de la propiedad tipoRegimenEconomico.
+     * Sets the value of the tipoRegimenEconomico property.
      * 
      * @param value
      *     allowed object is
@@ -180,7 +180,7 @@ public class Persona
     }
 
     /**
-     * Obtiene el valor de la propiedad titulos.
+     * Gets the value of the titulos property.
      * 
      * @return
      *     possible object is
@@ -192,7 +192,7 @@ public class Persona
     }
 
     /**
-     * Define el valor de la propiedad titulos.
+     * Sets the value of the titulos property.
      * 
      * @param value
      *     allowed object is

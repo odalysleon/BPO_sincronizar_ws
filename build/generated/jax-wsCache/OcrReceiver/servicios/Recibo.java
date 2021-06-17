@@ -12,9 +12,9 @@ import javax.xml.datatype.XMLGregorianCalendar;
 
 
 /**
- * <p>Clase Java para Recibo complex type.
+ * <p>Java class for Recibo complex type.
  * 
- * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="Recibo">
@@ -79,7 +79,7 @@ public class Recibo
     protected String numeroPrestamo;
 
     /**
-     * Obtiene el valor de la propiedad capitalPendiente.
+     * Gets the value of the capitalPendiente property.
      * 
      * @return
      *     possible object is
@@ -91,7 +91,7 @@ public class Recibo
     }
 
     /**
-     * Define el valor de la propiedad capitalPendiente.
+     * Sets the value of the capitalPendiente property.
      * 
      * @param value
      *     allowed object is
@@ -103,7 +103,7 @@ public class Recibo
     }
 
     /**
-     * Obtiene el valor de la propiedad cuota.
+     * Gets the value of the cuota property.
      * 
      */
     public double getCuota() {
@@ -111,7 +111,7 @@ public class Recibo
     }
 
     /**
-     * Define el valor de la propiedad cuota.
+     * Sets the value of the cuota property.
      * 
      */
     public void setCuota(double value) {
@@ -119,7 +119,7 @@ public class Recibo
     }
 
     /**
-     * Obtiene el valor de la propiedad documento.
+     * Gets the value of the documento property.
      * 
      * @return
      *     possible object is
@@ -131,7 +131,7 @@ public class Recibo
     }
 
     /**
-     * Define el valor de la propiedad documento.
+     * Sets the value of the documento property.
      * 
      * @param value
      *     allowed object is
@@ -143,7 +143,7 @@ public class Recibo
     }
 
     /**
-     * Obtiene el valor de la propiedad entidadEmisora.
+     * Gets the value of the entidadEmisora property.
      * 
      * @return
      *     possible object is
@@ -155,7 +155,7 @@ public class Recibo
     }
 
     /**
-     * Define el valor de la propiedad entidadEmisora.
+     * Sets the value of the entidadEmisora property.
      * 
      * @param value
      *     allowed object is
@@ -167,7 +167,7 @@ public class Recibo
     }
 
     /**
-     * Obtiene el valor de la propiedad fechaRecibo.
+     * Gets the value of the fechaRecibo property.
      * 
      * @return
      *     possible object is
@@ -179,7 +179,7 @@ public class Recibo
     }
 
     /**
-     * Define el valor de la propiedad fechaRecibo.
+     * Sets the value of the fechaRecibo property.
      * 
      * @param value
      *     allowed object is
@@ -191,7 +191,7 @@ public class Recibo
     }
 
     /**
-     * Obtiene el valor de la propiedad fechaVencimiento.
+     * Gets the value of the fechaVencimiento property.
      * 
      * @return
      *     possible object is
@@ -203,7 +203,7 @@ public class Recibo
     }
 
     /**
-     * Define el valor de la propiedad fechaVencimiento.
+     * Sets the value of the fechaVencimiento property.
      * 
      * @param value
      *     allowed object is
@@ -215,7 +215,7 @@ public class Recibo
     }
 
     /**
-     * Obtiene el valor de la propiedad idSolicitudOCR.
+     * Gets the value of the idSolicitudOCR property.
      * 
      */
     public int getIdSolicitudOCR() {
@@ -223,7 +223,7 @@ public class Recibo
     }
 
     /**
-     * Define el valor de la propiedad idSolicitudOCR.
+     * Sets the value of the idSolicitudOCR property.
      * 
      */
     public void setIdSolicitudOCR(int value) {
@@ -231,7 +231,7 @@ public class Recibo
     }
 
     /**
-     * Obtiene el valor de la propiedad importePrestamo.
+     * Gets the value of the importePrestamo property.
      * 
      * @return
      *     possible object is
@@ -243,7 +243,7 @@ public class Recibo
     }
 
     /**
-     * Define el valor de la propiedad importePrestamo.
+     * Sets the value of the importePrestamo property.
      * 
      * @param value
      *     allowed object is
@@ -255,7 +255,7 @@ public class Recibo
     }
 
     /**
-     * Obtiene el valor de la propiedad nombre.
+     * Gets the value of the nombre property.
      * 
      * @return
      *     possible object is
@@ -267,7 +267,7 @@ public class Recibo
     }
 
     /**
-     * Define el valor de la propiedad nombre.
+     * Sets the value of the nombre property.
      * 
      * @param value
      *     allowed object is
@@ -279,7 +279,7 @@ public class Recibo
     }
 
     /**
-     * Obtiene el valor de la propiedad numeroPrestamo.
+     * Gets the value of the numeroPrestamo property.
      * 
      * @return
      *     possible object is
@@ -291,7 +291,7 @@ public class Recibo
     }
 
     /**
-     * Define el valor de la propiedad numeroPrestamo.
+     * Sets the value of the numeroPrestamo property.
      * 
      * @param value
      *     allowed object is

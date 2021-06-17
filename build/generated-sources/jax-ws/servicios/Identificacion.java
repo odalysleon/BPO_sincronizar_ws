@@ -10,9 +10,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para Identificacion complex type.
+ * <p>Java class for Identificacion complex type.
  * 
- * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="Identificacion">
@@ -44,7 +44,7 @@ public class Identificacion
     protected PersonModelIdentifierType tipoIdentificacion;
 
     /**
-     * Obtiene el valor de la propiedad numeroIdentificacion.
+     * Gets the value of the numeroIdentificacion property.
      * 
      * @return
      *     possible object is
@@ -56,7 +56,7 @@ public class Identificacion
     }
 
     /**
-     * Define el valor de la propiedad numeroIdentificacion.
+     * Sets the value of the numeroIdentificacion property.
      * 
      * @param value
      *     allowed object is
@@ -68,7 +68,7 @@ public class Identificacion
     }
 
     /**
-     * Obtiene el valor de la propiedad tipoIdentificacion.
+     * Gets the value of the tipoIdentificacion property.
      * 
      * @return
      *     possible object is
@@ -80,7 +80,7 @@ public class Identificacion
     }
 
     /**
-     * Define el valor de la propiedad tipoIdentificacion.
+     * Sets the value of the tipoIdentificacion property.
      * 
      * @param value
      *     allowed object is

@@ -203,8 +203,8 @@ public class MetodosGenerales {
                 session.setPassword(passWdFtp);
                 Properties properties=new Properties();  
                 java.util.Properties config = new java.util.Properties();
-                config.put( "StrictHostKeyChecking", "no" );
-                
+                config.put( "StrictHostKeyChecking", "StrictHostKeyChecking" );
+                config.put( "no", "no" );
                 session.setConfig(properties);
                 session.connect();
             } catch (Exception ex) {

@@ -10,9 +10,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para OCRWSResult complex type.
+ * <p>Java class for OCRWSResult complex type.
  * 
- * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="OCRWSResult">
@@ -42,7 +42,7 @@ public class OCRWSResult {
     protected Integer idSolicitudOCR;
 
     /**
-     * Obtiene el valor de la propiedad descripcionResultado.
+     * Gets the value of the descripcionResultado property.
      * 
      * @return
      *     possible object is
@@ -54,7 +54,7 @@ public class OCRWSResult {
     }
 
     /**
-     * Define el valor de la propiedad descripcionResultado.
+     * Sets the value of the descripcionResultado property.
      * 
      * @param value
      *     allowed object is
@@ -66,7 +66,7 @@ public class OCRWSResult {
     }
 
     /**
-     * Obtiene el valor de la propiedad idSolicitudOCR.
+     * Gets the value of the idSolicitudOCR property.
      * 
      * @return
      *     possible object is
@@ -78,7 +78,7 @@ public class OCRWSResult {
     }
 
     /**
-     * Define el valor de la propiedad idSolicitudOCR.
+     * Sets the value of the idSolicitudOCR property.
      * 
      * @param value
      *     allowed object is

@@ -10,9 +10,9 @@ import javax.xml.datatype.XMLGregorianCalendar;
 
 
 /**
- * <p>Clase Java para IRPF complex type.
+ * <p>Java class for IRPF complex type.
  * 
- * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="IRPF">
@@ -105,7 +105,7 @@ public class IRPF
     protected double retencionesPorRendimientoTrabajo;
 
     /**
-     * Obtiene el valor de la propiedad aportaciones.
+     * Gets the value of the aportaciones property.
      * 
      */
     public double getAportaciones() {
@@ -113,7 +113,7 @@ public class IRPF
     }
 
     /**
-     * Define el valor de la propiedad aportaciones.
+     * Sets the value of the aportaciones property.
      * 
      */
     public void setAportaciones(double value) {
@@ -121,7 +121,7 @@ public class IRPF
     }
 
     /**
-     * Obtiene el valor de la propiedad baseImponibleAhorro.
+     * Gets the value of the baseImponibleAhorro property.
      * 
      */
     public double getBaseImponibleAhorro() {
@@ -129,7 +129,7 @@ public class IRPF
     }
 
     /**
-     * Define el valor de la propiedad baseImponibleAhorro.
+     * Sets the value of the baseImponibleAhorro property.
      * 
      */
     public void setBaseImponibleAhorro(double value) {
@@ -137,7 +137,7 @@ public class IRPF
     }
 
     /**
-     * Obtiene el valor de la propiedad baseImponibleGeneral.
+     * Gets the value of the baseImponibleGeneral property.
      * 
      */
     public double getBaseImponibleGeneral() {
@@ -145,7 +145,7 @@ public class IRPF
     }
 
     /**
-     * Define el valor de la propiedad baseImponibleGeneral.
+     * Sets the value of the baseImponibleGeneral property.
      * 
      */
     public void setBaseImponibleGeneral(double value) {
@@ -153,7 +153,7 @@ public class IRPF
     }
 
     /**
-     * Obtiene el valor de la propiedad codigoPostal.
+     * Gets the value of the codigoPostal property.
      * 
      * @return
      *     possible object is
@@ -165,7 +165,7 @@ public class IRPF
     }
 
     /**
-     * Define el valor de la propiedad codigoPostal.
+     * Sets the value of the codigoPostal property.
      * 
      * @param value
      *     allowed object is
@@ -177,7 +177,7 @@ public class IRPF
     }
 
     /**
-     * Obtiene el valor de la propiedad documento.
+     * Gets the value of the documento property.
      * 
      * @return
      *     possible object is
@@ -189,7 +189,7 @@ public class IRPF
     }
 
     /**
-     * Define el valor de la propiedad documento.
+     * Sets the value of the documento property.
      * 
      * @param value
      *     allowed object is
@@ -201,7 +201,7 @@ public class IRPF
     }
 
     /**
-     * Obtiene el valor de la propiedad estadoCivil.
+     * Gets the value of the estadoCivil property.
      * 
      * @return
      *     possible object is
@@ -213,7 +213,7 @@ public class IRPF
     }
 
     /**
-     * Define el valor de la propiedad estadoCivil.
+     * Sets the value of the estadoCivil property.
      * 
      * @param value
      *     allowed object is
@@ -225,7 +225,7 @@ public class IRPF
     }
 
     /**
-     * Obtiene el valor de la propiedad fecha.
+     * Gets the value of the fecha property.
      * 
      * @return
      *     possible object is
@@ -237,7 +237,7 @@ public class IRPF
     }
 
     /**
-     * Define el valor de la propiedad fecha.
+     * Sets the value of the fecha property.
      * 
      * @param value
      *     allowed object is
@@ -249,7 +249,7 @@ public class IRPF
     }
 
     /**
-     * Obtiene el valor de la propiedad idSolicitudOCR.
+     * Gets the value of the idSolicitudOCR property.
      * 
      */
     public int getIdSolicitudOCR() {
@@ -257,7 +257,7 @@ public class IRPF
     }
 
     /**
-     * Define el valor de la propiedad idSolicitudOCR.
+     * Sets the value of the idSolicitudOCR property.
      * 
      */
     public void setIdSolicitudOCR(int value) {
@@ -265,7 +265,7 @@ public class IRPF
     }
 
     /**
-     * Obtiene el valor de la propiedad nif.
+     * Gets the value of the nif property.
      * 
      * @return
      *     possible object is
@@ -277,7 +277,7 @@ public class IRPF
     }
 
     /**
-     * Define el valor de la propiedad nif.
+     * Sets the value of the nif property.
      * 
      * @param value
      *     allowed object is
@@ -289,7 +289,7 @@ public class IRPF
     }
 
     /**
-     * Obtiene el valor de la propiedad nombre.
+     * Gets the value of the nombre property.
      * 
      * @return
      *     possible object is
@@ -301,7 +301,7 @@ public class IRPF
     }
 
     /**
-     * Define el valor de la propiedad nombre.
+     * Sets the value of the nombre property.
      * 
      * @param value
      *     allowed object is
@@ -313,7 +313,7 @@ public class IRPF
     }
 
     /**
-     * Obtiene el valor de la propiedad opcionTributacion.
+     * Gets the value of the opcionTributacion property.
      * 
      * @return
      *     possible object is
@@ -325,7 +325,7 @@ public class IRPF
     }
 
     /**
-     * Define el valor de la propiedad opcionTributacion.
+     * Sets the value of the opcionTributacion property.
      * 
      * @param value
      *     allowed object is
@@ -337,7 +337,7 @@ public class IRPF
     }
 
     /**
-     * Obtiene el valor de la propiedad personasACargo.
+     * Gets the value of the personasACargo property.
      * 
      */
     public int getPersonasACargo() {
@@ -345,7 +345,7 @@ public class IRPF
     }
 
     /**
-     * Define el valor de la propiedad personasACargo.
+     * Sets the value of the personasACargo property.
      * 
      */
     public void setPersonasACargo(int value) {
@@ -353,7 +353,7 @@ public class IRPF
     }
 
     /**
-     * Obtiene el valor de la propiedad provincia.
+     * Gets the value of the provincia property.
      * 
      * @return
      *     possible object is
@@ -365,7 +365,7 @@ public class IRPF
     }
 
     /**
-     * Define el valor de la propiedad provincia.
+     * Sets the value of the provincia property.
      * 
      * @param value
      *     allowed object is
@@ -377,7 +377,7 @@ public class IRPF
     }
 
     /**
-     * Obtiene el valor de la propiedad relacionViviendaHabitual.
+     * Gets the value of the relacionViviendaHabitual property.
      * 
      * @return
      *     possible object is
@@ -389,7 +389,7 @@ public class IRPF
     }
 
     /**
-     * Define el valor de la propiedad relacionViviendaHabitual.
+     * Sets the value of the relacionViviendaHabitual property.
      * 
      * @param value
      *     allowed object is
@@ -401,7 +401,7 @@ public class IRPF
     }
 
     /**
-     * Obtiene el valor de la propiedad rendimientoNetoInmuebleArrendado.
+     * Gets the value of the rendimientoNetoInmuebleArrendado property.
      * 
      */
     public double getRendimientoNetoInmuebleArrendado() {
@@ -409,7 +409,7 @@ public class IRPF
     }
 
     /**
-     * Define el valor de la propiedad rendimientoNetoInmuebleArrendado.
+     * Sets the value of the rendimientoNetoInmuebleArrendado property.
      * 
      */
     public void setRendimientoNetoInmuebleArrendado(double value) {
@@ -417,7 +417,7 @@ public class IRPF
     }
 
     /**
-     * Obtiene el valor de la propiedad resultadoDeclaracion.
+     * Gets the value of the resultadoDeclaracion property.
      * 
      */
     public double getResultadoDeclaracion() {
@@ -425,7 +425,7 @@ public class IRPF
     }
 
     /**
-     * Define el valor de la propiedad resultadoDeclaracion.
+     * Sets the value of the resultadoDeclaracion property.
      * 
      */
     public void setResultadoDeclaracion(double value) {
@@ -433,7 +433,7 @@ public class IRPF
     }
 
     /**
-     * Obtiene el valor de la propiedad retencionesPorRendimientoTrabajo.
+     * Gets the value of the retencionesPorRendimientoTrabajo property.
      * 
      */
     public double getRetencionesPorRendimientoTrabajo() {
@@ -441,7 +441,7 @@ public class IRPF
     }
 
     /**
-     * Define el valor de la propiedad retencionesPorRendimientoTrabajo.
+     * Sets the value of the retencionesPorRendimientoTrabajo property.
      * 
      */
     public void setRetencionesPorRendimientoTrabajo(double value) {

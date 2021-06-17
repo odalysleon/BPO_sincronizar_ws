@@ -8,9 +8,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para OCRBase complex type.
+ * <p>Java class for OCRBase complex type.
  * 
- * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="OCRBase">
@@ -28,23 +28,23 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "OCRBase")
 @XmlSeeAlso({
-    Tasacion.class,
-    Finca.class,
-    Identificacion.class,
-    Condicionante.class,
-    Titulo.class,
-    NotaSimple.class,
-    Advertencia.class,
-    Recibo.class,
-    NotaSimpleNodulos.class,
     Anejo.class,
-    Persona.class,
-    FincaTasacion.class,
-    VidaLaboral.class,
-    Carga.class,
+    Condicionante.class,
+    Advertencia.class,
+    NotaSimple.class,
     FincaTitular.class,
-    Nomina.class,
-    IRPF.class
+    FincaTasacion.class,
+    Tasacion.class,
+    NotaSimpleNodulos.class,
+    Recibo.class,
+    Titulo.class,
+    Identificacion.class,
+    Persona.class,
+    Finca.class,
+    VidaLaboral.class,
+    IRPF.class,
+    Carga.class,
+    Nomina.class
 })
 public class OCRBase
     extends BaseModel

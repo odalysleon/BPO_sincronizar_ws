@@ -274,6 +274,7 @@ public class TimerTaskSchedule {
      * 
      */
     public void setTimerTaskSchedule(/*final ChannelSftp channelSftp, final ChannelSftp channelSftpTech*/) {
+       
         final Timer timer;
         timer = new Timer();
         
