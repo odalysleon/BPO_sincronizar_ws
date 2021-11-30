@@ -10,9 +10,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para anonymous complex type.
+ * <p>Java class for anonymous complex type.
  * 
- * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType>
@@ -39,7 +39,7 @@ public class ReceiveNotasSimplesNodulos {
     protected JAXBElement<ArrayOfNotaSimpleNodulos> notasSimples;
 
     /**
-     * Obtiene el valor de la propiedad notasSimples.
+     * Gets the value of the notasSimples property.
      * 
      * @return
      *     possible object is
@@ -51,7 +51,7 @@ public class ReceiveNotasSimplesNodulos {
     }
 
     /**
-     * Define el valor de la propiedad notasSimples.
+     * Sets the value of the notasSimples property.
      * 
      * @param value
      *     allowed object is

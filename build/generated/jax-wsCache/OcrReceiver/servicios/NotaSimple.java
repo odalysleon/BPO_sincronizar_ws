@@ -12,9 +12,9 @@ import javax.xml.datatype.XMLGregorianCalendar;
 
 
 /**
- * <p>Clase Java para NotaSimple complex type.
+ * <p>Java class for NotaSimple complex type.
  * 
- * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="NotaSimple">
@@ -63,7 +63,7 @@ public class NotaSimple
     protected JAXBElement<ArrayOfFincaTitular> titulares;
 
     /**
-     * Obtiene el valor de la propiedad anejos.
+     * Gets the value of the anejos property.
      * 
      * @return
      *     possible object is
@@ -75,7 +75,7 @@ public class NotaSimple
     }
 
     /**
-     * Define el valor de la propiedad anejos.
+     * Sets the value of the anejos property.
      * 
      * @param value
      *     allowed object is
@@ -87,7 +87,7 @@ public class NotaSimple
     }
 
     /**
-     * Obtiene el valor de la propiedad documento.
+     * Gets the value of the documento property.
      * 
      * @return
      *     possible object is
@@ -99,7 +99,7 @@ public class NotaSimple
     }
 
     /**
-     * Define el valor de la propiedad documento.
+     * Sets the value of the documento property.
      * 
      * @param value
      *     allowed object is
@@ -111,7 +111,7 @@ public class NotaSimple
     }
 
     /**
-     * Obtiene el valor de la propiedad fechaNotaSimple.
+     * Gets the value of the fechaNotaSimple property.
      * 
      * @return
      *     possible object is
@@ -123,7 +123,7 @@ public class NotaSimple
     }
 
     /**
-     * Define el valor de la propiedad fechaNotaSimple.
+     * Sets the value of the fechaNotaSimple property.
      * 
      * @param value
      *     allowed object is
@@ -135,7 +135,7 @@ public class NotaSimple
     }
 
     /**
-     * Obtiene el valor de la propiedad finca.
+     * Gets the value of the finca property.
      * 
      * @return
      *     possible object is
@@ -147,7 +147,7 @@ public class NotaSimple
     }
 
     /**
-     * Define el valor de la propiedad finca.
+     * Sets the value of the finca property.
      * 
      * @param value
      *     allowed object is
@@ -159,7 +159,7 @@ public class NotaSimple
     }
 
     /**
-     * Obtiene el valor de la propiedad idSolicitudOCR.
+     * Gets the value of the idSolicitudOCR property.
      * 
      * @return
      *     possible object is
@@ -171,7 +171,7 @@ public class NotaSimple
     }
 
     /**
-     * Define el valor de la propiedad idSolicitudOCR.
+     * Sets the value of the idSolicitudOCR property.
      * 
      * @param value
      *     allowed object is
@@ -183,7 +183,7 @@ public class NotaSimple
     }
 
     /**
-     * Obtiene el valor de la propiedad titulares.
+     * Gets the value of the titulares property.
      * 
      * @return
      *     possible object is
@@ -195,7 +195,7 @@ public class NotaSimple
     }
 
     /**
-     * Define el valor de la propiedad titulares.
+     * Sets the value of the titulares property.
      * 
      * @param value
      *     allowed object is

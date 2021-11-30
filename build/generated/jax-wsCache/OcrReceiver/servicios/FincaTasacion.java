@@ -9,9 +9,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para FincaTasacion complex type.
+ * <p>Java class for FincaTasacion complex type.
  * 
- * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="FincaTasacion">
@@ -59,7 +59,7 @@ public class FincaTasacion
     protected JAXBElement<Double> valorTasacion;
 
     /**
-     * Obtiene el valor de la propiedad anejos.
+     * Gets the value of the anejos property.
      * 
      * @return
      *     possible object is
@@ -71,7 +71,7 @@ public class FincaTasacion
     }
 
     /**
-     * Define el valor de la propiedad anejos.
+     * Sets the value of the anejos property.
      * 
      * @param value
      *     allowed object is
@@ -83,7 +83,7 @@ public class FincaTasacion
     }
 
     /**
-     * Obtiene el valor de la propiedad finca.
+     * Gets the value of the finca property.
      * 
      * @return
      *     possible object is
@@ -95,7 +95,7 @@ public class FincaTasacion
     }
 
     /**
-     * Define el valor de la propiedad finca.
+     * Sets the value of the finca property.
      * 
      * @param value
      *     allowed object is
@@ -107,7 +107,7 @@ public class FincaTasacion
     }
 
     /**
-     * Obtiene el valor de la propiedad idTasacion.
+     * Gets the value of the idTasacion property.
      * 
      * @return
      *     possible object is
@@ -119,7 +119,7 @@ public class FincaTasacion
     }
 
     /**
-     * Define el valor de la propiedad idTasacion.
+     * Sets the value of the idTasacion property.
      * 
      * @param value
      *     allowed object is
@@ -131,7 +131,7 @@ public class FincaTasacion
     }
 
     /**
-     * Obtiene el valor de la propiedad titulares.
+     * Gets the value of the titulares property.
      * 
      * @return
      *     possible object is
@@ -143,7 +143,7 @@ public class FincaTasacion
     }
 
     /**
-     * Define el valor de la propiedad titulares.
+     * Sets the value of the titulares property.
      * 
      * @param value
      *     allowed object is
@@ -155,7 +155,7 @@ public class FincaTasacion
     }
 
     /**
-     * Obtiene el valor de la propiedad valorHipotecario.
+     * Gets the value of the valorHipotecario property.
      * 
      * @return
      *     possible object is
@@ -167,7 +167,7 @@ public class FincaTasacion
     }
 
     /**
-     * Define el valor de la propiedad valorHipotecario.
+     * Sets the value of the valorHipotecario property.
      * 
      * @param value
      *     allowed object is
@@ -179,7 +179,7 @@ public class FincaTasacion
     }
 
     /**
-     * Obtiene el valor de la propiedad valorTasacion.
+     * Gets the value of the valorTasacion property.
      * 
      * @return
      *     possible object is
@@ -191,7 +191,7 @@ public class FincaTasacion
     }
 
     /**
-     * Define el valor de la propiedad valorTasacion.
+     * Sets the value of the valorTasacion property.
      * 
      * @param value
      *     allowed object is

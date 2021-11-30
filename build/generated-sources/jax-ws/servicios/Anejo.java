@@ -8,9 +8,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para Anejo complex type.
+ * <p>Java class for Anejo complex type.
  * 
- * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="Anejo">
@@ -50,7 +50,7 @@ public class Anejo
     protected Double valoracion;
 
     /**
-     * Obtiene el valor de la propiedad superficieConstruida.
+     * Gets the value of the superficieConstruida property.
      * 
      * @return
      *     possible object is
@@ -62,7 +62,7 @@ public class Anejo
     }
 
     /**
-     * Define el valor de la propiedad superficieConstruida.
+     * Sets the value of the superficieConstruida property.
      * 
      * @param value
      *     allowed object is
@@ -74,7 +74,7 @@ public class Anejo
     }
 
     /**
-     * Obtiene el valor de la propiedad superficieUtil.
+     * Gets the value of the superficieUtil property.
      * 
      * @return
      *     possible object is
@@ -86,7 +86,7 @@ public class Anejo
     }
 
     /**
-     * Define el valor de la propiedad superficieUtil.
+     * Sets the value of the superficieUtil property.
      * 
      * @param value
      *     allowed object is
@@ -98,7 +98,7 @@ public class Anejo
     }
 
     /**
-     * Obtiene el valor de la propiedad tipoFinca.
+     * Gets the value of the tipoFinca property.
      * 
      * @return
      *     possible object is
@@ -110,7 +110,7 @@ public class Anejo
     }
 
     /**
-     * Define el valor de la propiedad tipoFinca.
+     * Sets the value of the tipoFinca property.
      * 
      * @param value
      *     allowed object is
@@ -122,7 +122,7 @@ public class Anejo
     }
 
     /**
-     * Obtiene el valor de la propiedad valoracion.
+     * Gets the value of the valoracion property.
      * 
      * @return
      *     possible object is
@@ -134,7 +134,7 @@ public class Anejo
     }
 
     /**
-     * Define el valor de la propiedad valoracion.
+     * Sets the value of the valoracion property.
      * 
      * @param value
      *     allowed object is

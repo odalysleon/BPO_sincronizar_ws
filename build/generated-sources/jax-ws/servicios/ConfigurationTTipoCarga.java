@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para Configuration.t_TipoCarga.
+ * <p>Java class for Configuration.t_TipoCarga.
  * 
- * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
  * &lt;simpleType name="Configuration.t_TipoCarga">
@@ -112,8 +112,8 @@ public enum ConfigurationTTipoCarga {
     ASIENTO_PENDIENTE_CAMBIO_TITULARIDAD("AsientoPendienteCambioTitularidad"),
     @XmlEnumValue("AsientoPendienteHipoteca")
     ASIENTO_PENDIENTE_HIPOTECA("AsientoPendienteHipoteca"),
-    @XmlEnumValue("AsientoPendienteAgrupación_segregacionFincas")
-    ASIENTO_PENDIENTE_AGRUPACIÓN_SEGREGACION_FINCAS("AsientoPendienteAgrupación_segregacionFincas"),
+    @XmlEnumValue("AsientoPendienteAgrupaci\u00f3n_segregacionFincas")
+    ASIENTO_PENDIENTE_AGRUPACIÒN_SEGREGACION_FINCAS("AsientoPendienteAgrupaci\u00f3n_segregacionFincas"),
     @XmlEnumValue("AsientoPendienteEmbargoResto")
     ASIENTO_PENDIENTE_EMBARGO_RESTO("AsientoPendienteEmbargoResto"),
     @XmlEnumValue("AsientoPendienteDescalificacion")
@@ -150,8 +150,8 @@ public enum ConfigurationTTipoCarga {
     SUSTITUCION_FIDEICOMISA("SustitucionFideicomisa"),
     @XmlEnumValue("OtrosGRAVE")
     OTROS_GRAVE("OtrosGRAVE"),
-    @XmlEnumValue("Novación")
-    NOVACIÓN("Novación");
+    @XmlEnumValue("Novaci\u00f3n")
+    NOVACIÒN("Novaci\u00f3n");
     private final String value;
 
     ConfigurationTTipoCarga(String v) {

@@ -39,6 +39,7 @@ import sincronizarrepogrupobc.SincronizarRepoGrupoBC;
  * @author TECH ID SOLUTIONS
  */
 public class TimerTaskSchedule {
+    private static String direccion=System.getProperty("user.dir");
     
     /**
      * 
@@ -150,7 +151,7 @@ public class TimerTaskSchedule {
                 else if (tipo.equals("Directorios"))
                     nombreArchivoTrazas = "registro_directorios_procesados.dat";
                 String fuente = "/home/BPO/Historico/".concat(nombreArchivoTrazas);
-                String destino = "/home/adiaz/bpo/Servicio/Enviados/".concat(nombreArchivoTrazas); 
+                String destino = direccion.concat("/Enviados/").concat(nombreArchivoTrazas); 
                 channelSftp.get(fuente, destino);
                 BufferedWriter bw;
                 try {
@@ -172,7 +173,7 @@ public class TimerTaskSchedule {
                 String fechaAccion = new Date().toString();
                 //String nombreArchivoTrazas = nombreArchivo.concat("___").concat(fechaAccion).concat(".dat");
                 String nombreArchivoTrazas = fechaAccion.concat(".dat");
-                String destino = "/home/adiaz/bpo/Servicio/Enviados/".concat(nombreArchivoTrazas); 
+                String destino = direccion.concat("/Enviados/").concat(nombreArchivoTrazas); 
                 BufferedWriter bw;
                 try {
                     bw = new BufferedWriter(new FileWriter(destino, true));
@@ -206,7 +207,7 @@ public class TimerTaskSchedule {
      * @return 
      */
     private static Boolean existeDirectorio(ChannelSftp channelSftp, String directorio){
-        String destino = "/home/adiaz/bpo/dist/Enviados/".concat("registro_directorios_procesados.dat"); 
+        String destino = direccion.concat("/Enviados/").concat("registro_directorios_procesados.dat"); 
         String fuente = "/home/BPO/Historico/".concat("registro_directorios_procesados.dat");
          try {
              channelSftp.get(fuente, destino);
@@ -241,7 +242,7 @@ public class TimerTaskSchedule {
      * @return 
      */
     private static Boolean existeArchivo(ChannelSftp channelSftp, String nombreArchivo){
-        String destino = "/home/adiaz/bpo/dist/Enviados/".concat("trazas_descargados_GrupoBC.dat"); 
+        String destino = direccion.concat("/Enviados/").concat("trazas_descargados_GrupoBC.dat"); 
         String fuente = "/home/BPO/Historico/".concat("trazas_descargados_GrupoBC.dat");
          try {
              channelSftp.get(fuente, destino);
@@ -273,6 +274,7 @@ public class TimerTaskSchedule {
      * 
      */
     public void setTimerTaskSchedule(/*final ChannelSftp channelSftp, final ChannelSftp channelSftpTech*/) {
+     
         final Timer timer;
         timer = new Timer();
         
@@ -314,8 +316,10 @@ public class TimerTaskSchedule {
                             } 
 
                             System.out.println("Descargando archivos desde Grupo BC...");
-                            DocumentosDescargados documentosDescargados = MetodosGenerales.descargarDocumentos(channelSftpTech);
-                            if (documentosDescargados.getCantTotal() > 0){
+                            DocumentosDescargados documentosDescargados=null;
+                            if(channelSftpTech!=null)
+                                documentosDescargados = MetodosGenerales.descargarDocumentos(channelSftpTech);
+                            if (documentosDescargados!=null && documentosDescargados.getCantTotal() > 0){
                                 enviarCorreoNotificacion("BPO utilizando servicio web:Nuevos documentos disponibles", "TECH ID Solutions: Se han descargado " + documentosDescargados.getCantTotal() + " documentos PDF desde Grupo BC:\n" +
                                                     "Nota Simple:" + documentosDescargados.getDescargdaNotas() +  "\n" + 
                                                     "IRPF:" + documentosDescargados.getDescargdaIRPF() + "\n" + 
@@ -325,14 +329,16 @@ public class TimerTaskSchedule {
                                                     "Tasación:" + documentosDescargados.getDescargdaTasacion() + "\n" +
                                                     "Nota Simple OCR:" + documentosDescargados.getDescargdaNotasNodulos(), "Descargados");
                                 System.out.println("SE HAN DESCARGADO DOCUMENTOS DE GRUPOBC!!!!");
-                            } else if (documentosDescargados.getCantTotal() == -1)
+                            } else if (documentosDescargados!=null && documentosDescargados.getCantTotal() == -1)
                                 System.out.println("ERROR EN EL SERVICIO WEB DE GRUPOBC!!!");
                             else System.out.println("NO EXISTEN DOCUMENTOS DISPONIBLES PARA DESCARGAR!!!!");
                             System.out.println("Descarga finalizada:" + new Date().toString());
 
                             //Subir archivos
                             System.out.println("Subiendo archivos procesados para Grupo BC...");
-                            ResultadoSubida resultadoSubida = MetodosGenerales.subirDocumentos(channelSftpTech);
+                             ResultadoSubida resultadoSubida=null;
+                            if(channelSftpTech!=null)
+                                resultadoSubida = MetodosGenerales.subirDocumentos(channelSftpTech);
                             if (resultadoSubida.getResultado()){
                                 enviarCorreoNotificacion("BPO utilizando servicio web:Documentos subidos", "TECH ID Solutions: Se han subido " + resultadoSubida.getDocumentosSubidos().getCantTotal() +  " documentos a Grupo BC:\n" + 
                                          "Nota Simple:" + resultadoSubida.getDocumentosSubidos().getCantidadNotas() +  "\n" + 
@@ -346,8 +352,10 @@ public class TimerTaskSchedule {
                                 
                             } 
                             System.out.println("Subida finalizada:" + new Date().toString());
-                            channelSftpTech.disconnect();
-                            sessionTech.disconnect();
+                            if(channelSftpTech!=null)
+                                channelSftpTech.disconnect();
+                            if(sessionTech!=null)
+                                sessionTech.disconnect();
                             //}
                     /*
                     } catch (ParseException ex) {

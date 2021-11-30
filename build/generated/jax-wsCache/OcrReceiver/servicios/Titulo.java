@@ -12,9 +12,9 @@ import javax.xml.datatype.XMLGregorianCalendar;
 
 
 /**
- * <p>Clase Java para Titulo complex type.
+ * <p>Java class for Titulo complex type.
  * 
- * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="Titulo">
@@ -80,7 +80,7 @@ public class Titulo
     protected ConfigurationTTipoTitulosPropiedad tipoTituloPropiedad;
 
     /**
-     * Obtiene el valor de la propiedad fechaEscritura.
+     * Gets the value of the fechaEscritura property.
      * 
      * @return
      *     possible object is
@@ -92,7 +92,7 @@ public class Titulo
     }
 
     /**
-     * Define el valor de la propiedad fechaEscritura.
+     * Sets the value of the fechaEscritura property.
      * 
      * @param value
      *     allowed object is
@@ -104,7 +104,7 @@ public class Titulo
     }
 
     /**
-     * Obtiene el valor de la propiedad fechaInscripcion.
+     * Gets the value of the fechaInscripcion property.
      * 
      * @return
      *     possible object is
@@ -116,7 +116,7 @@ public class Titulo
     }
 
     /**
-     * Define el valor de la propiedad fechaInscripcion.
+     * Sets the value of the fechaInscripcion property.
      * 
      * @param value
      *     allowed object is
@@ -128,7 +128,7 @@ public class Titulo
     }
 
     /**
-     * Obtiene el valor de la propiedad idPersona.
+     * Gets the value of the idPersona property.
      * 
      * @return
      *     possible object is
@@ -140,7 +140,7 @@ public class Titulo
     }
 
     /**
-     * Define el valor de la propiedad idPersona.
+     * Sets the value of the idPersona property.
      * 
      * @param value
      *     allowed object is
@@ -152,7 +152,7 @@ public class Titulo
     }
 
     /**
-     * Obtiene el valor de la propiedad notaria.
+     * Gets the value of the notaria property.
      * 
      * @return
      *     possible object is
@@ -164,7 +164,7 @@ public class Titulo
     }
 
     /**
-     * Define el valor de la propiedad notaria.
+     * Sets the value of the notaria property.
      * 
      * @param value
      *     allowed object is
@@ -176,7 +176,7 @@ public class Titulo
     }
 
     /**
-     * Obtiene el valor de la propiedad numeroInscripcion.
+     * Gets the value of the numeroInscripcion property.
      * 
      * @return
      *     possible object is
@@ -188,7 +188,7 @@ public class Titulo
     }
 
     /**
-     * Define el valor de la propiedad numeroInscripcion.
+     * Sets the value of the numeroInscripcion property.
      * 
      * @param value
      *     allowed object is
@@ -200,7 +200,7 @@ public class Titulo
     }
 
     /**
-     * Obtiene el valor de la propiedad porcentajeParticipacion.
+     * Gets the value of the porcentajeParticipacion property.
      * 
      * @return
      *     possible object is
@@ -212,7 +212,7 @@ public class Titulo
     }
 
     /**
-     * Define el valor de la propiedad porcentajeParticipacion.
+     * Sets the value of the porcentajeParticipacion property.
      * 
      * @param value
      *     allowed object is
@@ -224,7 +224,7 @@ public class Titulo
     }
 
     /**
-     * Obtiene el valor de la propiedad protocolo.
+     * Gets the value of the protocolo property.
      * 
      * @return
      *     possible object is
@@ -236,7 +236,7 @@ public class Titulo
     }
 
     /**
-     * Define el valor de la propiedad protocolo.
+     * Sets the value of the protocolo property.
      * 
      * @param value
      *     allowed object is
@@ -248,7 +248,7 @@ public class Titulo
     }
 
     /**
-     * Obtiene el valor de la propiedad tipoParticipacion.
+     * Gets the value of the tipoParticipacion property.
      * 
      * @return
      *     possible object is
@@ -260,7 +260,7 @@ public class Titulo
     }
 
     /**
-     * Define el valor de la propiedad tipoParticipacion.
+     * Sets the value of the tipoParticipacion property.
      * 
      * @param value
      *     allowed object is
@@ -272,7 +272,7 @@ public class Titulo
     }
 
     /**
-     * Obtiene el valor de la propiedad tipoPropiedad.
+     * Gets the value of the tipoPropiedad property.
      * 
      * @return
      *     possible object is
@@ -284,7 +284,7 @@ public class Titulo
     }
 
     /**
-     * Define el valor de la propiedad tipoPropiedad.
+     * Sets the value of the tipoPropiedad property.
      * 
      * @param value
      *     allowed object is
@@ -296,7 +296,7 @@ public class Titulo
     }
 
     /**
-     * Obtiene el valor de la propiedad tipoTituloPropiedad.
+     * Gets the value of the tipoTituloPropiedad property.
      * 
      * @return
      *     possible object is
@@ -308,7 +308,7 @@ public class Titulo
     }
 
     /**
-     * Define el valor de la propiedad tipoTituloPropiedad.
+     * Sets the value of the tipoTituloPropiedad property.
      * 
      * @param value
      *     allowed object is

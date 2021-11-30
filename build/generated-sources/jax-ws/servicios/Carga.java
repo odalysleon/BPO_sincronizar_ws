@@ -11,9 +11,9 @@ import javax.xml.datatype.XMLGregorianCalendar;
 
 
 /**
- * <p>Clase Java para Carga complex type.
+ * <p>Java class for Carga complex type.
  * 
- * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="Carga">
@@ -185,7 +185,7 @@ public class Carga
     protected Integer tomo;
 
     /**
-     * Obtiene el valor de la propiedad auto.
+     * Gets the value of the auto property.
      * 
      * @return
      *     possible object is
@@ -197,7 +197,7 @@ public class Carga
     }
 
     /**
-     * Define el valor de la propiedad auto.
+     * Sets the value of the auto property.
      * 
      * @param value
      *     allowed object is
@@ -209,7 +209,7 @@ public class Carga
     }
 
     /**
-     * Obtiene el valor de la propiedad beneficiarioCesion.
+     * Gets the value of the beneficiarioCesion property.
      * 
      * @return
      *     possible object is
@@ -221,7 +221,7 @@ public class Carga
     }
 
     /**
-     * Define el valor de la propiedad beneficiarioCesion.
+     * Sets the value of the beneficiarioCesion property.
      * 
      * @param value
      *     allowed object is
@@ -233,7 +233,7 @@ public class Carga
     }
 
     /**
-     * Obtiene el valor de la propiedad beneficiarioHipoteca.
+     * Gets the value of the beneficiarioHipoteca property.
      * 
      * @return
      *     possible object is
@@ -245,7 +245,7 @@ public class Carga
     }
 
     /**
-     * Define el valor de la propiedad beneficiarioHipoteca.
+     * Sets the value of the beneficiarioHipoteca property.
      * 
      * @param value
      *     allowed object is
@@ -257,7 +257,7 @@ public class Carga
     }
 
     /**
-     * Obtiene el valor de la propiedad beneficiarioHipotecaBanco.
+     * Gets the value of the beneficiarioHipotecaBanco property.
      * 
      * @return
      *     possible object is
@@ -269,7 +269,7 @@ public class Carga
     }
 
     /**
-     * Define el valor de la propiedad beneficiarioHipotecaBanco.
+     * Sets the value of the beneficiarioHipotecaBanco property.
      * 
      * @param value
      *     allowed object is
@@ -281,7 +281,7 @@ public class Carga
     }
 
     /**
-     * Obtiene el valor de la propiedad certificacionDominio.
+     * Gets the value of the certificacionDominio property.
      * 
      * @return
      *     possible object is
@@ -293,7 +293,7 @@ public class Carga
     }
 
     /**
-     * Define el valor de la propiedad certificacionDominio.
+     * Sets the value of the certificacionDominio property.
      * 
      * @param value
      *     allowed object is
@@ -305,7 +305,7 @@ public class Carga
     }
 
     /**
-     * Obtiene el valor de la propiedad cesion.
+     * Gets the value of the cesion property.
      * 
      * @return
      *     possible object is
@@ -317,7 +317,7 @@ public class Carga
     }
 
     /**
-     * Define el valor de la propiedad cesion.
+     * Sets the value of the cesion property.
      * 
      * @param value
      *     allowed object is
@@ -329,7 +329,7 @@ public class Carga
     }
 
     /**
-     * Obtiene el valor de la propiedad descripcionNovacion.
+     * Gets the value of the descripcionNovacion property.
      * 
      * @return
      *     possible object is
@@ -341,7 +341,7 @@ public class Carga
     }
 
     /**
-     * Define el valor de la propiedad descripcionNovacion.
+     * Sets the value of the descripcionNovacion property.
      * 
      * @param value
      *     allowed object is
@@ -353,7 +353,7 @@ public class Carga
     }
 
     /**
-     * Obtiene el valor de la propiedad fechaAuto.
+     * Gets the value of the fechaAuto property.
      * 
      * @return
      *     possible object is
@@ -365,7 +365,7 @@ public class Carga
     }
 
     /**
-     * Define el valor de la propiedad fechaAuto.
+     * Sets the value of the fechaAuto property.
      * 
      * @param value
      *     allowed object is
@@ -377,7 +377,7 @@ public class Carga
     }
 
     /**
-     * Obtiene el valor de la propiedad fechaCertificacion.
+     * Gets the value of the fechaCertificacion property.
      * 
      * @return
      *     possible object is
@@ -389,7 +389,7 @@ public class Carga
     }
 
     /**
-     * Define el valor de la propiedad fechaCertificacion.
+     * Sets the value of the fechaCertificacion property.
      * 
      * @param value
      *     allowed object is
@@ -401,7 +401,7 @@ public class Carga
     }
 
     /**
-     * Obtiene el valor de la propiedad fechaCesion.
+     * Gets the value of the fechaCesion property.
      * 
      * @return
      *     possible object is
@@ -413,7 +413,7 @@ public class Carga
     }
 
     /**
-     * Define el valor de la propiedad fechaCesion.
+     * Sets the value of the fechaCesion property.
      * 
      * @param value
      *     allowed object is
@@ -425,7 +425,7 @@ public class Carga
     }
 
     /**
-     * Obtiene el valor de la propiedad fechaEscritura.
+     * Gets the value of the fechaEscritura property.
      * 
      * @return
      *     possible object is
@@ -437,7 +437,7 @@ public class Carga
     }
 
     /**
-     * Define el valor de la propiedad fechaEscritura.
+     * Sets the value of the fechaEscritura property.
      * 
      * @param value
      *     allowed object is
@@ -449,7 +449,7 @@ public class Carga
     }
 
     /**
-     * Obtiene el valor de la propiedad fechaInscripcionCarga.
+     * Gets the value of the fechaInscripcionCarga property.
      * 
      * @return
      *     possible object is
@@ -461,7 +461,7 @@ public class Carga
     }
 
     /**
-     * Define el valor de la propiedad fechaInscripcionCarga.
+     * Sets the value of the fechaInscripcionCarga property.
      * 
      * @param value
      *     allowed object is
@@ -473,7 +473,7 @@ public class Carga
     }
 
     /**
-     * Obtiene el valor de la propiedad fechaInscripcionCesion.
+     * Gets the value of the fechaInscripcionCesion property.
      * 
      * @return
      *     possible object is
@@ -485,7 +485,7 @@ public class Carga
     }
 
     /**
-     * Define el valor de la propiedad fechaInscripcionCesion.
+     * Sets the value of the fechaInscripcionCesion property.
      * 
      * @param value
      *     allowed object is
@@ -497,7 +497,7 @@ public class Carga
     }
 
     /**
-     * Obtiene el valor de la propiedad fechaVencimiento.
+     * Gets the value of the fechaVencimiento property.
      * 
      * @return
      *     possible object is
@@ -509,7 +509,7 @@ public class Carga
     }
 
     /**
-     * Define el valor de la propiedad fechaVencimiento.
+     * Sets the value of the fechaVencimiento property.
      * 
      * @param value
      *     allowed object is
@@ -521,7 +521,7 @@ public class Carga
     }
 
     /**
-     * Obtiene el valor de la propiedad folio.
+     * Gets the value of the folio property.
      * 
      * @return
      *     possible object is
@@ -533,7 +533,7 @@ public class Carga
     }
 
     /**
-     * Define el valor de la propiedad folio.
+     * Sets the value of the folio property.
      * 
      * @param value
      *     allowed object is
@@ -545,7 +545,7 @@ public class Carga
     }
 
     /**
-     * Obtiene el valor de la propiedad gastoCostas.
+     * Gets the value of the gastoCostas property.
      * 
      * @return
      *     possible object is
@@ -557,7 +557,7 @@ public class Carga
     }
 
     /**
-     * Define el valor de la propiedad gastoCostas.
+     * Sets the value of the gastoCostas property.
      * 
      * @param value
      *     allowed object is
@@ -569,7 +569,7 @@ public class Carga
     }
 
     /**
-     * Obtiene el valor de la propiedad gastosProcesales.
+     * Gets the value of the gastosProcesales property.
      * 
      * @return
      *     possible object is
@@ -581,7 +581,7 @@ public class Carga
     }
 
     /**
-     * Define el valor de la propiedad gastosProcesales.
+     * Sets the value of the gastosProcesales property.
      * 
      * @param value
      *     allowed object is
@@ -593,7 +593,7 @@ public class Carga
     }
 
     /**
-     * Obtiene el valor de la propiedad igualdadRango.
+     * Gets the value of the igualdadRango property.
      * 
      * @return
      *     possible object is
@@ -605,7 +605,7 @@ public class Carga
     }
 
     /**
-     * Define el valor de la propiedad igualdadRango.
+     * Sets the value of the igualdadRango property.
      * 
      * @param value
      *     allowed object is
@@ -617,7 +617,7 @@ public class Carga
     }
 
     /**
-     * Obtiene el valor de la propiedad importeHipoteca.
+     * Gets the value of the importeHipoteca property.
      * 
      * @return
      *     possible object is
@@ -629,7 +629,7 @@ public class Carga
     }
 
     /**
-     * Define el valor de la propiedad importeHipoteca.
+     * Sets the value of the importeHipoteca property.
      * 
      * @param value
      *     allowed object is
@@ -641,7 +641,7 @@ public class Carga
     }
 
     /**
-     * Obtiene el valor de la propiedad inscripcion.
+     * Gets the value of the inscripcion property.
      * 
      * @return
      *     possible object is
@@ -653,7 +653,7 @@ public class Carga
     }
 
     /**
-     * Define el valor de la propiedad inscripcion.
+     * Sets the value of the inscripcion property.
      * 
      * @param value
      *     allowed object is
@@ -665,7 +665,7 @@ public class Carga
     }
 
     /**
-     * Obtiene el valor de la propiedad interesesDemora.
+     * Gets the value of the interesesDemora property.
      * 
      * @return
      *     possible object is
@@ -677,7 +677,7 @@ public class Carga
     }
 
     /**
-     * Define el valor de la propiedad interesesDemora.
+     * Sets the value of the interesesDemora property.
      * 
      * @param value
      *     allowed object is
@@ -689,7 +689,7 @@ public class Carga
     }
 
     /**
-     * Obtiene el valor de la propiedad interesesHipoteca.
+     * Gets the value of the interesesHipoteca property.
      * 
      * @return
      *     possible object is
@@ -701,7 +701,7 @@ public class Carga
     }
 
     /**
-     * Define el valor de la propiedad interesesHipoteca.
+     * Sets the value of the interesesHipoteca property.
      * 
      * @param value
      *     allowed object is
@@ -713,7 +713,7 @@ public class Carga
     }
 
     /**
-     * Obtiene el valor de la propiedad juzgado.
+     * Gets the value of the juzgado property.
      * 
      * @return
      *     possible object is
@@ -725,7 +725,7 @@ public class Carga
     }
 
     /**
-     * Define el valor de la propiedad juzgado.
+     * Sets the value of the juzgado property.
      * 
      * @param value
      *     allowed object is
@@ -737,7 +737,7 @@ public class Carga
     }
 
     /**
-     * Obtiene el valor de la propiedad letra.
+     * Gets the value of the letra property.
      * 
      * @return
      *     possible object is
@@ -749,7 +749,7 @@ public class Carga
     }
 
     /**
-     * Define el valor de la propiedad letra.
+     * Sets the value of the letra property.
      * 
      * @param value
      *     allowed object is
@@ -761,7 +761,7 @@ public class Carga
     }
 
     /**
-     * Obtiene el valor de la propiedad libro.
+     * Gets the value of the libro property.
      * 
      * @return
      *     possible object is
@@ -773,7 +773,7 @@ public class Carga
     }
 
     /**
-     * Define el valor de la propiedad libro.
+     * Sets the value of the libro property.
      * 
      * @param value
      *     allowed object is
@@ -785,7 +785,7 @@ public class Carga
     }
 
     /**
-     * Obtiene el valor de la propiedad moneda.
+     * Gets the value of the moneda property.
      * 
      * @return
      *     possible object is
@@ -797,7 +797,7 @@ public class Carga
     }
 
     /**
-     * Define el valor de la propiedad moneda.
+     * Sets the value of the moneda property.
      * 
      * @param value
      *     allowed object is
@@ -809,7 +809,7 @@ public class Carga
     }
 
     /**
-     * Obtiene el valor de la propiedad notario.
+     * Gets the value of the notario property.
      * 
      * @return
      *     possible object is
@@ -821,7 +821,7 @@ public class Carga
     }
 
     /**
-     * Define el valor de la propiedad notario.
+     * Sets the value of the notario property.
      * 
      * @param value
      *     allowed object is
@@ -833,7 +833,7 @@ public class Carga
     }
 
     /**
-     * Obtiene el valor de la propiedad notarioCesion.
+     * Gets the value of the notarioCesion property.
      * 
      * @return
      *     possible object is
@@ -845,7 +845,7 @@ public class Carga
     }
 
     /**
-     * Define el valor de la propiedad notarioCesion.
+     * Sets the value of the notarioCesion property.
      * 
      * @param value
      *     allowed object is
@@ -857,7 +857,7 @@ public class Carga
     }
 
     /**
-     * Obtiene el valor de la propiedad otrosGastos.
+     * Gets the value of the otrosGastos property.
      * 
      * @return
      *     possible object is
@@ -869,7 +869,7 @@ public class Carga
     }
 
     /**
-     * Define el valor de la propiedad otrosGastos.
+     * Sets the value of the otrosGastos property.
      * 
      * @param value
      *     allowed object is
@@ -881,7 +881,7 @@ public class Carga
     }
 
     /**
-     * Obtiene el valor de la propiedad plazoMesesCarga.
+     * Gets the value of the plazoMesesCarga property.
      * 
      * @return
      *     possible object is
@@ -893,7 +893,7 @@ public class Carga
     }
 
     /**
-     * Define el valor de la propiedad plazoMesesCarga.
+     * Sets the value of the plazoMesesCarga property.
      * 
      * @param value
      *     allowed object is
@@ -905,7 +905,7 @@ public class Carga
     }
 
     /**
-     * Obtiene el valor de la propiedad protocolo.
+     * Gets the value of the protocolo property.
      * 
      * @return
      *     possible object is
@@ -917,7 +917,7 @@ public class Carga
     }
 
     /**
-     * Define el valor de la propiedad protocolo.
+     * Sets the value of the protocolo property.
      * 
      * @param value
      *     allowed object is
@@ -929,7 +929,7 @@ public class Carga
     }
 
     /**
-     * Obtiene el valor de la propiedad protocoloCesion.
+     * Gets the value of the protocoloCesion property.
      * 
      * @return
      *     possible object is
@@ -941,7 +941,7 @@ public class Carga
     }
 
     /**
-     * Define el valor de la propiedad protocoloCesion.
+     * Sets the value of the protocoloCesion property.
      * 
      * @param value
      *     allowed object is
@@ -953,7 +953,7 @@ public class Carga
     }
 
     /**
-     * Obtiene el valor de la propiedad recargoApremio.
+     * Gets the value of the recargoApremio property.
      * 
      * @return
      *     possible object is
@@ -965,7 +965,7 @@ public class Carga
     }
 
     /**
-     * Define el valor de la propiedad recargoApremio.
+     * Sets the value of the recargoApremio property.
      * 
      * @param value
      *     allowed object is
@@ -977,7 +977,7 @@ public class Carga
     }
 
     /**
-     * Obtiene el valor de la propiedad relacionCarga.
+     * Gets the value of the relacionCarga property.
      * 
      * @return
      *     possible object is
@@ -989,7 +989,7 @@ public class Carga
     }
 
     /**
-     * Define el valor de la propiedad relacionCarga.
+     * Sets the value of the relacionCarga property.
      * 
      * @param value
      *     allowed object is
@@ -1001,7 +1001,7 @@ public class Carga
     }
 
     /**
-     * Obtiene el valor de la propiedad responsabilidadHipoteca.
+     * Gets the value of the responsabilidadHipoteca property.
      * 
      * @return
      *     possible object is
@@ -1013,7 +1013,7 @@ public class Carga
     }
 
     /**
-     * Define el valor de la propiedad responsabilidadHipoteca.
+     * Sets the value of the responsabilidadHipoteca property.
      * 
      * @param value
      *     allowed object is
@@ -1025,7 +1025,7 @@ public class Carga
     }
 
     /**
-     * Obtiene el valor de la propiedad tipoCarga.
+     * Gets the value of the tipoCarga property.
      * 
      * @return
      *     possible object is
@@ -1037,7 +1037,7 @@ public class Carga
     }
 
     /**
-     * Define el valor de la propiedad tipoCarga.
+     * Sets the value of the tipoCarga property.
      * 
      * @param value
      *     allowed object is
@@ -1049,7 +1049,7 @@ public class Carga
     }
 
     /**
-     * Obtiene el valor de la propiedad tomo.
+     * Gets the value of the tomo property.
      * 
      * @return
      *     possible object is
@@ -1061,7 +1061,7 @@ public class Carga
     }
 
     /**
-     * Define el valor de la propiedad tomo.
+     * Sets the value of the tomo property.
      * 
      * @param value
      *     allowed object is

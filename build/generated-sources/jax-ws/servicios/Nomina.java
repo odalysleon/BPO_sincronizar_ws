@@ -12,9 +12,9 @@ import javax.xml.datatype.XMLGregorianCalendar;
 
 
 /**
- * <p>Clase Java para Nomina complex type.
+ * <p>Java class for Nomina complex type.
  * 
- * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="Nomina">
@@ -104,7 +104,7 @@ public class Nomina
     protected Double tipoIRPF;
 
     /**
-     * Obtiene el valor de la propiedad baseImponible.
+     * Gets the value of the baseImponible property.
      * 
      * @return
      *     possible object is
@@ -116,7 +116,7 @@ public class Nomina
     }
 
     /**
-     * Define el valor de la propiedad baseImponible.
+     * Sets the value of the baseImponible property.
      * 
      * @param value
      *     allowed object is
@@ -128,7 +128,7 @@ public class Nomina
     }
 
     /**
-     * Obtiene el valor de la propiedad cnae.
+     * Gets the value of the cnae property.
      * 
      * @return
      *     possible object is
@@ -140,7 +140,7 @@ public class Nomina
     }
 
     /**
-     * Define el valor de la propiedad cnae.
+     * Sets the value of the cnae property.
      * 
      * @param value
      *     allowed object is
@@ -152,7 +152,7 @@ public class Nomina
     }
 
     /**
-     * Obtiene el valor de la propiedad contigenciasComunes.
+     * Gets the value of the contigenciasComunes property.
      * 
      * @return
      *     possible object is
@@ -164,7 +164,7 @@ public class Nomina
     }
 
     /**
-     * Define el valor de la propiedad contigenciasComunes.
+     * Sets the value of the contigenciasComunes property.
      * 
      * @param value
      *     allowed object is
@@ -176,7 +176,7 @@ public class Nomina
     }
 
     /**
-     * Obtiene el valor de la propiedad documento.
+     * Gets the value of the documento property.
      * 
      * @return
      *     possible object is
@@ -188,7 +188,7 @@ public class Nomina
     }
 
     /**
-     * Define el valor de la propiedad documento.
+     * Sets the value of the documento property.
      * 
      * @param value
      *     allowed object is
@@ -200,7 +200,7 @@ public class Nomina
     }
 
     /**
-     * Obtiene el valor de la propiedad empresa.
+     * Gets the value of the empresa property.
      * 
      * @return
      *     possible object is
@@ -212,7 +212,7 @@ public class Nomina
     }
 
     /**
-     * Define el valor de la propiedad empresa.
+     * Sets the value of the empresa property.
      * 
      * @param value
      *     allowed object is
@@ -224,7 +224,7 @@ public class Nomina
     }
 
     /**
-     * Obtiene el valor de la propiedad fecha.
+     * Gets the value of the fecha property.
      * 
      * @return
      *     possible object is
@@ -236,7 +236,7 @@ public class Nomina
     }
 
     /**
-     * Define el valor de la propiedad fecha.
+     * Sets the value of the fecha property.
      * 
      * @param value
      *     allowed object is
@@ -248,7 +248,7 @@ public class Nomina
     }
 
     /**
-     * Obtiene el valor de la propiedad fechaAntiguedad.
+     * Gets the value of the fechaAntiguedad property.
      * 
      * @return
      *     possible object is
@@ -260,7 +260,7 @@ public class Nomina
     }
 
     /**
-     * Define el valor de la propiedad fechaAntiguedad.
+     * Sets the value of the fechaAntiguedad property.
      * 
      * @param value
      *     allowed object is
@@ -272,7 +272,7 @@ public class Nomina
     }
 
     /**
-     * Obtiene el valor de la propiedad grupoCotizacion.
+     * Gets the value of the grupoCotizacion property.
      * 
      * @return
      *     possible object is
@@ -284,7 +284,7 @@ public class Nomina
     }
 
     /**
-     * Define el valor de la propiedad grupoCotizacion.
+     * Sets the value of the grupoCotizacion property.
      * 
      * @param value
      *     allowed object is
@@ -296,7 +296,7 @@ public class Nomina
     }
 
     /**
-     * Obtiene el valor de la propiedad idSolicitudOCR.
+     * Gets the value of the idSolicitudOCR property.
      * 
      */
     public int getIdSolicitudOCR() {
@@ -304,7 +304,7 @@ public class Nomina
     }
 
     /**
-     * Define el valor de la propiedad idSolicitudOCR.
+     * Sets the value of the idSolicitudOCR property.
      * 
      */
     public void setIdSolicitudOCR(int value) {
@@ -312,7 +312,7 @@ public class Nomina
     }
 
     /**
-     * Obtiene el valor de la propiedad importeARecibir.
+     * Gets the value of the importeARecibir property.
      * 
      * @return
      *     possible object is
@@ -324,7 +324,7 @@ public class Nomina
     }
 
     /**
-     * Define el valor de la propiedad importeARecibir.
+     * Sets the value of the importeARecibir property.
      * 
      * @param value
      *     allowed object is
@@ -336,7 +336,7 @@ public class Nomina
     }
 
     /**
-     * Obtiene el valor de la propiedad nif.
+     * Gets the value of the nif property.
      * 
      * @return
      *     possible object is
@@ -348,7 +348,7 @@ public class Nomina
     }
 
     /**
-     * Define el valor de la propiedad nif.
+     * Sets the value of the nif property.
      * 
      * @param value
      *     allowed object is
@@ -360,7 +360,7 @@ public class Nomina
     }
 
     /**
-     * Obtiene el valor de la propiedad nombre.
+     * Gets the value of the nombre property.
      * 
      * @return
      *     possible object is
@@ -372,7 +372,7 @@ public class Nomina
     }
 
     /**
-     * Define el valor de la propiedad nombre.
+     * Sets the value of the nombre property.
      * 
      * @param value
      *     allowed object is
@@ -384,7 +384,7 @@ public class Nomina
     }
 
     /**
-     * Obtiene el valor de la propiedad numeroSeguridadSocial.
+     * Gets the value of the numeroSeguridadSocial property.
      * 
      * @return
      *     possible object is
@@ -396,7 +396,7 @@ public class Nomina
     }
 
     /**
-     * Define el valor de la propiedad numeroSeguridadSocial.
+     * Sets the value of the numeroSeguridadSocial property.
      * 
      * @param value
      *     allowed object is
@@ -408,7 +408,7 @@ public class Nomina
     }
 
     /**
-     * Obtiene el valor de la propiedad retencion.
+     * Gets the value of the retencion property.
      * 
      * @return
      *     possible object is
@@ -420,7 +420,7 @@ public class Nomina
     }
 
     /**
-     * Define el valor de la propiedad retencion.
+     * Sets the value of the retencion property.
      * 
      * @param value
      *     allowed object is
@@ -432,7 +432,7 @@ public class Nomina
     }
 
     /**
-     * Obtiene el valor de la propiedad retencionSeguridadSocial.
+     * Gets the value of the retencionSeguridadSocial property.
      * 
      * @return
      *     possible object is
@@ -444,7 +444,7 @@ public class Nomina
     }
 
     /**
-     * Define el valor de la propiedad retencionSeguridadSocial.
+     * Sets the value of the retencionSeguridadSocial property.
      * 
      * @param value
      *     allowed object is
@@ -456,7 +456,7 @@ public class Nomina
     }
 
     /**
-     * Obtiene el valor de la propiedad tipoIRPF.
+     * Gets the value of the tipoIRPF property.
      * 
      * @return
      *     possible object is
@@ -468,7 +468,7 @@ public class Nomina
     }
 
     /**
-     * Define el valor de la propiedad tipoIRPF.
+     * Sets the value of the tipoIRPF property.
      * 
      * @param value
      *     allowed object is

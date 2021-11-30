@@ -9,9 +9,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para DatosEnvio complex type.
+ * <p>Java class for DatosEnvio complex type.
  * 
- * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="DatosEnvio">
@@ -41,7 +41,7 @@ public class DatosEnvio {
     protected JAXBElement<Integer> idSolicitud;
 
     /**
-     * Obtiene el valor de la propiedad documentos.
+     * Gets the value of the documentos property.
      * 
      * @return
      *     possible object is
@@ -53,7 +53,7 @@ public class DatosEnvio {
     }
 
     /**
-     * Define el valor de la propiedad documentos.
+     * Sets the value of the documentos property.
      * 
      * @param value
      *     allowed object is
@@ -65,7 +65,7 @@ public class DatosEnvio {
     }
 
     /**
-     * Obtiene el valor de la propiedad idSolicitud.
+     * Gets the value of the idSolicitud property.
      * 
      * @return
      *     possible object is
@@ -77,7 +77,7 @@ public class DatosEnvio {
     }
 
     /**
-     * Define el valor de la propiedad idSolicitud.
+     * Sets the value of the idSolicitud property.
      * 
      * @param value
      *     allowed object is
